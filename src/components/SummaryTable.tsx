@@ -1,5 +1,5 @@
+import { useState } from 'react';
 import type { DepartmentData, MonthlyData } from '@/types';
-import { getLatestMonthData } from '@/utils/data-loader';
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
 
 interface SummaryTableProps {
@@ -9,20 +9,40 @@ interface SummaryTableProps {
 }
 
 export default function SummaryTable({ departments, totalMonthly, totalLabel = '合计' }: SummaryTableProps) {
+  const [selectedMonthIdx, setSelectedMonthIdx] = useState(totalMonthly.length - 1);
+
   if (departments.length === 0) return null;
 
-  const latestTotal = totalMonthly[totalMonthly.length - 1];
   const months = totalMonthly.map(m => m.month);
+  const currentTotal = totalMonthly[selectedMonthIdx];
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
-      <div className="px-5 py-4 border-b border-slate-100">
-        <h3 className="text-base font-semibold text-slate-800">
-          各部门数据明细
-        </h3>
-        <p className="text-xs text-slate-500 mt-1">
-          点击列头可查看不同月份数据（展示最新月）
-        </p>
+      <div className="px-5 py-4 border-b border-slate-100 flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h3 className="text-base font-semibold text-slate-800">
+            各部门数据明细
+          </h3>
+          <p className="text-xs text-slate-500 mt-1">
+            点击下方月份切换查看不同月份数据
+          </p>
+        </div>
+        {/* 月份切换器 */}
+        <div className="flex flex-wrap gap-1.5">
+          {months.map((m, idx) => (
+            <button
+              key={m}
+              onClick={() => setSelectedMonthIdx(idx)}
+              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
+                selectedMonthIdx === idx
+                  ? 'bg-sky-500 text-white shadow-sm'
+                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+              }`}
+            >
+              {m}
+            </button>
+          ))}
+        </div>
       </div>
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
@@ -56,8 +76,8 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
           </thead>
           <tbody>
             {departments.map((dept, idx) => {
-              const latest = getLatestMonthData(dept);
-              if (!latest) return null;
+              const monthData = dept.monthly[selectedMonthIdx];
+              if (!monthData) return null;
               return (
                 <tr
                   key={dept.name}
@@ -69,37 +89,37 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                     {dept.name}
                   </td>
                   <td className="text-center px-3 py-3 text-slate-700 font-semibold">
-                    {latest.startCount}
+                    {monthData.startCount}
                   </td>
                   <td className="text-center px-3 py-3 text-slate-600">
-                    {latest.fullTime}
+                    {monthData.fullTime}
                   </td>
                   <td className="text-center px-3 py-3 text-slate-600">
-                    {latest.intern}
+                    {monthData.intern}
                   </td>
                   <td className="text-center px-3 py-3 text-emerald-600 font-medium">
-                    +{latest.joinCount}
+                    +{monthData.joinCount}
                   </td>
                   <td className="text-center px-3 py-3 text-rose-600 font-medium">
-                    -{latest.leaveCount}
+                    -{monthData.leaveCount}
                   </td>
                   <td className="text-center px-4 py-3">
                     <span className={`inline-flex items-center gap-1 font-medium ${
-                      latest.netChange > 0
+                      monthData.netChange > 0
                         ? 'text-emerald-600'
-                        : latest.netChange < 0
+                        : monthData.netChange < 0
                         ? 'text-rose-600'
                         : 'text-slate-500'
                     }`}>
-                      {latest.netChange > 0 ? (
+                      {monthData.netChange > 0 ? (
                         <TrendingUp size={14} />
-                      ) : latest.netChange < 0 ? (
+                      ) : monthData.netChange < 0 ? (
                         <TrendingDown size={14} />
                       ) : (
                         <Minus size={14} />
                       )}
-                      {latest.netChange > 0 ? '+' : ''}
-                      {latest.netChange}
+                      {monthData.netChange > 0 ? '+' : ''}
+                      {monthData.netChange}
                     </span>
                   </td>
                   <td className="text-center px-3 py-3">
@@ -113,37 +133,37 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                 {totalLabel}
               </td>
               <td className="text-center px-3 py-3 text-slate-800">
-                {latestTotal?.startCount ?? 0}
+                {currentTotal?.startCount ?? 0}
               </td>
               <td className="text-center px-3 py-3 text-slate-700">
-                {latestTotal?.fullTime ?? 0}
+                {currentTotal?.fullTime ?? 0}
               </td>
               <td className="text-center px-3 py-3 text-slate-700">
-                {latestTotal?.intern ?? 0}
+                {currentTotal?.intern ?? 0}
               </td>
               <td className="text-center px-3 py-3 text-emerald-700">
-                +{latestTotal?.joinCount ?? 0}
+                +{currentTotal?.joinCount ?? 0}
               </td>
               <td className="text-center px-3 py-3 text-rose-700">
-                -{latestTotal?.leaveCount ?? 0}
+                -{currentTotal?.leaveCount ?? 0}
               </td>
               <td className="text-center px-4 py-3">
                 <span className={`inline-flex items-center gap-1 ${
-                  (latestTotal?.netChange ?? 0) > 0
+                  (currentTotal?.netChange ?? 0) > 0
                     ? 'text-emerald-700'
-                    : (latestTotal?.netChange ?? 0) < 0
+                    : (currentTotal?.netChange ?? 0) < 0
                     ? 'text-rose-700'
                     : 'text-slate-600'
                 }`}>
-                  {(latestTotal?.netChange ?? 0) > 0 ? (
+                  {(currentTotal?.netChange ?? 0) > 0 ? (
                     <TrendingUp size={14} />
-                  ) : (latestTotal?.netChange ?? 0) < 0 ? (
+                  ) : (currentTotal?.netChange ?? 0) < 0 ? (
                     <TrendingDown size={14} />
                   ) : (
                     <Minus size={14} />
                   )}
-                  {(latestTotal?.netChange ?? 0) > 0 ? '+' : ''}
-                  {latestTotal?.netChange ?? 0}
+                  {(currentTotal?.netChange ?? 0) > 0 ? '+' : ''}
+                  {currentTotal?.netChange ?? 0}
                 </span>
               </td>
               <td className="text-center px-3 py-3">
@@ -154,7 +174,7 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
         </table>
       </div>
       <div className="px-5 py-3 border-t border-slate-100 bg-slate-50/50 text-xs text-slate-500">
-        统计月份：{months.join(' / ')}
+        当前查看：{months[selectedMonthIdx]} · 全部月份：{months.join(' / ')}
       </div>
     </div>
   );
