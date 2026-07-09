@@ -61,10 +61,16 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                 实习
               </th>
               <th className="text-center px-3 py-3 font-semibold text-emerald-600">
-                入职
+                本周入职
               </th>
               <th className="text-center px-3 py-3 font-semibold text-rose-600">
-                离职
+                本周离职
+              </th>
+              <th className="text-center px-3 py-3 font-semibold text-emerald-600">
+                本月累计入职
+              </th>
+              <th className="text-center px-3 py-3 font-semibold text-rose-600">
+                本月累计离职
               </th>
               <th className="text-center px-4 py-3 font-semibold text-slate-600">
                 净变动
@@ -96,6 +102,12 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                   </td>
                   <td className="text-center px-3 py-3 text-slate-600">
                     {monthData.intern}
+                  </td>
+                  <td className="text-center px-3 py-3 text-emerald-600 font-medium">
+                    +{monthData.weeklyJoinCount}
+                  </td>
+                  <td className="text-center px-3 py-3 text-rose-600 font-medium">
+                    -{monthData.weeklyLeaveCount}
                   </td>
                   <td className="text-center px-3 py-3 text-emerald-600 font-medium">
                     +{monthData.joinCount}
@@ -140,6 +152,12 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
               </td>
               <td className="text-center px-3 py-3 text-slate-700">
                 {currentTotal?.intern ?? 0}
+              </td>
+              <td className="text-center px-3 py-3 text-emerald-700">
+                +{currentTotal?.weeklyJoinCount ?? 0}
+              </td>
+              <td className="text-center px-3 py-3 text-rose-700">
+                -{currentTotal?.weeklyLeaveCount ?? 0}
               </td>
               <td className="text-center px-3 py-3 text-emerald-700">
                 +{currentTotal?.joinCount ?? 0}

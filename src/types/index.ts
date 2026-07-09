@@ -4,6 +4,10 @@ export interface MonthlyData {
   startCount: number;
   fullTime: number;
   intern: number;
+  // 本周数据
+  weeklyJoinCount: number;
+  weeklyLeaveCount: number;
+  // 本月累计数据
   joinCount: number;
   leaveCount: number;
   netChange: number;
