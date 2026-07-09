@@ -475,18 +475,38 @@ function CsRolePieChart({ data }: { data: SalesCsData }) {
 }
 
 function BranchRatioRankChart({ data }: { data: SalesCsData }) {
-  const branches: { name: string; ratio: number; region: string }[] = [];
+  // 按分公司名称合并（同一分公司多个城市的数据累加）
+  const branchMap = new Map<string, { salesSpecialist: number; csSpecialist: number; implementSpecialist: number; region: string }>();
+
   data.regions.forEach((region) => {
     region.branches.forEach((branch) => {
-      if (branch.salesSpecialist > 0) {
-        const ratio = (branch.csSpecialist + branch.implementSpecialist) / branch.salesSpecialist;
-        branches.push({
-          name: branch.city ? `${branch.branch}(${branch.city})` : branch.branch,
-          ratio: Number(ratio.toFixed(2)),
+      const key = branch.branch;
+      const existing = branchMap.get(key);
+      if (existing) {
+        existing.salesSpecialist += branch.salesSpecialist;
+        existing.csSpecialist += branch.csSpecialist;
+        existing.implementSpecialist += branch.implementSpecialist;
+      } else {
+        branchMap.set(key, {
+          salesSpecialist: branch.salesSpecialist,
+          csSpecialist: branch.csSpecialist,
+          implementSpecialist: branch.implementSpecialist,
           region: region.regionName,
         });
       }
     });
+  });
+
+  const branches: { name: string; ratio: number; region: string }[] = [];
+  branchMap.forEach((value, name) => {
+    if (value.salesSpecialist > 0) {
+      const ratio = (value.csSpecialist + value.implementSpecialist) / value.salesSpecialist;
+      branches.push({
+        name,
+        ratio: Number(ratio.toFixed(2)),
+        region: value.region,
+      });
+    }
   });
 
   const sorted = branches.sort((a, b) => a.ratio - b.ratio);
