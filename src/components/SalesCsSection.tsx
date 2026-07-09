@@ -1,5 +1,6 @@
 import ReactECharts from 'echarts-for-react';
-import { Users, UserCheck, Briefcase, BarChart3 } from 'lucide-react';
+import { Users, UserCheck, Briefcase, BarChart3, TrendingDown } from 'lucide-react';
+import sequenceData from '@/data/sequence-ratio-data.json';
 
 interface BranchData {
   branch: string;
@@ -581,6 +582,142 @@ function BranchRatioRankChart({ data }: { data: SalesCsData }) {
   );
 }
 
+function GuanMinRatioChart() {
+  const months = sequenceData.data.map((d) => d.month);
+  const csData = sequenceData.data.map((d) => d.customerSuccess);
+  const salesData = sequenceData.data.map((d) => d.sales);
+  const managementData = sequenceData.data.map((d) => d.management);
+  const ratioData = sequenceData.data.map((d) => d.guanMinRatio);
+
+  const option = {
+    title: {
+      text: '片区人员序列占比与官民比趋势',
+      left: 'left',
+      textStyle: { fontSize: 16, fontWeight: 600, color: '#334155' },
+    },
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: { type: 'cross' as const },
+      backgroundColor: 'rgba(255, 255, 255, 0.95)',
+      borderColor: '#e2e8f0',
+      borderWidth: 1,
+      textStyle: { color: '#334155' },
+    },
+    legend: {
+      data: ['客户成功', '销售', '管理', '官民比'],
+      top: '5%',
+    },
+    grid: [
+      { left: '3%', right: '4%', bottom: '35%', top: '18%', containLabel: true },
+      { left: '3%', right: '4%', bottom: '8%', height: '18%', top: '72%', containLabel: true },
+    ],
+    xAxis: [
+      {
+        type: 'category' as const,
+        data: months,
+        axisLine: { lineStyle: { color: '#e2e8f0' } },
+        axisTick: { show: false },
+        axisLabel: { color: '#475569', fontSize: 11 },
+      },
+      {
+        type: 'category' as const,
+        gridIndex: 1,
+        data: months,
+        axisLine: { lineStyle: { color: '#e2e8f0' } },
+        axisTick: { show: false },
+        axisLabel: { color: '#475569', fontSize: 11 },
+      },
+    ],
+    yAxis: [
+      {
+        type: 'value' as const,
+        name: '人数',
+        nameTextStyle: { color: '#64748b', fontSize: 12 },
+        axisLine: { show: false },
+        axisTick: { show: false },
+        splitLine: { lineStyle: { color: '#f1f5f9' } },
+        axisLabel: { color: '#64748b' },
+      },
+      {
+        type: 'value' as const,
+        gridIndex: 1,
+        name: '官民比',
+        nameTextStyle: { color: '#64748b', fontSize: 12 },
+        axisLine: { show: false },
+        axisTick: { show: false },
+        splitLine: { lineStyle: { color: '#f1f5f9' } },
+        axisLabel: { color: '#64748b' },
+      },
+    ],
+    series: [
+      {
+        name: '客户成功',
+        type: 'bar' as const,
+        data: csData,
+        itemStyle: { color: '#10b981', borderRadius: [4, 4, 0, 0] },
+        barWidth: '25%',
+        barGap: '10%',
+        label: { show: true, position: 'top' as const, color: '#475569', fontSize: 11 },
+      },
+      {
+        name: '销售',
+        type: 'bar' as const,
+        data: salesData,
+        itemStyle: { color: '#3b82f6', borderRadius: [4, 4, 0, 0] },
+        barWidth: '25%',
+        label: { show: true, position: 'top' as const, color: '#475569', fontSize: 11 },
+      },
+      {
+        name: '管理',
+        type: 'bar' as const,
+        data: managementData,
+        itemStyle: { color: '#6366f1', borderRadius: [4, 4, 0, 0] },
+        barWidth: '25%',
+        label: { show: true, position: 'top' as const, color: '#475569', fontSize: 11 },
+      },
+      {
+        name: '官民比',
+        type: 'line' as const,
+        xAxisIndex: 1,
+        yAxisIndex: 1,
+        data: ratioData,
+        smooth: true,
+        symbol: 'circle',
+        symbolSize: 8,
+        lineStyle: { color: '#f59e0b', width: 3 },
+        itemStyle: { color: '#f59e0b', borderWidth: 2, borderColor: '#fff' },
+        areaStyle: {
+          color: {
+            type: 'linear' as const,
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            colorStops: [
+              { offset: 0, color: 'rgba(245, 158, 11, 0.3)' },
+              { offset: 1, color: 'rgba(245, 158, 11, 0.05)' },
+            ],
+          },
+        },
+        label: {
+          show: true,
+          position: 'top' as const,
+          color: '#92400e',
+          fontSize: 12,
+          fontWeight: 'bold',
+          formatter: '{c}',
+        },
+      },
+    ],
+  };
+
+  return (
+    <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
+      <ReactECharts option={option} style={{ height: '420px' }} />
+    </div>
+  );
+}
+
 function DetailTable({ data }: { data: SalesCsData }) {
   const rows: {
     type: 'region' | 'branch' | 'total';
@@ -734,6 +871,8 @@ export default function SalesCsSection({ data }: SalesCsSectionProps) {
       </div>
 
       <BranchRatioRankChart data={data} />
+
+      <GuanMinRatioChart />
 
       <DetailTable data={data} />
     </section>
