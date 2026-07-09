@@ -326,6 +326,241 @@ function PositionStackChart({ data }: { data: SalesCsData }) {
   );
 }
 
+function SalesVsCsChart({ data }: { data: SalesCsData }) {
+  const regions = data.regions;
+  const names = regions.map((r) => r.regionName);
+  const salesTotals = regions.map((r) => r.summary.salesSpecialist + r.summary.salesManager);
+  const csTotals = regions.map(
+    (r) =>
+      r.summary.csManager +
+      r.summary.csSupervisor +
+      r.summary.csSpecialist +
+      r.summary.implementSupervisor +
+      r.summary.implementSpecialist
+  );
+
+  const option = {
+    title: {
+      text: '销售团队 vs 客户成功团队人数对比',
+      left: 'left',
+      textStyle: { fontSize: 16, fontWeight: 600, color: '#334155' },
+    },
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: { type: 'shadow' as const },
+      backgroundColor: 'rgba(255, 255, 255, 0.95)',
+      borderColor: '#e2e8f0',
+      borderWidth: 1,
+      textStyle: { color: '#334155' },
+    },
+    legend: {
+      data: ['销售团队', '客户成功团队'],
+      top: '5%',
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      top: '18%',
+      containLabel: true,
+    },
+    xAxis: {
+      type: 'category' as const,
+      data: names,
+      axisLine: { lineStyle: { color: '#e2e8f0' } },
+      axisTick: { show: false },
+      axisLabel: { color: '#475569', fontSize: 11 },
+    },
+    yAxis: {
+      type: 'value' as const,
+      axisLine: { show: false },
+      axisTick: { show: false },
+      splitLine: { lineStyle: { color: '#f1f5f9' } },
+      axisLabel: { color: '#64748b' },
+    },
+    series: [
+      {
+        name: '销售团队',
+        type: 'bar' as const,
+        data: salesTotals,
+        itemStyle: { color: '#3b82f6', borderRadius: [4, 4, 0, 0] },
+        barWidth: '30%',
+        barGap: '10%',
+        label: { show: true, position: 'top' as const, color: '#475569', fontSize: 11 },
+      },
+      {
+        name: '客户成功团队',
+        type: 'bar' as const,
+        data: csTotals,
+        itemStyle: { color: '#10b981', borderRadius: [4, 4, 0, 0] },
+        barWidth: '30%',
+        label: { show: true, position: 'top' as const, color: '#475569', fontSize: 11 },
+      },
+    ],
+  };
+
+  return (
+    <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
+      <ReactECharts option={option} style={{ height: '360px' }} />
+    </div>
+  );
+}
+
+function CsRolePieChart({ data }: { data: SalesCsData }) {
+  const s = data.summary;
+  const pieData = [
+    { value: s.csManager, name: '客户成功经理' },
+    { value: s.csSupervisor, name: '客户成功主管' },
+    { value: s.csSpecialist, name: '客户成功专员' },
+    { value: s.implementSupervisor, name: '实施主管' },
+    { value: s.implementSpecialist, name: '实施专员' },
+  ].filter((d) => d.value > 0);
+
+  const option = {
+    title: {
+      text: '客户成功团队岗位分布',
+      left: 'left',
+      textStyle: { fontSize: 16, fontWeight: 600, color: '#334155' },
+    },
+    tooltip: {
+      trigger: 'item',
+      backgroundColor: 'rgba(255, 255, 255, 0.95)',
+      borderColor: '#e2e8f0',
+      borderWidth: 1,
+      textStyle: { color: '#334155' },
+      formatter: '{b}: {c}人 ({d}%)',
+    },
+    legend: {
+      orient: 'vertical' as const,
+      right: '5%',
+      top: 'center',
+      textStyle: { fontSize: 12, color: '#475569' },
+    },
+    series: [
+      {
+        type: 'pie' as const,
+        radius: ['40%', '70%'] as [string, string],
+        center: ['40%', '55%'],
+        avoidLabelOverlap: true,
+        itemStyle: {
+          borderRadius: 6,
+          borderColor: '#fff',
+          borderWidth: 2,
+        },
+        label: {
+          show: true,
+          formatter: '{b}\n{c}人',
+          fontSize: 11,
+          color: '#475569',
+        },
+        emphasis: {
+          label: { show: true, fontSize: 13, fontWeight: 'bold' },
+          itemStyle: { shadowBlur: 10, shadowOffsetX: 0, shadowColor: 'rgba(0, 0, 0, 0.1)' },
+        },
+        data: pieData.map((d, i) => ({
+          ...d,
+          itemStyle: {
+            color: ['#22c55e', '#86efac', '#10b981', '#f97316', '#f59e0b'][i],
+          },
+        })),
+      },
+    ],
+  };
+
+  return (
+    <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
+      <ReactECharts option={option} style={{ height: '360px' }} />
+    </div>
+  );
+}
+
+function BranchRatioRankChart({ data }: { data: SalesCsData }) {
+  const branches: { name: string; ratio: number; region: string }[] = [];
+  data.regions.forEach((region) => {
+    region.branches.forEach((branch) => {
+      if (branch.salesSpecialist > 0) {
+        const ratio = (branch.csSpecialist + branch.implementSpecialist) / branch.salesSpecialist;
+        branches.push({
+          name: branch.city ? `${branch.branch}(${branch.city})` : branch.branch,
+          ratio: Number(ratio.toFixed(2)),
+          region: region.regionName,
+        });
+      }
+    });
+  });
+
+  const sorted = branches.sort((a, b) => a.ratio - b.ratio);
+  const names = sorted.map((b) => b.name);
+  const ratios = sorted.map((b) => b.ratio);
+
+  const option = {
+    title: {
+      text: '各分公司客成销售比排行（专员）',
+      left: 'left',
+      textStyle: { fontSize: 16, fontWeight: 600, color: '#334155' },
+    },
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: { type: 'shadow' as const },
+      backgroundColor: 'rgba(255, 255, 255, 0.95)',
+      borderColor: '#e2e8f0',
+      borderWidth: 1,
+      textStyle: { color: '#334155' },
+      formatter: (params: any) => {
+        const item = sorted[params[0].dataIndex];
+        return `${item.region}<br/>${item.name}: <b>${item.ratio}</b>`;
+      },
+    },
+    grid: {
+      left: '3%',
+      right: '8%',
+      bottom: '3%',
+      top: '12%',
+      containLabel: true,
+    },
+    xAxis: {
+      type: 'value' as const,
+      axisLine: { show: false },
+      axisTick: { show: false },
+      splitLine: { lineStyle: { color: '#f1f5f9' } },
+      axisLabel: { color: '#64748b' },
+    },
+    yAxis: {
+      type: 'category' as const,
+      data: names,
+      axisLine: { lineStyle: { color: '#e2e8f0' } },
+      axisTick: { show: false },
+      axisLabel: { color: '#475569', fontSize: 10 },
+    },
+    series: [
+      {
+        type: 'bar' as const,
+        data: ratios.map((value) => ({
+          value,
+          itemStyle: {
+            color: value >= 3 ? '#ef4444' : value >= 2 ? '#f59e0b' : '#3b82f6',
+            borderRadius: [0, 4, 4, 0],
+          },
+        })),
+        barWidth: '60%',
+        label: {
+          show: true,
+          position: 'right' as const,
+          color: '#475569',
+          fontSize: 11,
+          formatter: '{c}',
+        },
+      },
+    ],
+  };
+
+  return (
+    <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
+      <ReactECharts option={option} style={{ height: '500px' }} />
+    </div>
+  );
+}
+
 function DetailTable({ data }: { data: SalesCsData }) {
   const rows: {
     type: 'region' | 'branch' | 'total';
@@ -472,6 +707,13 @@ export default function SalesCsSection({ data }: SalesCsSectionProps) {
         <RatioCompareChart data={data} />
         <PositionStackChart data={data} />
       </div>
+
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
+        <SalesVsCsChart data={data} />
+        <CsRolePieChart data={data} />
+      </div>
+
+      <BranchRatioRankChart data={data} />
 
       <DetailTable data={data} />
     </section>
