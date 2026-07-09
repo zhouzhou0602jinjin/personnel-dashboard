@@ -872,9 +872,9 @@ export default function SalesCsSection({ data }: SalesCsSectionProps) {
 
       <BranchRatioRankChart data={data} />
 
-      <GuanMinRatioChart />
-
       <DetailTable data={data} />
+
+      <GuanMinRatioChart />
     </section>
   );
 }
