@@ -23,6 +23,8 @@ export interface PersonnelDataset {
   // 第一部分：公司总计
   companyTotal: MonthlyData[];
   organizations: DepartmentData[];
+  // SJS（独立，不参与公司总计）
+  sjsData: DepartmentData;
   // 第二部分：中小微事业群细分
   zxwSubTotal: MonthlyData[];
   zxwSubDepartments: DepartmentData[];

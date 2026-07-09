@@ -69,6 +69,7 @@ export default function Home() {
               departments={dataset.organizations}
               totalMonthly={dataset.companyTotal}
               totalLabel="公司总计"
+              extraRows={[dataset.sjsData]}
             />
           </div>
         </Section>

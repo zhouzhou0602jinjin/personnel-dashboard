@@ -6,9 +6,10 @@ interface SummaryTableProps {
   departments: DepartmentData[];
   totalMonthly: MonthlyData[];
   totalLabel?: string;
+  extraRows?: DepartmentData[];
 }
 
-export default function SummaryTable({ departments, totalMonthly, totalLabel = '合计' }: SummaryTableProps) {
+export default function SummaryTable({ departments, totalMonthly, totalLabel = '合计', extraRows = [] }: SummaryTableProps) {
   const [selectedMonthIdx, setSelectedMonthIdx] = useState(totalMonthly.length - 1);
 
   if (departments.length === 0) return null;
@@ -140,6 +141,75 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                 </tr>
               );
             })}
+            {/* 独立行（不参与合计） */}
+            {extraRows.length > 0 && (
+              <>
+                <tr>
+                  <td colSpan={10} className="bg-slate-50 px-4 py-2 text-xs font-medium text-slate-500">
+                  — 其他
+                </td>
+                </tr>
+                {extraRows.map((dept) => {
+                  const monthData = dept.monthly[selectedMonthIdx];
+                  if (!monthData) return null;
+                  return (
+                    <tr
+                      key={dept.name}
+                      className="border-t border-slate-100 bg-amber-50/40 hover:bg-amber-50/70 transition-colors"
+                    >
+                      <td className="text-left px-4 py-3 font-medium text-slate-700 sticky left-0 bg-inherit z-10">
+                        {dept.name}
+                      </td>
+                      <td className="text-center px-3 py-3 text-slate-700 font-semibold">
+                        {monthData.startCount}
+                      </td>
+                      <td className="text-center px-3 py-3 text-slate-600">
+                        {monthData.fullTime}
+                      </td>
+                      <td className="text-center px-3 py-3 text-slate-600">
+                        {monthData.intern}
+                      </td>
+                      <td className="text-center px-3 py-3 text-emerald-600 font-medium">
+                        +{monthData.weeklyJoinCount}
+                      </td>
+                      <td className="text-center px-3 py-3 text-rose-600 font-medium">
+                        -{monthData.weeklyLeaveCount}
+                      </td>
+                      <td className="text-center px-3 py-3 text-emerald-600 font-medium">
+                        +{monthData.joinCount}
+                      </td>
+                      <td className="text-center px-3 py-3 text-rose-600 font-medium">
+                        -{monthData.leaveCount}
+                      </td>
+                      <td className="text-center px-4 py-3">
+                        <span className={`inline-flex items-center gap-1 font-medium ${
+                          monthData.netChange > 0
+                            ? 'text-emerald-600'
+                            : monthData.netChange < 0
+                            ? 'text-rose-600'
+                            : 'text-slate-500'
+                        }`}>
+                          {monthData.netChange > 0 ? (
+                            <TrendingUp size={14} />
+                          ) : monthData.netChange < 0 ? (
+                            <TrendingDown size={14} />
+                          ) : (
+                            <Minus size={14} />
+                          )}
+                          {monthData.netChange > 0 ? '+' : ''}
+                          {monthData.netChange}
+                        </span>
+                      </td>
+                      <td className="text-center px-3 py-3">
+                        <MiniSparkline data={dept.monthly.map(m => m.startCount)} />
+                      </td>
+                    </tr>
+                  );
+                })}
+              </>
+            )}
+
+            {/* 合计行 */}
             <tr className="border-t-2 border-slate-200 bg-sky-50/50 font-semibold">
               <td className="text-left px-4 py-3 text-slate-800 sticky left-0 bg-sky-50/50 z-10">
                 {totalLabel}

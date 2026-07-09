@@ -653,88 +653,6 @@
           "weeklyLeaveCount": 0
         }
       ]
-    },
-    {
-      "name": "SJS",
-      "monthly": [
-        {
-          "month": "1月",
-          "startCount": 32,
-          "fullTime": 32,
-          "intern": 0,
-          "joinCount": 0,
-          "leaveCount": 1,
-          "netChange": -1,
-          "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
-        },
-        {
-          "month": "2月",
-          "startCount": 32,
-          "fullTime": 32,
-          "intern": 0,
-          "joinCount": 0,
-          "leaveCount": 0,
-          "netChange": 0,
-          "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 0
-        },
-        {
-          "month": "3月",
-          "startCount": 30,
-          "fullTime": 30,
-          "intern": 0,
-          "joinCount": 0,
-          "leaveCount": 2,
-          "netChange": -2,
-          "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 2
-        },
-        {
-          "month": "4月",
-          "startCount": 29,
-          "fullTime": 29,
-          "intern": 0,
-          "joinCount": 0,
-          "leaveCount": 1,
-          "netChange": -1,
-          "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
-        },
-        {
-          "month": "5月",
-          "startCount": 29,
-          "fullTime": 29,
-          "intern": 0,
-          "joinCount": 0,
-          "leaveCount": 0,
-          "netChange": 0,
-          "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 0
-        },
-        {
-          "month": "6月",
-          "startCount": 31,
-          "fullTime": 31,
-          "intern": 0,
-          "joinCount": 4,
-          "leaveCount": 2,
-          "netChange": 2,
-          "weeklyJoinCount": 4,
-          "weeklyLeaveCount": 2
-        },
-        {
-          "month": "7月",
-          "startCount": 31,
-          "fullTime": 31,
-          "intern": 0,
-          "joinCount": 0,
-          "leaveCount": 0,
-          "netChange": 0,
-          "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 0
-        }
-      ]
     }
   ],
   "zxwSubTotal": [
@@ -2047,5 +1965,87 @@
         }
       ]
     }
-  ]
+  ],
+  "sjsData": {
+    "name": "SJS",
+    "monthly": [
+      {
+        "month": "1月",
+        "startCount": 32,
+        "fullTime": 32,
+        "intern": 0,
+        "joinCount": 0,
+        "leaveCount": 1,
+        "netChange": -1,
+        "weeklyJoinCount": 0,
+        "weeklyLeaveCount": 1
+      },
+      {
+        "month": "2月",
+        "startCount": 32,
+        "fullTime": 32,
+        "intern": 0,
+        "joinCount": 0,
+        "leaveCount": 0,
+        "netChange": 0,
+        "weeklyJoinCount": 0,
+        "weeklyLeaveCount": 0
+      },
+      {
+        "month": "3月",
+        "startCount": 30,
+        "fullTime": 30,
+        "intern": 0,
+        "joinCount": 0,
+        "leaveCount": 2,
+        "netChange": -2,
+        "weeklyJoinCount": 0,
+        "weeklyLeaveCount": 2
+      },
+      {
+        "month": "4月",
+        "startCount": 29,
+        "fullTime": 29,
+        "intern": 0,
+        "joinCount": 0,
+        "leaveCount": 1,
+        "netChange": -1,
+        "weeklyJoinCount": 0,
+        "weeklyLeaveCount": 1
+      },
+      {
+        "month": "5月",
+        "startCount": 29,
+        "fullTime": 29,
+        "intern": 0,
+        "joinCount": 0,
+        "leaveCount": 0,
+        "netChange": 0,
+        "weeklyJoinCount": 0,
+        "weeklyLeaveCount": 0
+      },
+      {
+        "month": "6月",
+        "startCount": 31,
+        "fullTime": 31,
+        "intern": 0,
+        "joinCount": 4,
+        "leaveCount": 2,
+        "netChange": 2,
+        "weeklyJoinCount": 4,
+        "weeklyLeaveCount": 2
+      },
+      {
+        "month": "7月",
+        "startCount": 31,
+        "fullTime": 31,
+        "intern": 0,
+        "joinCount": 0,
+        "leaveCount": 0,
+        "netChange": 0,
+        "weeklyJoinCount": 0,
+        "weeklyLeaveCount": 0
+      }
+    ]
+  }
 }
