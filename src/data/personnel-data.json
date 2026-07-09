@@ -1,5 +1,5 @@
 {
-  "updateDate": "2026年7月3日",
+  "updateDate": "2026年7月9日",
   "companyTotal": [
     {
       "month": "1月",
@@ -69,12 +69,12 @@
     },
     {
       "month": "7月",
-      "startCount": 504,
+      "startCount": 497,
       "fullTime": 501,
       "intern": 3,
       "joinCount": 8,
       "leaveCount": 1,
-      "netChange": 3,
+      "netChange": 7,
       "weeklyJoinCount": 8,
       "weeklyLeaveCount": 1
     }
@@ -151,12 +151,12 @@
         },
         {
           "month": "7月",
-          "startCount": 123,
+          "startCount": 117,
           "fullTime": 123,
           "intern": 0,
           "joinCount": 6,
           "leaveCount": 0,
-          "netChange": -3,
+          "netChange": 6,
           "weeklyJoinCount": 6,
           "weeklyLeaveCount": 0
         }
@@ -315,7 +315,7 @@
         },
         {
           "month": "7月",
-          "startCount": 30,
+          "startCount": 29,
           "fullTime": 27,
           "intern": 3,
           "joinCount": 1,
@@ -402,7 +402,7 @@
           "intern": 0,
           "joinCount": 1,
           "leaveCount": 1,
-          "netChange": 2,
+          "netChange": 0,
           "weeklyJoinCount": 1,
           "weeklyLeaveCount": 1
         }
@@ -648,7 +648,7 @@
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 0,
-          "netChange": 3,
+          "netChange": 0,
           "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         }
@@ -729,7 +729,7 @@
       "intern": 0,
       "joinCount": 1,
       "leaveCount": 1,
-      "netChange": 2,
+      "netChange": 0,
       "weeklyJoinCount": 1,
       "weeklyLeaveCount": 1
     }
@@ -1052,7 +1052,7 @@
         },
         {
           "month": "7月",
-          "startCount": 23,
+          "startCount": 24,
           "fullTime": 23,
           "intern": 0,
           "joinCount": 0,
@@ -1134,7 +1134,7 @@
         },
         {
           "month": "7月",
-          "startCount": 46,
+          "startCount": 45,
           "fullTime": 46,
           "intern": 0,
           "joinCount": 1,
@@ -1380,8 +1380,8 @@
         },
         {
           "month": "7月",
-          "startCount": 2,
-          "fullTime": 2,
+          "startCount": 0,
+          "fullTime": 0,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 0,
@@ -1462,12 +1462,12 @@
         },
         {
           "month": "7月",
-          "startCount": 29,
-          "fullTime": 29,
+          "startCount": 0,
+          "fullTime": 0,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 0,
-          "netChange": 3,
+          "netChange": 0,
           "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         }
@@ -1544,8 +1544,8 @@
         },
         {
           "month": "7月",
-          "startCount": 5,
-          "fullTime": 5,
+          "startCount": 0,
+          "fullTime": 0,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 0,
@@ -1626,8 +1626,8 @@
         },
         {
           "month": "7月",
-          "startCount": 7,
-          "fullTime": 7,
+          "startCount": 0,
+          "fullTime": 0,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 0,
@@ -1708,8 +1708,8 @@
         },
         {
           "month": "7月",
-          "startCount": 6,
-          "fullTime": 6,
+          "startCount": 0,
+          "fullTime": 0,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 0,
@@ -1790,8 +1790,8 @@
         },
         {
           "month": "7月",
-          "startCount": 6,
-          "fullTime": 6,
+          "startCount": 0,
+          "fullTime": 0,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 0,
@@ -1872,12 +1872,12 @@
         },
         {
           "month": "7月",
-          "startCount": 6,
-          "fullTime": 6,
+          "startCount": 0,
+          "fullTime": 0,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 0,
-          "netChange": -1,
+          "netChange": 0,
           "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         }
@@ -1954,8 +1954,8 @@
         },
         {
           "month": "7月",
-          "startCount": 1,
-          "fullTime": 1,
+          "startCount": 0,
+          "fullTime": 0,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 0,
