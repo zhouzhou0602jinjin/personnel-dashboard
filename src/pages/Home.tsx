@@ -1,4 +1,5 @@
-import { Building2, Network, LayoutDashboard } from 'lucide-react';
+import { Building2, Network, LayoutDashboard, Target } from 'lucide-react';
+import SalesCsSection from '@/components/SalesCsSection';
 import Header from '@/components/Header';
 import Section from '@/components/Section';
 import AnalysisPanel from '@/components/AnalysisPanel';
@@ -12,6 +13,7 @@ import {
   getUpdateDate,
   calcAnalysisSummary,
 } from '@/utils/data-loader';
+import salesCsData from '@/data/sales-cs-data.json';
 
 export default function Home() {
   const dataset = getDataset();
@@ -103,6 +105,16 @@ export default function Home() {
               totalLabel="中小微事业群合计"
             />
           </div>
+        </Section>
+
+        {/* ===================== 第三部分：销售与客户成功人员配置 ===================== */}
+        <Section
+          title="第三部分 · 销售与客户成功人员配置"
+          subtitle="中小微事业群各片区销售团队与客户成功团队配置情况"
+          icon={<Target size={20} className="text-amber-600" />}
+          accentColor="amber"
+        >
+          <SalesCsSection data={salesCsData as any} />
         </Section>
 
         <footer className="text-center text-sm text-slate-400 py-6 border-t border-slate-200">
