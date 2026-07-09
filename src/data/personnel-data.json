@@ -69,7 +69,7 @@
     },
     {
       "month": "7月",
-      "startCount": 497,
+      "startCount": 504,
       "fullTime": 501,
       "intern": 3,
       "joinCount": 8,
@@ -151,7 +151,7 @@
         },
         {
           "month": "7月",
-          "startCount": 117,
+          "startCount": 123,
           "fullTime": 123,
           "intern": 0,
           "joinCount": 6,
@@ -315,7 +315,7 @@
         },
         {
           "month": "7月",
-          "startCount": 29,
+          "startCount": 30,
           "fullTime": 27,
           "intern": 3,
           "joinCount": 1,
@@ -1052,7 +1052,7 @@
         },
         {
           "month": "7月",
-          "startCount": 24,
+          "startCount": 23,
           "fullTime": 23,
           "intern": 0,
           "joinCount": 0,
@@ -1134,7 +1134,7 @@
         },
         {
           "month": "7月",
-          "startCount": 45,
+          "startCount": 46,
           "fullTime": 46,
           "intern": 0,
           "joinCount": 1,
@@ -1967,7 +1967,7 @@
     }
   ],
   "sjsData": {
-    "name": "SJS",
+    "name": "十角兽",
     "monthly": [
       {
         "month": "1月",
