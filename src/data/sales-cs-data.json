@@ -119,10 +119,10 @@
         "implementSpecialist": 0
       },
       "branches": [
-        { "branch": "广州分公司", "city": "广州", "salesSpecialist": 3, "salesManager": 1, "csManager": 0, "csSupervisor": 0, "csSpecialist": 3, "implementSupervisor": 0, "implementSpecialist": 0 },
+        { "branch": "广深分公司", "city": "广州", "salesSpecialist": 3, "salesManager": 1, "csManager": 0, "csSupervisor": 1, "csSpecialist": 3, "implementSupervisor": 0, "implementSpecialist": 0 },
         { "branch": "江西分公司", "city": "南昌", "salesSpecialist": 3, "salesManager": 0, "csManager": 0, "csSupervisor": 0, "csSpecialist": 4, "implementSupervisor": 0, "implementSpecialist": 0 },
-        { "branch": "云贵分公司", "city": "南宁", "salesSpecialist": 1, "salesManager": 0, "csManager": 0, "csSupervisor": 0, "csSpecialist": 2, "implementSupervisor": 0, "implementSpecialist": 0 },
-        { "branch": "厦门办事处", "city": "厦门", "salesSpecialist": 1, "salesManager": 0, "csManager": 0, "csSupervisor": 1, "csSpecialist": 3, "implementSupervisor": 0, "implementSpecialist": 0 },
+        { "branch": "广深分公司", "city": "南宁", "salesSpecialist": 1, "salesManager": 0, "csManager": 0, "csSupervisor": 0, "csSpecialist": 2, "implementSupervisor": 0, "implementSpecialist": 0 },
+        { "branch": "厦门办事处", "city": "厦门", "salesSpecialist": 1, "salesManager": 0, "csManager": 0, "csSupervisor": 0, "csSpecialist": 3, "implementSupervisor": 0, "implementSpecialist": 0 },
         { "branch": "广深分公司", "city": "深圳", "salesSpecialist": 1, "salesManager": 0, "csManager": 0, "csSupervisor": 0, "csSpecialist": 2, "implementSupervisor": 0, "implementSpecialist": 0 }
       ]
     },
