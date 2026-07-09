@@ -12,6 +12,7 @@ import {
   getDataset,
   getUpdateDate,
   calcAnalysisSummary,
+  getAnalysisNotes,
 } from '@/utils/data-loader';
 import salesCsData from '@/data/sales-cs-data.json';
 
@@ -19,17 +20,18 @@ export default function Home() {
   const dataset = getDataset();
   const updateDate = getUpdateDate();
 
+  const latestMonth = dataset.companyTotal[dataset.companyTotal.length - 1]?.month ?? '最新月';
+
   const companySummary = calcAnalysisSummary(
     dataset.organizations,
     dataset.companyTotal[dataset.companyTotal.length - 1],
+    getAnalysisNotes(latestMonth),
   );
 
   const zxwSummary = calcAnalysisSummary(
     dataset.zxwSubDepartments,
     dataset.zxwSubTotal[dataset.zxwSubTotal.length - 1],
   );
-
-  const latestMonth = dataset.companyTotal[dataset.companyTotal.length - 1]?.month ?? '最新月';
 
   return (
     <div className="min-h-screen bg-slate-50">

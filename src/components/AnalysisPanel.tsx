@@ -1,4 +1,4 @@
-import { TrendingUp, TrendingDown, Users, UserPlus, UserMinus, Award, AlertTriangle } from 'lucide-react';
+import { TrendingUp, TrendingDown, Users, UserPlus, UserMinus, Award, AlertTriangle, Info } from 'lucide-react';
 import type { AnalysisSummary } from '@/utils/data-loader';
 
 interface AnalysisPanelProps {
@@ -119,6 +119,22 @@ export default function AnalysisPanel({ summary, monthLabel, accentColor = 'sky'
             </div>
           </div>
         </div>
+
+        {summary.notes && summary.notes.length > 0 && (
+          <div className="space-y-3 pt-4 border-t border-slate-100">
+            <div className="flex items-center gap-2 text-sm font-semibold text-slate-700">
+              <Info size={16} className="text-blue-500" />
+              备注说明
+            </div>
+            <div className="space-y-2">
+              {summary.notes.map((note, index) => (
+                <div key={index} className="bg-blue-50 rounded-lg px-3 py-2 text-sm text-slate-600">
+                  {note}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
