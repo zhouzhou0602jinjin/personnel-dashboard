@@ -141,13 +141,62 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                 </tr>
               );
             })}
-            {/* 独立行（不参与合计） */}
+            {/* 合计行 */}
+            <tr className="border-t-2 border-slate-200 bg-sky-50/50 font-semibold">
+              <td className="text-left px-4 py-3 text-slate-800 sticky left-0 bg-sky-50/50 z-10">
+                {totalLabel}
+              </td>
+              <td className="text-center px-3 py-3 text-slate-800">
+                {currentTotal?.startCount ?? 0}
+              </td>
+              <td className="text-center px-3 py-3 text-slate-700">
+                {currentTotal?.fullTime ?? 0}
+              </td>
+              <td className="text-center px-3 py-3 text-slate-700">
+                {currentTotal?.intern ?? 0}
+              </td>
+              <td className="text-center px-3 py-3 text-emerald-700">
+                +{currentTotal?.weeklyJoinCount ?? 0}
+              </td>
+              <td className="text-center px-3 py-3 text-rose-700">
+                -{currentTotal?.weeklyLeaveCount ?? 0}
+              </td>
+              <td className="text-center px-3 py-3 text-emerald-700">
+                +{currentTotal?.joinCount ?? 0}
+              </td>
+              <td className="text-center px-3 py-3 text-rose-700">
+                -{currentTotal?.leaveCount ?? 0}
+              </td>
+              <td className="text-center px-4 py-3">
+                <span className={`inline-flex items-center gap-1 ${
+                  (currentTotal?.netChange ?? 0) > 0
+                    ? 'text-emerald-700'
+                    : (currentTotal?.netChange ?? 0) < 0
+                    ? 'text-rose-700'
+                    : 'text-slate-600'
+                }`}>
+                  {(currentTotal?.netChange ?? 0) > 0 ? (
+                    <TrendingUp size={14} />
+                  ) : (currentTotal?.netChange ?? 0) < 0 ? (
+                    <TrendingDown size={14} />
+                  ) : (
+                    <Minus size={14} />
+                  )}
+                  {(currentTotal?.netChange ?? 0) > 0 ? '+' : ''}
+                  {currentTotal?.netChange ?? 0}
+                </span>
+              </td>
+              <td className="text-center px-3 py-3">
+                <MiniSparkline data={totalMonthly.map(m => m.startCount)} accent />
+              </td>
+            </tr>
+            {/* 独立行（不参与合计，置于合计行下方） */}
             {extraRows.length > 0 && (
               <>
                 <tr>
-                  <td colSpan={10} className="bg-slate-50 px-4 py-2 text-xs font-medium text-slate-500">
-                  — 其他
-                </td>
+                  <td colSpan={10} className="bg-slate-50 px-4 py-2 text-xs font-medium text-slate-500 border-t border-slate-200">
+                    — 其他（不参与上述合计）
+                  </td>
                 </tr>
                 {extraRows.map((dept) => {
                   const monthData = dept.monthly[selectedMonthIdx];
@@ -208,56 +257,6 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                 })}
               </>
             )}
-
-            {/* 合计行 */}
-            <tr className="border-t-2 border-slate-200 bg-sky-50/50 font-semibold">
-              <td className="text-left px-4 py-3 text-slate-800 sticky left-0 bg-sky-50/50 z-10">
-                {totalLabel}
-              </td>
-              <td className="text-center px-3 py-3 text-slate-800">
-                {currentTotal?.startCount ?? 0}
-              </td>
-              <td className="text-center px-3 py-3 text-slate-700">
-                {currentTotal?.fullTime ?? 0}
-              </td>
-              <td className="text-center px-3 py-3 text-slate-700">
-                {currentTotal?.intern ?? 0}
-              </td>
-              <td className="text-center px-3 py-3 text-emerald-700">
-                +{currentTotal?.weeklyJoinCount ?? 0}
-              </td>
-              <td className="text-center px-3 py-3 text-rose-700">
-                -{currentTotal?.weeklyLeaveCount ?? 0}
-              </td>
-              <td className="text-center px-3 py-3 text-emerald-700">
-                +{currentTotal?.joinCount ?? 0}
-              </td>
-              <td className="text-center px-3 py-3 text-rose-700">
-                -{currentTotal?.leaveCount ?? 0}
-              </td>
-              <td className="text-center px-4 py-3">
-                <span className={`inline-flex items-center gap-1 ${
-                  (currentTotal?.netChange ?? 0) > 0
-                    ? 'text-emerald-700'
-                    : (currentTotal?.netChange ?? 0) < 0
-                    ? 'text-rose-700'
-                    : 'text-slate-600'
-                }`}>
-                  {(currentTotal?.netChange ?? 0) > 0 ? (
-                    <TrendingUp size={14} />
-                  ) : (currentTotal?.netChange ?? 0) < 0 ? (
-                    <TrendingDown size={14} />
-                  ) : (
-                    <Minus size={14} />
-                  )}
-                  {(currentTotal?.netChange ?? 0) > 0 ? '+' : ''}
-                  {currentTotal?.netChange ?? 0}
-                </span>
-              </td>
-              <td className="text-center px-3 py-3">
-                <MiniSparkline data={totalMonthly.map(m => m.startCount)} accent />
-              </td>
-            </tr>
           </tbody>
         </table>
       </div>
