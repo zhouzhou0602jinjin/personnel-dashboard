@@ -18,8 +18,14 @@ export interface DepartmentData {
   monthly: MonthlyData[];
 }
 
+export interface AnalysisNotes {
+  month: string;
+  notes: string[];
+}
+
 export interface PersonnelDataset {
   updateDate: string;
+  analysisNotes?: AnalysisNotes[];
   // 第一部分：公司总计
   companyTotal: MonthlyData[];
   organizations: DepartmentData[];
