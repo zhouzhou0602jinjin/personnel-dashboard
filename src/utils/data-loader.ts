@@ -77,12 +77,21 @@ export interface AnalysisSummary {
   topGrowthDept: { name: string; count: number };
   topDeclineDept: { name: string; count: number };
   deptCount: number;
+  notes: string[];
 }
+
+export const getAnalysisNotes = (month: string): string[] => {
+  const data = getDataset();
+  if (!data.analysisNotes) return [];
+  const monthNotes = data.analysisNotes.find(n => n.month === month);
+  return monthNotes?.notes || [];
+};
 
 // 计算一组部门的分析摘要
 export const calcAnalysisSummary = (
   departments: DepartmentData[],
   totalData: MonthlyData,
+  notes: string[] = [],
 ): AnalysisSummary => {
   const latest = departments
     .map(d => ({ name: d.name, data: getLatestMonthData(d) }))
@@ -118,5 +127,6 @@ export const calcAnalysisSummary = (
       ? { name: sortedByNet[sortedByNet.length - 1].name, count: sortedByNet[sortedByNet.length - 1].data.netChange }
       : { name: '-', count: 0 },
     deptCount: departments.length,
+    notes,
   };
 };
