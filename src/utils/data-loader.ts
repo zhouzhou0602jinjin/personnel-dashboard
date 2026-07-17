@@ -136,9 +136,8 @@ export const calcAnalysisSummary = (
     totalJoin,
     totalLeave,
     totalNetChange,
-    // excludeSJS 时，全职=在职总人数（不含SJS），不单独显示实习
-    fullTimeCount: excludeSJS ? totalHeadcount : totalData.fullTime,
-    internCount: excludeSJS ? 0 : totalData.intern,
+    fullTimeCount: excludeSJS ? totalData.fullTime - sjsFullTime : totalData.fullTime,
+    internCount: excludeSJS ? totalData.intern - sjsIntern : totalData.intern,
     joinRate,
     leaveRate,
     topJoinDept: sortedByJoin[0] ? { name: sortedByJoin[0].name, count: sortedByJoin[0].data.joinCount } : { name: '-', count: 0 },
