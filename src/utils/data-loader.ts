@@ -118,6 +118,8 @@ export const calcAnalysisSummary = (
   const data = getDataset();
   const sjsMonthData = data.sjsData.monthly.find(m => m.month === totalData.month);
   const sjsCount = sjsMonthData ? sjsMonthData.startCount : 0;
+  const sjsFullTime = sjsMonthData ? sjsMonthData.fullTime : 0;
+  const sjsIntern = sjsMonthData ? sjsMonthData.intern : 0;
   const totalHeadcount = excludeSJS ? totalData.startCount - sjsCount : totalData.startCount;
   const totalJoin = totalData.joinCount;
   const totalLeave = totalData.leaveCount;
@@ -134,8 +136,9 @@ export const calcAnalysisSummary = (
     totalJoin,
     totalLeave,
     totalNetChange,
-    fullTimeCount: totalData.fullTime,
-    internCount: totalData.intern,
+    // excludeSJS 时，全职=在职总人数（不含SJS），不单独显示实习
+    fullTimeCount: excludeSJS ? totalHeadcount : totalData.fullTime,
+    internCount: excludeSJS ? 0 : totalData.intern,
     joinRate,
     leaveRate,
     topJoinDept: sortedByJoin[0] ? { name: sortedByJoin[0].name, count: sortedByJoin[0].data.joinCount } : { name: '-', count: 0 },
