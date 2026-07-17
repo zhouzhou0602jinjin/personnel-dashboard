@@ -7,15 +7,41 @@ interface SummaryTableProps {
   totalMonthly: MonthlyData[];
   totalLabel?: string;
   extraRows?: DepartmentData[];
+  computeTotalFromDepartments?: boolean;
 }
 
-export default function SummaryTable({ departments, totalMonthly, totalLabel = '合计', extraRows = [] }: SummaryTableProps) {
+function sumMonthly(departments: DepartmentData[], idx: number): MonthlyData {
+  const month = departments[0]?.monthly[idx]?.month ?? '';
+  let startCount = 0, fullTime = 0, intern = 0;
+  let weeklyJoinCount = 0, weeklyLeaveCount = 0;
+  let joinCount = 0, leaveCount = 0, netChange = 0;
+  departments.forEach(d => {
+    const m = d.monthly[idx];
+    if (m) {
+      startCount += m.startCount;
+      fullTime += m.fullTime;
+      intern += m.intern;
+      weeklyJoinCount += m.weeklyJoinCount;
+      weeklyLeaveCount += m.weeklyLeaveCount;
+      joinCount += m.joinCount;
+      leaveCount += m.leaveCount;
+      netChange += m.netChange;
+    }
+  });
+  return { month, startCount, fullTime, intern, weeklyJoinCount, weeklyLeaveCount, joinCount, leaveCount, netChange };
+}
+
+export default function SummaryTable({ departments, totalMonthly, totalLabel = '合计', extraRows = [], computeTotalFromDepartments = false }: SummaryTableProps) {
   const [selectedMonthIdx, setSelectedMonthIdx] = useState(totalMonthly.length - 1);
 
   if (departments.length === 0) return null;
 
   const months = totalMonthly.map(m => m.month);
-  const currentTotal = totalMonthly[selectedMonthIdx];
+
+  const computedTotal = computeTotalFromDepartments
+    ? departments.map((_, idx) => sumMonthly(departments, idx))
+    : totalMonthly;
+  const currentTotal = computedTotal[selectedMonthIdx];
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
@@ -187,7 +213,7 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                 </span>
               </td>
               <td className="text-center px-3 py-3">
-                <MiniSparkline data={totalMonthly.map(m => m.startCount)} accent />
+                <MiniSparkline data={computedTotal.map(m => m.startCount)} accent />
               </td>
             </tr>
             {/* 独立行（不参与合计，置于合计行下方） */}

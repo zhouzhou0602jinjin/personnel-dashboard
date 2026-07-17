@@ -80,7 +80,7 @@ export default function PieChart({ data }: PieChartProps) {
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
-      <ReactECharts option={option} style={{ height: '320px' }} />
+      <ReactECharts option={option} style={{ height: '320px' }} opts={{ renderer: 'canvas' }} />
     </div>
   );
 }

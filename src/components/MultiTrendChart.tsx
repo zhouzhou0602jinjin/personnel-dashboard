@@ -5,6 +5,7 @@ interface MultiTrendChartProps {
   departments: DepartmentData[];
   title?: string;
   height?: number;
+  metric?: 'startCount' | 'fullTime';
 }
 
 const COLORS = [
@@ -13,7 +14,7 @@ const COLORS = [
   '#06b6d4', '#d946ef', '#eab308', '#22c55e', '#3b82f6',
 ];
 
-export default function MultiTrendChart({ departments, title = '各部门人数变化趋势', height = 360 }: MultiTrendChartProps) {
+export default function MultiTrendChart({ departments, title = '各部门人数变化趋势', height = 360, metric = 'startCount' }: MultiTrendChartProps) {
   if (departments.length === 0) return null;
 
   const months = departments[0].monthly.map(m => m.month);
@@ -24,7 +25,7 @@ export default function MultiTrendChart({ departments, title = '各部门人数�
     smooth: true,
     symbol: 'circle',
     symbolSize: 6,
-    data: dept.monthly.map(m => m.startCount),
+    data: dept.monthly.map(m => m[metric]),
     lineStyle: {
       width: 2,
       color: COLORS[index % COLORS.length],
@@ -109,7 +110,7 @@ export default function MultiTrendChart({ departments, title = '各部门人数�
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
-      <ReactECharts option={option} style={{ height: `${height}px` }} />
+      <ReactECharts option={option} style={{ height: `${height}px` }} opts={{ renderer: 'canvas' }} />
     </div>
   );
 }

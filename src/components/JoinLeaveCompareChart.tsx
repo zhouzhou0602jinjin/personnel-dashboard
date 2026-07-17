@@ -140,7 +140,7 @@ export default function JoinLeaveCompareChart({ departments, title = '各部门�
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
-      <ReactECharts option={option} style={{ height: `${height}px` }} />
+      <ReactECharts option={option} style={{ height: `${height}px` }} opts={{ renderer: "canvas" }} />
     </div>
   );
 }

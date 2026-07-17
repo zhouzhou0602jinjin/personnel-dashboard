@@ -6,13 +6,14 @@ interface HeadcountRankChartProps {
   departments: DepartmentData[];
   title?: string;
   height?: number;
+  metric?: 'startCount' | 'fullTime';
 }
 
-export default function HeadcountRankChart({ departments, title = '各部门在职人数排行', height = 360 }: HeadcountRankChartProps) {
+export default function HeadcountRankChart({ departments, title = '各部门在职人数排行', height = 360, metric = 'startCount' }: HeadcountRankChartProps) {
   if (departments.length === 0) return null;
 
   const latestData = departments
-    .map(d => ({ name: d.name, count: getLatestMonthData(d)?.startCount ?? 0 }))
+    .map(d => ({ name: d.name, count: getLatestMonthData(d)?.[metric] ?? 0 }))
     .sort((a, b) => a.count - b.count);
 
   const names = latestData.map(d => d.name);
@@ -118,7 +119,7 @@ export default function HeadcountRankChart({ departments, title = '各部门在�
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
-      <ReactECharts option={option} style={{ height: `${height}px` }} />
+      <ReactECharts option={option} style={{ height: `${height}px` }} opts={{ renderer: "canvas" }} />
     </div>
   );
 }

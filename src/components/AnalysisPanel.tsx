@@ -31,9 +31,11 @@ export default function AnalysisPanel({ summary, monthLabel, accentColor = 'sky'
             <div className="text-2xl font-bold text-slate-800">
               {summary.totalHeadcount.toLocaleString()}
             </div>
-            <div className="text-xs text-slate-500 mt-1">
-              全职 {summary.fullTimeCount} · 实习 {summary.internCount}
-            </div>
+            {summary.totalHeadcount !== summary.fullTimeCount && (
+              <div className="text-xs text-slate-500 mt-1">
+                全职 {summary.fullTimeCount} · 实习 {summary.internCount}
+              </div>
+            )}
           </div>
           <div className="bg-emerald-50 rounded-lg p-4">
             <div className="flex items-center gap-2 text-emerald-700 text-sm font-medium mb-2">

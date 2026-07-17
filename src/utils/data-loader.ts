@@ -61,6 +61,19 @@ export const getLatestMonthData = (data: DepartmentData | null): MonthlyData | n
   return data.monthly[data.monthly.length - 1];
 };
 
+// 基于 fullTime 计算净变动
+export const calcNetChangeFromFullTime = (prevMonth: MonthlyData, currMonth: MonthlyData): number => {
+  return currMonth.fullTime - prevMonth.fullTime;
+};
+
+// 返回 companyTotal 最新月 startCount 减去 sjsData 最新月 startCount
+export const getTotalWithoutSJS = (): number => {
+  const data = getDataset();
+  const companyLatest = data.companyTotal[data.companyTotal.length - 1];
+  const sjsLatest = data.sjsData.monthly[data.sjsData.monthly.length - 1];
+  return companyLatest.startCount - sjsLatest.startCount;
+};
+
 // ===================== 分析工具 =====================
 
 export interface AnalysisSummary {
@@ -92,6 +105,7 @@ export const calcAnalysisSummary = (
   departments: DepartmentData[],
   totalData: MonthlyData,
   notes: string[] = [],
+  excludeSJS: boolean = false,
 ): AnalysisSummary => {
   const latest = departments
     .map(d => ({ name: d.name, data: getLatestMonthData(d) }))
@@ -101,10 +115,16 @@ export const calcAnalysisSummary = (
   const sortedByLeave = [...latest].sort((a, b) => b.data.leaveCount - a.data.leaveCount);
   const sortedByNet = [...latest].sort((a, b) => b.data.netChange - a.data.netChange);
 
-  const totalHeadcount = totalData.startCount;
+  const data = getDataset();
+  const sjsMonthData = data.sjsData.monthly.find(m => m.month === totalData.month);
+  const sjsCount = sjsMonthData ? sjsMonthData.startCount : 0;
+  const totalHeadcount = excludeSJS ? totalData.startCount - sjsCount : totalData.startCount;
   const totalJoin = totalData.joinCount;
   const totalLeave = totalData.leaveCount;
-  const totalNetChange = totalData.netChange;
+  // 当 excludeSJS=true 时，净变动按各一级组织累加（不含 SJS）
+  const totalNetChange = excludeSJS
+    ? latest.reduce((sum, d) => sum + d.data.netChange, 0)
+    : totalData.netChange;
 
   const joinRate = totalHeadcount > 0 ? ((totalJoin / totalHeadcount) * 100).toFixed(1) : '0';
   const leaveRate = totalHeadcount > 0 ? ((totalLeave / totalHeadcount) * 100).toFixed(1) : '0';

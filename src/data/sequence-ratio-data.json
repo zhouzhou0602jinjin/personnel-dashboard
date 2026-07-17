@@ -1,13 +1,63 @@
 {
-  "updateDate": "2026年7月9日",
-  "months": ["202601", "202602", "202603", "202604", "202605", "202606", "202607"],
+  "updateDate": "2026年7月10日",
+  "months": [
+    "202601",
+    "202602",
+    "202603",
+    "202604",
+    "202605",
+    "202606",
+    "202607"
+  ],
   "data": [
-    { "month": "1月", "customerSuccess": 142, "sales": 72, "management": 31, "guanMinRatio": 6.9 },
-    { "month": "2月", "customerSuccess": 138, "sales": 72, "management": 31, "guanMinRatio": 6.8 },
-    { "month": "3月", "customerSuccess": 135, "sales": 78, "management": 32, "guanMinRatio": 6.7 },
-    { "month": "4月", "customerSuccess": 137, "sales": 81, "management": 32, "guanMinRatio": 6.8 },
-    { "month": "5月", "customerSuccess": 137, "sales": 77, "management": 32, "guanMinRatio": 6.7 },
-    { "month": "6月", "customerSuccess": 137, "sales": 73, "management": 32, "guanMinRatio": 6.6 },
-    { "month": "7月", "customerSuccess": 137, "sales": 73, "management": 32, "guanMinRatio": 6.6 }
+    {
+      "month": "1月",
+      "customerSuccess": 142,
+      "sales": 72,
+      "management": 31,
+      "guanMinRatio": 6.9
+    },
+    {
+      "month": "2月",
+      "customerSuccess": 138,
+      "sales": 72,
+      "management": 31,
+      "guanMinRatio": 6.8
+    },
+    {
+      "month": "3月",
+      "customerSuccess": 135,
+      "sales": 78,
+      "management": 32,
+      "guanMinRatio": 6.7
+    },
+    {
+      "month": "4月",
+      "customerSuccess": 137,
+      "sales": 81,
+      "management": 32,
+      "guanMinRatio": 6.8
+    },
+    {
+      "month": "5月",
+      "customerSuccess": 137,
+      "sales": 77,
+      "management": 32,
+      "guanMinRatio": 6.7
+    },
+    {
+      "month": "6月",
+      "customerSuccess": 137,
+      "sales": 73,
+      "management": 32,
+      "guanMinRatio": 6.6
+    },
+    {
+      "month": "7月",
+      "customerSuccess": 139,
+      "sales": 77,
+      "management": 32,
+      "guanMinRatio": 6.75
+    }
   ]
 }

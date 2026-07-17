@@ -6,14 +6,22 @@ interface NetChangeChartProps {
   departments: DepartmentData[];
   title?: string;
   height?: number;
+  metric?: 'startCount' | 'fullTime';
+  calcFromPrevMonth?: boolean;
 }
 
-export default function NetChangeChart({ departments, title = '各部门净变动排行', height = 360 }: NetChangeChartProps) {
+export default function NetChangeChart({ departments, title = '各部门净变动排行', height = 360, metric = 'startCount', calcFromPrevMonth = false }: NetChangeChartProps) {
   if (departments.length === 0) return null;
 
   const latestData = departments
     .map(d => {
       const latest = getLatestMonthData(d);
+      if (calcFromPrevMonth && d.monthly.length >= 2) {
+        const prev = d.monthly[d.monthly.length - 2];
+        const latestValue = latest?.[metric] ?? 0;
+        const prevValue = prev?.[metric] ?? 0;
+        return { name: d.name, value: latestValue - prevValue };
+      }
       return { name: d.name, value: latest?.netChange ?? 0 };
     })
     .sort((a, b) => a.value - b.value);
@@ -133,7 +141,7 @@ export default function NetChangeChart({ departments, title = '各部门净变�
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
-      <ReactECharts option={option} style={{ height: `${height}px` }} />
+      <ReactECharts option={option} style={{ height: `${height}px` }} opts={{ renderer: "canvas" }} />
     </div>
   );
 }

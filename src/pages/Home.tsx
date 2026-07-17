@@ -26,6 +26,7 @@ export default function Home() {
     dataset.organizations,
     dataset.companyTotal[dataset.companyTotal.length - 1],
     getAnalysisNotes(latestMonth),
+    true,
   );
 
   const zxwSummary = calcAnalysisSummary(
@@ -57,23 +58,25 @@ export default function Home() {
         >
           <div className="space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <MultiTrendChart departments={dataset.organizations} title="各一级组织人数变化趋势" />
-              <HeadcountRankChart departments={dataset.organizations} title="各一级组织在职人数排行" />
+              <MultiTrendChart departments={dataset.organizations} title="各一级组织人数变化趋势" metric="fullTime" />
+              <HeadcountRankChart departments={dataset.organizations} title="各一级组织在职人数排行" metric="fullTime" />
             </div>
 
             <StructurePieChart
               departments={dataset.organizations}
               totalData={dataset.companyTotal[dataset.companyTotal.length - 1]}
               title="各组织人数占比"
+              metric="fullTime"
             />
 
-            <NetChangeChart departments={dataset.organizations} title="各一级组织净变动排行" />
+            <NetChangeChart departments={dataset.organizations} title="各一级组织净变动排行" metric="fullTime" calcFromPrevMonth={true} />
 
             <SummaryTable
               departments={dataset.organizations}
               totalMonthly={dataset.companyTotal}
               totalLabel="公司总计"
               extraRows={[dataset.sjsData]}
+              computeTotalFromDepartments={true}
             />
           </div>
         </Section>
@@ -97,9 +100,10 @@ export default function Home() {
               departments={dataset.zxwSubDepartments}
               totalData={dataset.zxwSubTotal[dataset.zxwSubTotal.length - 1]}
               title="各部门人数占比"
+              metric="fullTime"
             />
 
-            <NetChangeChart departments={dataset.zxwSubDepartments} title="各二级部门净变动排行" />
+            <NetChangeChart departments={dataset.zxwSubDepartments} title="各二级部门净变动排行" metric="fullTime" calcFromPrevMonth={true} />
 
             <SummaryTable
               departments={dataset.zxwSubDepartments}

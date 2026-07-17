@@ -7,6 +7,7 @@ interface StructurePieChartProps {
   totalData: MonthlyData;
   title?: string;
   height?: number;
+  metric?: 'startCount' | 'fullTime';
 }
 
 const COLORS = [
@@ -15,16 +16,16 @@ const COLORS = [
   '#06b6d4', '#d946ef', '#eab308', '#22c55e', '#3b82f6',
 ];
 
-export default function StructurePieChart({ departments, totalData, title = '各部门人数占比', height = 360 }: StructurePieChartProps) {
+export default function StructurePieChart({ departments, totalData, title = '各部门人数占比', height = 360, metric = 'startCount' }: StructurePieChartProps) {
   if (departments.length === 0) return null;
 
   const pieData = departments.map((dept, index) => ({
     name: dept.name,
-    value: getLatestMonthData(dept)?.startCount ?? 0,
+    value: getLatestMonthData(dept)?.[metric] ?? 0,
     itemStyle: { color: COLORS[index % COLORS.length] },
   }));
 
-  const totalCount = totalData.startCount;
+  const totalCount = totalData[metric];
 
   const option = {
     title: {
@@ -68,7 +69,7 @@ export default function StructurePieChart({ departments, totalData, title = '各
         name: '人数占比',
         type: 'pie' as const,
         radius: ['45%', '70%'],
-        center: ['32%', '55%'],
+        center: ['40%', '55%'],
         avoidLabelOverlap: true,
         itemStyle: {
           borderRadius: 6,
@@ -76,7 +77,8 @@ export default function StructurePieChart({ departments, totalData, title = '各
           borderWidth: 2,
         },
         label: {
-          show: false,
+          show: true,
+          formatter: '{b}\n{c}人 ({d}%)',
         },
         emphasis: {
           label: {
@@ -92,7 +94,7 @@ export default function StructurePieChart({ departments, totalData, title = '各
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
-      <ReactECharts option={option} style={{ height: `${height}px` }} />
+      <ReactECharts option={option} style={{ height: `${height}px` }} opts={{ renderer: "canvas" }} />
     </div>
   );
 }

@@ -237,7 +237,7 @@ function RatioCompareChart({ data }: { data: SalesCsData }) {
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
-      <ReactECharts option={option} style={{ height: '360px' }} />
+      <ReactECharts option={option} style={{ height: '360px' }} opts={{ renderer: 'canvas' }} />
     </div>
   );
 }
@@ -322,7 +322,7 @@ function PositionStackChart({ data }: { data: SalesCsData }) {
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
-      <ReactECharts option={option} style={{ height: '360px' }} />
+      <ReactECharts option={option} style={{ height: '360px' }} opts={{ renderer: 'canvas' }} />
     </div>
   );
 }
@@ -402,7 +402,7 @@ function SalesVsCsChart({ data }: { data: SalesCsData }) {
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
-      <ReactECharts option={option} style={{ height: '360px' }} />
+      <ReactECharts option={option} style={{ height: '360px' }} opts={{ renderer: 'canvas' }} />
     </div>
   );
 }
@@ -470,7 +470,7 @@ function CsRolePieChart({ data }: { data: SalesCsData }) {
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
-      <ReactECharts option={option} style={{ height: '360px' }} />
+      <ReactECharts option={option} style={{ height: '360px' }} opts={{ renderer: 'canvas' }} />
     </div>
   );
 }
@@ -577,7 +577,7 @@ function BranchRatioRankChart({ data }: { data: SalesCsData }) {
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
-      <ReactECharts option={option} style={{ height: '500px' }} />
+      <ReactECharts option={option} style={{ height: '500px' }} opts={{ renderer: 'canvas' }} />
     </div>
   );
 }
@@ -587,7 +587,10 @@ function GuanMinRatioChart() {
   const csData = sequenceData.data.map((d) => d.customerSuccess);
   const salesData = sequenceData.data.map((d) => d.sales);
   const managementData = sequenceData.data.map((d) => d.management);
-  const ratioData = sequenceData.data.map((d) => d.guanMinRatio);
+  // 官民比 = (客户成功 + 销售) / 管理
+  const ratioData = sequenceData.data.map((d) => {
+    return Number(((d.customerSuccess + d.sales) / d.management).toFixed(2));
+  });
 
   const option = {
     title: {
@@ -713,7 +716,7 @@ function GuanMinRatioChart() {
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
-      <ReactECharts option={option} style={{ height: '420px' }} />
+      <ReactECharts option={option} style={{ height: '420px' }} opts={{ renderer: 'canvas' }} />
     </div>
   );
 }
