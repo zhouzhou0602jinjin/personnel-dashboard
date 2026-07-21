@@ -91,10 +91,7 @@ export default function Home() {
           <div className="space-y-6">
             <AnalysisPanel summary={zxwSummary} monthLabel={latestMonth} accentColor="emerald" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <MultiTrendChart departments={dataset.zxwSubDepartments} title="各二级部门人数变化趋势" />
-              <HeadcountRankChart departments={dataset.zxwSubDepartments} title="各二级部门在职人数排行" />
-            </div>
+            <MultiTrendChart departments={dataset.zxwSubDepartments} title="各二级部门人数变化趋势" />
 
             <StructurePieChart
               departments={dataset.zxwSubDepartments}

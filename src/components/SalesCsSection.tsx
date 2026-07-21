@@ -1,10 +1,10 @@
 import ReactECharts from 'echarts-for-react';
-import { Users, UserCheck, Briefcase, BarChart3, TrendingDown } from 'lucide-react';
+import { Users, UserCheck, Briefcase, BarChart3 } from 'lucide-react';
 import sequenceData from '@/data/sequence-ratio-data.json';
 
 interface BranchData {
   branch: string;
-  city: string;
+  cities: string[];
   salesSpecialist: number;
   salesManager: number;
   csManager: number;
@@ -42,6 +42,25 @@ interface SalesCsSectionProps {
   data: SalesCsData;
 }
 
+interface FlatNode {
+  type: 'region' | 'branch';
+  name: string;
+  fullName: string;
+  regionName: string;
+  cities: string[];
+  salesSpecialist: number;
+  salesManager: number;
+  csManager: number;
+  csSupervisor: number;
+  csSpecialist: number;
+  implementSupervisor: number;
+  implementSpecialist: number;
+  ratioSpecialist: number;
+  ratioFull: number;
+  salesTotal: number;
+  csTotal: number;
+}
+
 function calcRatioSpecialist(row: { salesSpecialist: number; csSpecialist: number; implementSpecialist: number }): string {
   if (row.salesSpecialist === 0) return '-';
   return ((row.csSpecialist + row.implementSpecialist) / row.salesSpecialist).toFixed(2);
@@ -60,6 +79,59 @@ function calcRatioFull(row: {
   if (denominator === 0) return '-';
   const numerator = row.csManager + row.csSupervisor + row.csSpecialist + row.implementSupervisor + row.implementSpecialist;
   return (numerator / denominator).toFixed(2);
+}
+
+function buildFlatData(data: SalesCsData): FlatNode[] {
+  const result: FlatNode[] = [];
+  data.regions.forEach((region) => {
+    const r = region.summary;
+    const rSalesTotal = r.salesSpecialist + r.salesManager;
+    const rCsTotal = r.csManager + r.csSupervisor + r.csSpecialist + r.implementSupervisor + r.implementSpecialist;
+    const regionCities = region.branches.flatMap((b) => b.cities);
+    result.push({
+      type: 'region',
+      name: region.regionName,
+      fullName: region.regionName,
+      regionName: region.regionName,
+      cities: regionCities,
+      salesSpecialist: r.salesSpecialist,
+      salesManager: r.salesManager,
+      csManager: r.csManager,
+      csSupervisor: r.csSupervisor,
+      csSpecialist: r.csSpecialist,
+      implementSupervisor: r.implementSupervisor,
+      implementSpecialist: r.implementSpecialist,
+      ratioSpecialist: r.salesSpecialist === 0 ? 0 : Number(((r.csSpecialist + r.implementSpecialist) / r.salesSpecialist).toFixed(2)),
+      ratioFull: rSalesTotal === 0 ? 0 : Number((rCsTotal / rSalesTotal).toFixed(2)),
+      salesTotal: rSalesTotal,
+      csTotal: rCsTotal,
+    });
+
+    region.branches.forEach((branch) => {
+      if (branch.branch.includes('直属')) return;
+      const bSalesTotal = branch.salesSpecialist + branch.salesManager;
+      const bCsTotal = branch.csManager + branch.csSupervisor + branch.csSpecialist + branch.implementSupervisor + branch.implementSpecialist;
+      result.push({
+        type: 'branch',
+        name: branch.branch,
+        fullName: branch.branch,
+        regionName: region.regionName,
+        cities: branch.cities,
+        salesSpecialist: branch.salesSpecialist,
+        salesManager: branch.salesManager,
+        csManager: branch.csManager,
+        csSupervisor: branch.csSupervisor,
+        csSpecialist: branch.csSpecialist,
+        implementSupervisor: branch.implementSupervisor,
+        implementSpecialist: branch.implementSpecialist,
+        ratioSpecialist: branch.salesSpecialist === 0 ? 0 : Number(((branch.csSpecialist + branch.implementSpecialist) / branch.salesSpecialist).toFixed(2)),
+        ratioFull: bSalesTotal === 0 ? 0 : Number((bCsTotal / bSalesTotal).toFixed(2)),
+        salesTotal: bSalesTotal,
+        csTotal: bCsTotal,
+      });
+    });
+  });
+  return result;
 }
 
 function MetricCard({
@@ -124,32 +196,16 @@ function OverviewCards({ data }: { data: SalesCsData }) {
 }
 
 function RatioCompareChart({ data }: { data: SalesCsData }) {
-  const regions = data.regions;
-  const names = regions.map((r) => r.regionName);
-  const specialistRatios = regions.map((r) => {
-    if (r.summary.salesSpecialist === 0) return 0;
-    return Number(
-      ((r.summary.csSpecialist + r.summary.implementSpecialist) / r.summary.salesSpecialist).toFixed(2)
-    );
-  });
-  const fullRatios = regions.map((r) => {
-    const denominator = r.summary.salesSpecialist + r.summary.salesManager;
-    if (denominator === 0) return 0;
-    return Number(
-      (
-        (r.summary.csManager +
-          r.summary.csSupervisor +
-          r.summary.csSpecialist +
-          r.summary.implementSupervisor +
-          r.summary.implementSpecialist) /
-        denominator
-      ).toFixed(2)
-    );
-  });
+  const flat = buildFlatData(data);
+  const names = flat.map((item) => (item.type === 'region' ? item.fullName : `  ${item.fullName}`));
+  const specialistRatios = flat.map((item) => item.ratioSpecialist);
+  const fullRatios = flat.map((item) => item.ratioFull);
+
+  const regionIndices = flat.map((item, idx) => (item.type === 'region' ? idx : -1)).filter((idx) => idx !== -1);
 
   const option = {
     title: {
-      text: '各片区客成销售比对比',
+      text: '各片区与分公司客成销售比对比',
       left: 'left',
       textStyle: {
         fontSize: 16,
@@ -168,6 +224,19 @@ function RatioCompareChart({ data }: { data: SalesCsData }) {
       textStyle: {
         color: '#334155',
       },
+      formatter: (params: { dataIndex: number }[]) => {
+        const idx = params[0].dataIndex;
+        const item = flat[idx];
+        const lines = [
+          `<b>${item.regionName}${item.type === 'branch' ? ' · ' + item.fullName : ''}</b>`,
+          item.cities.length > 0 ? `覆盖城市: ${item.cities.join('、')}` : '',
+          `客成销售比（专员）: <b>${item.ratioSpecialist}</b>`,
+          `客成销售比（全量）: <b>${item.ratioFull}</b>`,
+          `销售团队: ${item.salesTotal}人`,
+          `客户成功团队: ${item.csTotal}人`,
+        ].filter((l) => l);
+        return lines.join('<br/>');
+      },
     },
     legend: {
       data: ['客成销售比（专员）', '客成销售比（全量）'],
@@ -176,10 +245,28 @@ function RatioCompareChart({ data }: { data: SalesCsData }) {
     grid: {
       left: '3%',
       right: '8%',
-      bottom: '3%',
-      top: '18%',
+      bottom: '8%',
+      top: '15%',
       containLabel: true,
     },
+    dataZoom: [
+      {
+        type: 'slider' as const,
+        yAxisIndex: 0,
+        width: 16,
+        right: '2%',
+        top: '15%',
+        bottom: '8%',
+        start: 0,
+        end: 100,
+        handleSize: '100%',
+        show: true,
+      },
+      {
+        type: 'inside' as const,
+        yAxisIndex: 0,
+      },
+    ],
     xAxis: {
       type: 'value' as const,
       axisLine: { show: false },
@@ -196,17 +283,28 @@ function RatioCompareChart({ data }: { data: SalesCsData }) {
         lineStyle: { color: '#e2e8f0' },
       },
       axisTick: { show: false },
-      axisLabel: { color: '#475569', fontSize: 11 },
+      axisLabel: {
+        color: (value: string, idx: number) => {
+          return flat[idx]?.type === 'region' ? '#1e293b' : '#64748b';
+        },
+        fontSize: 11,
+        fontWeight: (value: string, idx: number) => {
+          return flat[idx]?.type === 'region' ? 'bold' : 'normal';
+        },
+      },
     },
     series: [
       {
         name: '客成销售比（专员）',
         type: 'bar' as const,
-        data: specialistRatios.map((value) => ({
+        data: specialistRatios.map((value, idx) => ({
           value,
-          itemStyle: { color: '#3b82f6', borderRadius: [0, 4, 4, 0] },
+          itemStyle: {
+            color: flat[idx].type === 'region' ? '#2563eb' : '#93c5fd',
+            borderRadius: [0, 4, 4, 0],
+          },
         })),
-        barWidth: '40%',
+        barWidth: '35%',
         barGap: '20%',
         label: {
           show: true,
@@ -219,11 +317,14 @@ function RatioCompareChart({ data }: { data: SalesCsData }) {
       {
         name: '客成销售比（全量）',
         type: 'bar' as const,
-        data: fullRatios.map((value) => ({
+        data: fullRatios.map((value, idx) => ({
           value,
-          itemStyle: { color: '#10b981', borderRadius: [0, 4, 4, 0] },
+          itemStyle: {
+            color: flat[idx].type === 'region' ? '#059669' : '#6ee7b7',
+            borderRadius: [0, 4, 4, 0],
+          },
         })),
-        barWidth: '40%',
+        barWidth: '35%',
         label: {
           show: true,
           position: 'right' as const,
@@ -231,118 +332,40 @@ function RatioCompareChart({ data }: { data: SalesCsData }) {
           fontSize: 11,
           formatter: '{c}',
         },
+        markLine: {
+          silent: true,
+          symbol: 'none',
+          lineStyle: {
+            color: '#94a3b8',
+            type: 'dashed',
+            width: 1,
+          },
+          data: regionIndices.map((idx) => ({
+            yAxis: idx + 0.5,
+          })),
+        },
       },
     ],
   };
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
-      <ReactECharts option={option} style={{ height: '360px' }} opts={{ renderer: 'canvas' }} />
-    </div>
-  );
-}
-
-function PositionStackChart({ data }: { data: SalesCsData }) {
-  const regions = data.regions;
-  const names = regions.map((r) => r.regionName);
-
-  const seriesData = [
-    { name: '销售专员', key: 'salesSpecialist' as const, color: '#3b82f6' },
-    { name: '销售主管', key: 'salesManager' as const, color: '#1e40af' },
-    { name: '客户成功经理', key: 'csManager' as const, color: '#22c55e' },
-    { name: '客户成功主管', key: 'csSupervisor' as const, color: '#86efac' },
-    { name: '客户成功专员', key: 'csSpecialist' as const, color: '#10b981' },
-    { name: '实施主管', key: 'implementSupervisor' as const, color: '#f97316' },
-    { name: '实施专员', key: 'implementSpecialist' as const, color: '#f59e0b' },
-  ];
-
-  const series = seriesData.map((s) => ({
-    name: s.name,
-    type: 'bar' as const,
-    stack: 'total' as const,
-    data: regions.map((r) => r.summary[s.key]),
-    itemStyle: { color: s.color },
-    barWidth: '50%',
-  }));
-
-  const option = {
-    title: {
-      text: '各片区岗位人数分布',
-      left: 'left',
-      textStyle: {
-        fontSize: 16,
-        fontWeight: 600,
-        color: '#334155',
-      },
-    },
-    tooltip: {
-      trigger: 'axis',
-      axisPointer: {
-        type: 'shadow' as const,
-      },
-      backgroundColor: 'rgba(255, 255, 255, 0.95)',
-      borderColor: '#e2e8f0',
-      borderWidth: 1,
-      textStyle: {
-        color: '#334155',
-      },
-    },
-    legend: {
-      data: seriesData.map((s) => s.name),
-      top: '5%',
-      textStyle: { fontSize: 11 },
-    },
-    grid: {
-      left: '3%',
-      right: '4%',
-      bottom: '3%',
-      top: '18%',
-      containLabel: true,
-    },
-    xAxis: {
-      type: 'category' as const,
-      data: names,
-      axisLine: {
-        lineStyle: { color: '#e2e8f0' },
-      },
-      axisTick: { show: false },
-      axisLabel: { color: '#475569', fontSize: 11 },
-    },
-    yAxis: {
-      type: 'value' as const,
-      axisLine: { show: false },
-      axisTick: { show: false },
-      splitLine: {
-        lineStyle: { color: '#f1f5f9' },
-      },
-      axisLabel: { color: '#64748b' },
-    },
-    series,
-  };
-
-  return (
-    <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
-      <ReactECharts option={option} style={{ height: '360px' }} opts={{ renderer: 'canvas' }} />
+      <ReactECharts option={option} style={{ height: '600px' }} opts={{ renderer: 'canvas' }} />
     </div>
   );
 }
 
 function SalesVsCsChart({ data }: { data: SalesCsData }) {
-  const regions = data.regions;
-  const names = regions.map((r) => r.regionName);
-  const salesTotals = regions.map((r) => r.summary.salesSpecialist + r.summary.salesManager);
-  const csTotals = regions.map(
-    (r) =>
-      r.summary.csManager +
-      r.summary.csSupervisor +
-      r.summary.csSpecialist +
-      r.summary.implementSupervisor +
-      r.summary.implementSpecialist
-  );
+  const flat = buildFlatData(data);
+  const names = flat.map((item) => (item.type === 'region' ? item.fullName : `  ${item.fullName}`));
+  const salesTotals = flat.map((item) => item.salesTotal);
+  const csTotals = flat.map((item) => item.csTotal);
+
+  const regionIndices = flat.map((item, idx) => (item.type === 'region' ? idx : -1)).filter((idx) => idx !== -1);
 
   const option = {
     title: {
-      text: '销售团队 vs 客户成功团队人数对比',
+      text: '各片区与分公司销售团队 vs 客户成功团队人数对比',
       left: 'left',
       textStyle: { fontSize: 16, fontWeight: 600, color: '#334155' },
     },
@@ -353,24 +376,61 @@ function SalesVsCsChart({ data }: { data: SalesCsData }) {
       borderColor: '#e2e8f0',
       borderWidth: 1,
       textStyle: { color: '#334155' },
+      formatter: (params: { dataIndex: number }[]) => {
+        const idx = params[0].dataIndex;
+        const item = flat[idx];
+        const lines = [
+          `<b>${item.regionName}${item.type === 'branch' ? ' · ' + item.fullName : ''}</b>`,
+          item.cities.length > 0 ? `覆盖城市: ${item.cities.join('、')}` : '',
+          `销售团队: <b>${item.salesTotal}人</b>`,
+          `客户成功团队: <b>${item.csTotal}人</b>`,
+          `客成销售比（全量）: ${item.ratioFull}`,
+        ].filter((l) => l);
+        return lines.join('<br/>');
+      },
     },
     legend: {
       data: ['销售团队', '客户成功团队'],
-      top: '5%',
+      top: '10%',
     },
     grid: {
       left: '3%',
-      right: '4%',
-      bottom: '3%',
-      top: '18%',
+      right: '5%',
+      bottom: '5%',
+      top: '20%',
       containLabel: true,
     },
+    dataZoom: [
+      {
+        type: 'slider' as const,
+        xAxisIndex: 0,
+        height: 16,
+        bottom: '1%',
+        start: 0,
+        end: 100,
+        show: true,
+      },
+      {
+        type: 'inside' as const,
+        xAxisIndex: 0,
+      },
+    ],
     xAxis: {
       type: 'category' as const,
       data: names,
       axisLine: { lineStyle: { color: '#e2e8f0' } },
       axisTick: { show: false },
-      axisLabel: { color: '#475569', fontSize: 11 },
+      axisLabel: {
+        color: (value: string, idx: number) => {
+          return flat[idx]?.type === 'region' ? '#1e293b' : '#64748b';
+        },
+        fontSize: 11,
+        fontWeight: (value: string, idx: number) => {
+          return flat[idx]?.type === 'region' ? 'bold' : 'normal';
+        },
+        rotate: 45,
+        interval: 0,
+      },
     },
     yAxis: {
       type: 'value' as const,
@@ -383,193 +443,40 @@ function SalesVsCsChart({ data }: { data: SalesCsData }) {
       {
         name: '销售团队',
         type: 'bar' as const,
-        data: salesTotals,
-        itemStyle: { color: '#3b82f6', borderRadius: [4, 4, 0, 0] },
+        data: salesTotals.map((value, idx) => ({
+          value,
+          itemStyle: {
+            color: flat[idx].type === 'region' ? '#1d4ed8' : '#93c5fd',
+            borderRadius: [4, 4, 0, 0],
+          },
+        })),
         barWidth: '30%',
         barGap: '10%',
-        label: { show: true, position: 'top' as const, color: '#475569', fontSize: 11 },
+        label: { show: true, position: 'top' as const, color: '#475569', fontSize: 10 },
       },
       {
         name: '客户成功团队',
         type: 'bar' as const,
-        data: csTotals,
-        itemStyle: { color: '#10b981', borderRadius: [4, 4, 0, 0] },
-        barWidth: '30%',
-        label: { show: true, position: 'top' as const, color: '#475569', fontSize: 11 },
-      },
-    ],
-  };
-
-  return (
-    <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
-      <ReactECharts option={option} style={{ height: '360px' }} opts={{ renderer: 'canvas' }} />
-    </div>
-  );
-}
-
-function CsRolePieChart({ data }: { data: SalesCsData }) {
-  const s = data.summary;
-  const pieData = [
-    { value: s.csManager, name: '客户成功经理' },
-    { value: s.csSupervisor, name: '客户成功主管' },
-    { value: s.csSpecialist, name: '客户成功专员' },
-    { value: s.implementSupervisor, name: '实施主管' },
-    { value: s.implementSpecialist, name: '实施专员' },
-  ].filter((d) => d.value > 0);
-
-  const option = {
-    title: {
-      text: '客户成功团队岗位分布',
-      left: 'left',
-      textStyle: { fontSize: 16, fontWeight: 600, color: '#334155' },
-    },
-    tooltip: {
-      trigger: 'item',
-      backgroundColor: 'rgba(255, 255, 255, 0.95)',
-      borderColor: '#e2e8f0',
-      borderWidth: 1,
-      textStyle: { color: '#334155' },
-      formatter: '{b}: {c}人 ({d}%)',
-    },
-    legend: {
-      orient: 'vertical' as const,
-      right: '5%',
-      top: 'center',
-      textStyle: { fontSize: 12, color: '#475569' },
-    },
-    series: [
-      {
-        type: 'pie' as const,
-        radius: ['40%', '70%'] as [string, string],
-        center: ['40%', '55%'],
-        avoidLabelOverlap: true,
-        itemStyle: {
-          borderRadius: 6,
-          borderColor: '#fff',
-          borderWidth: 2,
-        },
-        label: {
-          show: true,
-          formatter: '{b}\n{c}人',
-          fontSize: 11,
-          color: '#475569',
-        },
-        emphasis: {
-          label: { show: true, fontSize: 13, fontWeight: 'bold' },
-          itemStyle: { shadowBlur: 10, shadowOffsetX: 0, shadowColor: 'rgba(0, 0, 0, 0.1)' },
-        },
-        data: pieData.map((d, i) => ({
-          ...d,
-          itemStyle: {
-            color: ['#22c55e', '#86efac', '#10b981', '#f97316', '#f59e0b'][i],
-          },
-        })),
-      },
-    ],
-  };
-
-  return (
-    <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
-      <ReactECharts option={option} style={{ height: '360px' }} opts={{ renderer: 'canvas' }} />
-    </div>
-  );
-}
-
-function BranchRatioRankChart({ data }: { data: SalesCsData }) {
-  // 按分公司名称合并（同一分公司多个城市的数据累加）
-  const branchMap = new Map<string, { salesSpecialist: number; csSpecialist: number; implementSpecialist: number; region: string }>();
-
-  data.regions.forEach((region) => {
-    region.branches.forEach((branch) => {
-      const key = branch.branch;
-      const existing = branchMap.get(key);
-      if (existing) {
-        existing.salesSpecialist += branch.salesSpecialist;
-        existing.csSpecialist += branch.csSpecialist;
-        existing.implementSpecialist += branch.implementSpecialist;
-      } else {
-        branchMap.set(key, {
-          salesSpecialist: branch.salesSpecialist,
-          csSpecialist: branch.csSpecialist,
-          implementSpecialist: branch.implementSpecialist,
-          region: region.regionName,
-        });
-      }
-    });
-  });
-
-  const branches: { name: string; ratio: number; region: string }[] = [];
-  branchMap.forEach((value, name) => {
-    if (value.salesSpecialist > 0) {
-      const ratio = (value.csSpecialist + value.implementSpecialist) / value.salesSpecialist;
-      branches.push({
-        name,
-        ratio: Number(ratio.toFixed(2)),
-        region: value.region,
-      });
-    }
-  });
-
-  const sorted = branches.sort((a, b) => a.ratio - b.ratio);
-  const names = sorted.map((b) => b.name);
-  const ratios = sorted.map((b) => b.ratio);
-
-  const option = {
-    title: {
-      text: '各分公司客成销售比排行（专员）',
-      left: 'left',
-      textStyle: { fontSize: 16, fontWeight: 600, color: '#334155' },
-    },
-    tooltip: {
-      trigger: 'axis',
-      axisPointer: { type: 'shadow' as const },
-      backgroundColor: 'rgba(255, 255, 255, 0.95)',
-      borderColor: '#e2e8f0',
-      borderWidth: 1,
-      textStyle: { color: '#334155' },
-      formatter: (params: any) => {
-        const item = sorted[params[0].dataIndex];
-        return `${item.region}<br/>${item.name}: <b>${item.ratio}</b>`;
-      },
-    },
-    grid: {
-      left: '3%',
-      right: '8%',
-      bottom: '3%',
-      top: '12%',
-      containLabel: true,
-    },
-    xAxis: {
-      type: 'value' as const,
-      axisLine: { show: false },
-      axisTick: { show: false },
-      splitLine: { lineStyle: { color: '#f1f5f9' } },
-      axisLabel: { color: '#64748b' },
-    },
-    yAxis: {
-      type: 'category' as const,
-      data: names,
-      axisLine: { lineStyle: { color: '#e2e8f0' } },
-      axisTick: { show: false },
-      axisLabel: { color: '#475569', fontSize: 10 },
-    },
-    series: [
-      {
-        type: 'bar' as const,
-        data: ratios.map((value) => ({
+        data: csTotals.map((value, idx) => ({
           value,
           itemStyle: {
-            color: value >= 3 ? '#ef4444' : value >= 2 ? '#f59e0b' : '#3b82f6',
-            borderRadius: [0, 4, 4, 0],
+            color: flat[idx].type === 'region' ? '#059669' : '#6ee7b7',
+            borderRadius: [4, 4, 0, 0],
           },
         })),
-        barWidth: '60%',
-        label: {
-          show: true,
-          position: 'right' as const,
-          color: '#475569',
-          fontSize: 11,
-          formatter: '{c}',
+        barWidth: '30%',
+        label: { show: true, position: 'top' as const, color: '#475569', fontSize: 10 },
+        markLine: {
+          silent: true,
+          symbol: 'none',
+          lineStyle: {
+            color: '#94a3b8',
+            type: 'dashed',
+            width: 1,
+          },
+          data: regionIndices.map((idx) => ({
+            xAxis: idx + 0.5,
+          })),
         },
       },
     ],
@@ -577,7 +484,7 @@ function BranchRatioRankChart({ data }: { data: SalesCsData }) {
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5">
-      <ReactECharts option={option} style={{ height: '500px' }} opts={{ renderer: 'canvas' }} />
+      <ReactECharts option={option} style={{ height: '480px' }} opts={{ renderer: 'canvas' }} />
     </div>
   );
 }
@@ -587,7 +494,6 @@ function GuanMinRatioChart() {
   const csData = sequenceData.data.map((d) => d.customerSuccess);
   const salesData = sequenceData.data.map((d) => d.sales);
   const managementData = sequenceData.data.map((d) => d.management);
-  // 官民比 = (客户成功 + 销售) / 管理
   const ratioData = sequenceData.data.map((d) => {
     return Number(((d.customerSuccess + d.sales) / d.management).toFixed(2));
   });
@@ -726,7 +632,7 @@ function DetailTable({ data }: { data: SalesCsData }) {
     type: 'region' | 'branch' | 'total';
     region?: string;
     branch?: string;
-    city?: string;
+    cities?: string[];
     salesSpecialist: number;
     salesManager: number;
     csManager: number;
@@ -737,11 +643,12 @@ function DetailTable({ data }: { data: SalesCsData }) {
   }[] = [];
 
   data.regions.forEach((region) => {
+    const regionCities = region.branches.flatMap((b) => b.cities);
     rows.push({
       type: 'region',
       region: region.regionName,
       branch: region.regionName,
-      city: '-',
+      cities: regionCities,
       salesSpecialist: region.summary.salesSpecialist,
       salesManager: region.summary.salesManager,
       csManager: region.summary.csManager,
@@ -752,11 +659,12 @@ function DetailTable({ data }: { data: SalesCsData }) {
     });
 
     region.branches.forEach((branch) => {
+      if (branch.branch.includes('直属')) return;
       rows.push({
         type: 'branch',
         region: region.regionName,
         branch: branch.branch,
-        city: branch.city,
+        cities: branch.cities,
         salesSpecialist: branch.salesSpecialist,
         salesManager: branch.salesManager,
         csManager: branch.csManager,
@@ -772,7 +680,7 @@ function DetailTable({ data }: { data: SalesCsData }) {
     type: 'total',
     region: '总计',
     branch: '总计',
-    city: '-',
+    cities: [],
     salesSpecialist: data.summary.salesSpecialist,
     salesManager: data.summary.salesManager,
     csManager: data.summary.csManager,
@@ -784,8 +692,7 @@ function DetailTable({ data }: { data: SalesCsData }) {
 
   const headers = [
     '区域',
-    '分公司',
-    '城市',
+    '分公司/办事处',
     '销售专员',
     '销售主管',
     '客户成功经理',
@@ -799,7 +706,7 @@ function DetailTable({ data }: { data: SalesCsData }) {
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-5 overflow-hidden">
-      <h3 className="text-base font-semibold text-slate-800 mb-4">各片区与分公司人员明细</h3>
+      <h3 className="text-base font-semibold text-slate-800 mb-4">各片区与分公司销售团队与客户成功团队人员明细</h3>
       <div className="overflow-x-auto">
         <table className="w-full text-sm border-collapse">
           <thead>
@@ -826,7 +733,6 @@ function DetailTable({ data }: { data: SalesCsData }) {
                 <tr key={idx} className={`${bgClass} ${borderClass}`}>
                   <td className="px-3 py-2.5 whitespace-nowrap">{row.region}</td>
                   <td className="px-3 py-2.5 whitespace-nowrap">{row.branch}</td>
-                  <td className="px-3 py-2.5 whitespace-nowrap">{row.city}</td>
                   <td className="px-3 py-2.5 whitespace-nowrap">{row.salesSpecialist}</td>
                   <td className="px-3 py-2.5 whitespace-nowrap">{row.salesManager}</td>
                   <td className="px-3 py-2.5 whitespace-nowrap">{row.csManager}</td>
@@ -834,12 +740,8 @@ function DetailTable({ data }: { data: SalesCsData }) {
                   <td className="px-3 py-2.5 whitespace-nowrap">{row.csSpecialist}</td>
                   <td className="px-3 py-2.5 whitespace-nowrap">{row.implementSupervisor}</td>
                   <td className="px-3 py-2.5 whitespace-nowrap">{row.implementSpecialist}</td>
-                  <td className="px-3 py-2.5 whitespace-nowrap">
-                    {calcRatioSpecialist(row)}
-                  </td>
-                  <td className="px-3 py-2.5 whitespace-nowrap">
-                    {calcRatioFull(row)}
-                  </td>
+                  <td className="px-3 py-2.5 whitespace-nowrap">{calcRatioSpecialist(row)}</td>
+                  <td className="px-3 py-2.5 whitespace-nowrap">{calcRatioFull(row)}</td>
                 </tr>
               );
             })}
@@ -863,17 +765,13 @@ export default function SalesCsSection({ data }: SalesCsSectionProps) {
 
       <OverviewCards data={data} />
 
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 gap-5">
         <RatioCompareChart data={data} />
-        <PositionStackChart data={data} />
       </div>
 
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 gap-5">
         <SalesVsCsChart data={data} />
-        <CsRolePieChart data={data} />
       </div>
-
-      <BranchRatioRankChart data={data} />
 
       <DetailTable data={data} />
 

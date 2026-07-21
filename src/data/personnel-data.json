@@ -12,68 +12,68 @@
     {
       "month": "1月",
       "startCount": 525,
-      "fullTime": 518,
-      "intern": 7,
-      "joinCount": 10,
-      "leaveCount": 17,
-      "netChange": -7,
-      "weeklyJoinCount": 10,
-      "weeklyLeaveCount": 17
+      "fullTime": 525,
+      "intern": 0,
+      "joinCount": 9,
+      "leaveCount": 8,
+      "netChange": 1,
+      "weeklyJoinCount": 0,
+      "weeklyLeaveCount": 0
     },
     {
       "month": "2月",
-      "startCount": 519,
-      "fullTime": 513,
-      "intern": 6,
+      "startCount": 525,
+      "fullTime": 519,
+      "intern": 0,
       "joinCount": 6,
       "leaveCount": 12,
       "netChange": -6,
-      "weeklyJoinCount": 6,
-      "weeklyLeaveCount": 12
+      "weeklyJoinCount": 0,
+      "weeklyLeaveCount": 0
     },
     {
       "month": "3月",
-      "startCount": 522,
-      "fullTime": 517,
-      "intern": 5,
-      "joinCount": 23,
-      "leaveCount": 20,
+      "startCount": 519,
+      "fullTime": 522,
+      "intern": 0,
+      "joinCount": 26,
+      "leaveCount": 23,
       "netChange": 3,
-      "weeklyJoinCount": 23,
-      "weeklyLeaveCount": 20
+      "weeklyJoinCount": 0,
+      "weeklyLeaveCount": 0
     },
     {
       "month": "4月",
-      "startCount": 528,
-      "fullTime": 522,
-      "intern": 6,
-      "joinCount": 21,
-      "leaveCount": 15,
+      "startCount": 522,
+      "fullTime": 528,
+      "intern": 0,
+      "joinCount": 25,
+      "leaveCount": 19,
       "netChange": 6,
-      "weeklyJoinCount": 21,
-      "weeklyLeaveCount": 15
+      "weeklyJoinCount": 0,
+      "weeklyLeaveCount": 0
     },
     {
       "month": "5月",
-      "startCount": 517,
-      "fullTime": 511,
-      "intern": 6,
-      "joinCount": 15,
-      "leaveCount": 26,
+      "startCount": 528,
+      "fullTime": 517,
+      "intern": 0,
+      "joinCount": 19,
+      "leaveCount": 30,
       "netChange": -11,
-      "weeklyJoinCount": 15,
-      "weeklyLeaveCount": 26
+      "weeklyJoinCount": 0,
+      "weeklyLeaveCount": 0
     },
     {
       "month": "6月",
-      "startCount": 501,
-      "fullTime": 495,
-      "intern": 6,
+      "startCount": 517,
+      "fullTime": 501,
+      "intern": 0,
       "joinCount": 16,
       "leaveCount": 32,
       "netChange": -16,
-      "weeklyJoinCount": 16,
-      "weeklyLeaveCount": 32
+      "weeklyJoinCount": 0,
+      "weeklyLeaveCount": 0
     },
     {
       "month": "7月",
@@ -94,68 +94,68 @@
         {
           "month": "1月",
           "startCount": 142,
-          "fullTime": 138,
-          "intern": 4,
+          "fullTime": 142,
+          "intern": 0,
           "joinCount": 0,
-          "leaveCount": 4,
-          "netChange": -4,
+          "leaveCount": 0,
+          "netChange": 0,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 4
+          "weeklyLeaveCount": 0
         },
         {
           "month": "2月",
-          "startCount": 143,
-          "fullTime": 139,
-          "intern": 4,
+          "startCount": 142,
+          "fullTime": 143,
+          "intern": 0,
           "joinCount": 1,
           "leaveCount": 0,
           "netChange": 1,
-          "weeklyJoinCount": 1,
+          "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         },
         {
           "month": "3月",
           "startCount": 143,
-          "fullTime": 139,
-          "intern": 4,
-          "joinCount": 1,
-          "leaveCount": 1,
+          "fullTime": 143,
+          "intern": 0,
+          "joinCount": 5,
+          "leaveCount": 5,
           "netChange": 0,
-          "weeklyJoinCount": 1,
-          "weeklyLeaveCount": 1
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "4月",
-          "startCount": 142,
-          "fullTime": 138,
-          "intern": 4,
-          "joinCount": 1,
-          "leaveCount": 2,
+          "startCount": 143,
+          "fullTime": 142,
+          "intern": 0,
+          "joinCount": 5,
+          "leaveCount": 6,
           "netChange": -1,
-          "weeklyJoinCount": 1,
-          "weeklyLeaveCount": 2
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "5月",
-          "startCount": 136,
-          "fullTime": 132,
-          "intern": 4,
-          "joinCount": 0,
-          "leaveCount": 6,
+          "startCount": 142,
+          "fullTime": 136,
+          "intern": 0,
+          "joinCount": 4,
+          "leaveCount": 10,
           "netChange": -6,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 6
+          "weeklyLeaveCount": 0
         },
         {
           "month": "6月",
-          "startCount": 126,
-          "fullTime": 122,
-          "intern": 4,
+          "startCount": 136,
+          "fullTime": 126,
+          "intern": 0,
           "joinCount": 0,
           "leaveCount": 10,
           "netChange": -10,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 10
+          "weeklyLeaveCount": 0
         },
         {
           "month": "7月",
@@ -176,45 +176,45 @@
         {
           "month": "1月",
           "startCount": 43,
-          "fullTime": 42,
-          "intern": 1,
-          "joinCount": 1,
-          "leaveCount": 5,
-          "netChange": -4,
-          "weeklyJoinCount": 1,
-          "weeklyLeaveCount": 5
+          "fullTime": 43,
+          "intern": 0,
+          "joinCount": 0,
+          "leaveCount": 0,
+          "netChange": 0,
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "2月",
-          "startCount": 42,
+          "startCount": 43,
           "fullTime": 42,
           "intern": 0,
           "joinCount": 1,
           "leaveCount": 2,
           "netChange": -1,
-          "weeklyJoinCount": 1,
-          "weeklyLeaveCount": 2
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "3月",
-          "startCount": 41,
+          "startCount": 42,
           "fullTime": 41,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 1,
           "netChange": -1,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 0
         },
         {
           "month": "4月",
-          "startCount": 42,
+          "startCount": 41,
           "fullTime": 42,
           "intern": 0,
           "joinCount": 1,
           "leaveCount": 0,
           "netChange": 1,
-          "weeklyJoinCount": 1,
+          "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         },
         {
@@ -236,8 +236,8 @@
           "joinCount": 1,
           "leaveCount": 1,
           "netChange": 0,
-          "weeklyJoinCount": 1,
-          "weeklyLeaveCount": 1
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "7月",
@@ -258,8 +258,8 @@
         {
           "month": "1月",
           "startCount": 32,
-          "fullTime": 30,
-          "intern": 2,
+          "fullTime": 32,
+          "intern": 0,
           "joinCount": 0,
           "leaveCount": 0,
           "netChange": 0,
@@ -268,42 +268,42 @@
         },
         {
           "month": "2月",
-          "startCount": 31,
-          "fullTime": 29,
-          "intern": 2,
+          "startCount": 32,
+          "fullTime": 31,
+          "intern": 0,
           "joinCount": 0,
           "leaveCount": 1,
           "netChange": -1,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 0
         },
         {
           "month": "3月",
-          "startCount": 30,
-          "fullTime": 29,
-          "intern": 1,
-          "joinCount": 2,
-          "leaveCount": 3,
+          "startCount": 31,
+          "fullTime": 30,
+          "intern": 0,
+          "joinCount": 1,
+          "leaveCount": 2,
           "netChange": -1,
-          "weeklyJoinCount": 2,
-          "weeklyLeaveCount": 3
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "4月",
           "startCount": 30,
-          "fullTime": 28,
-          "intern": 2,
+          "fullTime": 30,
+          "intern": 0,
           "joinCount": 1,
           "leaveCount": 1,
           "netChange": 0,
-          "weeklyJoinCount": 1,
-          "weeklyLeaveCount": 1
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "5月",
           "startCount": 30,
-          "fullTime": 28,
-          "intern": 2,
+          "fullTime": 30,
+          "intern": 0,
           "joinCount": 0,
           "leaveCount": 0,
           "netChange": 0,
@@ -312,14 +312,14 @@
         },
         {
           "month": "6月",
-          "startCount": 29,
-          "fullTime": 27,
-          "intern": 2,
+          "startCount": 30,
+          "fullTime": 29,
+          "intern": 0,
           "joinCount": 1,
           "leaveCount": 2,
           "netChange": -1,
-          "weeklyJoinCount": 1,
-          "weeklyLeaveCount": 2
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "7月",
@@ -345,63 +345,63 @@
           "joinCount": 9,
           "leaveCount": 8,
           "netChange": 1,
-          "weeklyJoinCount": 9,
-          "weeklyLeaveCount": 8
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "2月",
-          "startCount": 301,
+          "startCount": 306,
           "fullTime": 301,
           "intern": 0,
           "joinCount": 4,
           "leaveCount": 9,
           "netChange": -5,
-          "weeklyJoinCount": 4,
-          "weeklyLeaveCount": 9
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "3月",
-          "startCount": 306,
+          "startCount": 301,
           "fullTime": 306,
           "intern": 0,
           "joinCount": 20,
           "leaveCount": 15,
           "netChange": 5,
-          "weeklyJoinCount": 20,
-          "weeklyLeaveCount": 15
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "4月",
-          "startCount": 312,
+          "startCount": 306,
           "fullTime": 312,
           "intern": 0,
           "joinCount": 18,
           "leaveCount": 12,
           "netChange": 6,
-          "weeklyJoinCount": 18,
-          "weeklyLeaveCount": 12
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "5月",
-          "startCount": 307,
+          "startCount": 312,
           "fullTime": 307,
           "intern": 0,
           "joinCount": 15,
           "leaveCount": 20,
           "netChange": -5,
-          "weeklyJoinCount": 15,
-          "weeklyLeaveCount": 20
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "6月",
-          "startCount": 301,
+          "startCount": 307,
           "fullTime": 301,
           "intern": 0,
           "joinCount": 13,
           "leaveCount": 19,
           "netChange": -6,
-          "weeklyJoinCount": 13,
-          "weeklyLeaveCount": 19
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "7月",
@@ -640,13 +640,13 @@
         },
         {
           "month": "6月",
-          "startCount": 1,
+          "startCount": 0,
           "fullTime": 1,
           "intern": 0,
           "joinCount": 1,
           "leaveCount": 0,
           "netChange": 1,
-          "weeklyJoinCount": 1,
+          "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         },
         {
@@ -672,63 +672,63 @@
       "joinCount": 9,
       "leaveCount": 8,
       "netChange": 1,
-      "weeklyJoinCount": 9,
-      "weeklyLeaveCount": 8
+      "weeklyJoinCount": 0,
+      "weeklyLeaveCount": 0
     },
     {
       "month": "2月",
-      "startCount": 301,
+      "startCount": 306,
       "fullTime": 301,
       "intern": 0,
       "joinCount": 4,
       "leaveCount": 9,
       "netChange": -5,
-      "weeklyJoinCount": 4,
-      "weeklyLeaveCount": 9
+      "weeklyJoinCount": 0,
+      "weeklyLeaveCount": 0
     },
     {
       "month": "3月",
-      "startCount": 306,
+      "startCount": 301,
       "fullTime": 306,
       "intern": 0,
       "joinCount": 20,
       "leaveCount": 15,
       "netChange": 5,
-      "weeklyJoinCount": 20,
-      "weeklyLeaveCount": 15
+      "weeklyJoinCount": 0,
+      "weeklyLeaveCount": 0
     },
     {
       "month": "4月",
-      "startCount": 312,
+      "startCount": 306,
       "fullTime": 312,
       "intern": 0,
       "joinCount": 18,
       "leaveCount": 12,
       "netChange": 6,
-      "weeklyJoinCount": 18,
-      "weeklyLeaveCount": 12
+      "weeklyJoinCount": 0,
+      "weeklyLeaveCount": 0
     },
     {
       "month": "5月",
-      "startCount": 307,
+      "startCount": 312,
       "fullTime": 307,
       "intern": 0,
       "joinCount": 15,
       "leaveCount": 20,
       "netChange": -5,
-      "weeklyJoinCount": 15,
-      "weeklyLeaveCount": 20
+      "weeklyJoinCount": 0,
+      "weeklyLeaveCount": 0
     },
     {
       "month": "6月",
-      "startCount": 301,
+      "startCount": 307,
       "fullTime": 301,
       "intern": 0,
       "joinCount": 13,
       "leaveCount": 19,
       "netChange": -6,
-      "weeklyJoinCount": 13,
-      "weeklyLeaveCount": 19
+      "weeklyJoinCount": 0,
+      "weeklyLeaveCount": 0
     },
     {
       "month": "7月",
@@ -754,63 +754,63 @@
           "joinCount": 1,
           "leaveCount": 0,
           "netChange": 1,
-          "weeklyJoinCount": 1,
+          "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         },
         {
           "month": "2月",
-          "startCount": 17,
+          "startCount": 18,
           "fullTime": 17,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 1,
           "netChange": -1,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 0
         },
         {
           "month": "3月",
-          "startCount": 16,
+          "startCount": 17,
           "fullTime": 16,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 1,
           "netChange": -1,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 0
         },
         {
           "month": "4月",
-          "startCount": 18,
+          "startCount": 16,
           "fullTime": 18,
           "intern": 0,
           "joinCount": 2,
           "leaveCount": 0,
           "netChange": 2,
-          "weeklyJoinCount": 2,
+          "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         },
         {
           "month": "5月",
-          "startCount": 17,
+          "startCount": 18,
           "fullTime": 17,
           "intern": 0,
           "joinCount": 1,
           "leaveCount": 2,
           "netChange": -1,
-          "weeklyJoinCount": 1,
-          "weeklyLeaveCount": 2
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "6月",
-          "startCount": 18,
+          "startCount": 17,
           "fullTime": 18,
           "intern": 0,
           "joinCount": 2,
           "leaveCount": 1,
           "netChange": 1,
-          "weeklyJoinCount": 2,
-          "weeklyLeaveCount": 1
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "7月",
@@ -822,6 +822,254 @@
           "netChange": -1,
           "weeklyJoinCount": 0,
           "weeklyLeaveCount": 1
+        }
+      ],
+      "children": [
+        {
+          "name": "北京分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 12,
+              "fullTime": 12,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 12,
+              "fullTime": 11,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 11,
+              "fullTime": 11,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 11,
+              "fullTime": 13,
+              "intern": 0,
+              "joinCount": 2,
+              "leaveCount": 0,
+              "netChange": 2,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 13,
+              "fullTime": 12,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 2,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 12,
+              "fullTime": 12,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 1,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 11,
+              "fullTime": 11,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 1
+            }
+          ]
+        },
+        {
+          "name": "天津办事处",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 5,
+              "fullTime": 5,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 0,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 5,
+              "fullTime": 5,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 5,
+              "fullTime": 4,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 4,
+              "fullTime": 4,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 4,
+              "fullTime": 4,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 4,
+              "fullTime": 5,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 0,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 5,
+              "fullTime": 5,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "京津片区直属",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
         }
       ]
     },
@@ -836,52 +1084,52 @@
           "joinCount": 2,
           "leaveCount": 0,
           "netChange": 2,
-          "weeklyJoinCount": 2,
+          "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         },
         {
           "month": "2月",
-          "startCount": 43,
+          "startCount": 46,
           "fullTime": 43,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 2,
           "netChange": -2,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 2
+          "weeklyLeaveCount": 0
         },
         {
           "month": "3月",
-          "startCount": 41,
+          "startCount": 43,
           "fullTime": 41,
           "intern": 0,
           "joinCount": 2,
           "leaveCount": 4,
           "netChange": -2,
-          "weeklyJoinCount": 2,
-          "weeklyLeaveCount": 4
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "4月",
-          "startCount": 45,
+          "startCount": 41,
           "fullTime": 45,
           "intern": 0,
           "joinCount": 6,
           "leaveCount": 2,
           "netChange": 4,
-          "weeklyJoinCount": 6,
-          "weeklyLeaveCount": 2
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "5月",
-          "startCount": 44,
+          "startCount": 45,
           "fullTime": 44,
           "intern": 0,
           "joinCount": 1,
           "leaveCount": 3,
           "netChange": -2,
-          "weeklyJoinCount": 1,
-          "weeklyLeaveCount": 3
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "6月",
@@ -904,6 +1152,336 @@
           "netChange": 1,
           "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
+        }
+      ],
+      "children": [
+        {
+          "name": "山东分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 15,
+              "fullTime": 15,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 15,
+              "fullTime": 15,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 15,
+              "fullTime": 15,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 1,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 15,
+              "fullTime": 16,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 0,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 16,
+              "fullTime": 14,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 2,
+              "netChange": -2,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 14,
+              "fullTime": 14,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 14,
+              "fullTime": 14,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "河南分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 17,
+              "fullTime": 17,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 17,
+              "fullTime": 17,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 17,
+              "fullTime": 17,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 17,
+              "fullTime": 17,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 17,
+              "fullTime": 17,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 17,
+              "fullTime": 17,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 18,
+              "fullTime": 18,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 0,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "湖北分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 11,
+              "fullTime": 11,
+              "intern": 0,
+              "joinCount": 2,
+              "leaveCount": 0,
+              "netChange": 2,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 11,
+              "fullTime": 9,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 2,
+              "netChange": -2,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 9,
+              "fullTime": 7,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 3,
+              "netChange": -2,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 7,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 5,
+              "leaveCount": 2,
+              "netChange": 3,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 10,
+              "fullTime": 11,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 1,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 11,
+              "fullTime": 11,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 11,
+              "fullTime": 11,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "鲁鄂豫片区直属",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 3,
+              "fullTime": 3,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 3,
+              "fullTime": 2,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 2,
+              "fullTime": 2,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 2,
+              "fullTime": 2,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 2,
+              "fullTime": 2,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 2,
+              "fullTime": 2,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 2,
+              "fullTime": 2,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
         }
       ]
     },
@@ -918,52 +1496,52 @@
           "joinCount": 2,
           "leaveCount": 1,
           "netChange": 1,
-          "weeklyJoinCount": 2,
-          "weeklyLeaveCount": 1
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "2月",
-          "startCount": 28,
+          "startCount": 37,
           "fullTime": 28,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 1,
           "netChange": -1,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 0
         },
         {
           "month": "3月",
-          "startCount": 27,
+          "startCount": 28,
           "fullTime": 27,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 1,
           "netChange": -1,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 0
         },
         {
           "month": "4月",
-          "startCount": 28,
+          "startCount": 27,
           "fullTime": 28,
           "intern": 0,
           "joinCount": 2,
           "leaveCount": 1,
           "netChange": 1,
-          "weeklyJoinCount": 2,
-          "weeklyLeaveCount": 1
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "5月",
-          "startCount": 29,
+          "startCount": 28,
           "fullTime": 29,
           "intern": 0,
           "joinCount": 3,
           "leaveCount": 2,
           "netChange": 1,
-          "weeklyJoinCount": 3,
-          "weeklyLeaveCount": 2
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "6月",
@@ -973,8 +1551,8 @@
           "joinCount": 2,
           "leaveCount": 2,
           "netChange": 0,
-          "weeklyJoinCount": 2,
-          "weeklyLeaveCount": 2
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "7月",
@@ -986,6 +1564,336 @@
           "netChange": 0,
           "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
+        }
+      ],
+      "children": [
+        {
+          "name": "厦门办事处",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 6,
+              "fullTime": 6,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 6,
+              "fullTime": 6,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 6,
+              "fullTime": 6,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 6,
+              "fullTime": 6,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 6,
+              "fullTime": 5,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 5,
+              "fullTime": 5,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 5,
+              "fullTime": 5,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "广深分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 15,
+              "fullTime": 15,
+              "intern": 0,
+              "joinCount": 2,
+              "leaveCount": 1,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 15,
+              "fullTime": 15,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 15,
+              "fullTime": 14,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 14,
+              "fullTime": 14,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 1,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 14,
+              "fullTime": 14,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 1,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 14,
+              "fullTime": 15,
+              "intern": 0,
+              "joinCount": 2,
+              "leaveCount": 1,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 15,
+              "fullTime": 15,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "江西分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 7,
+              "fullTime": 7,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 7,
+              "fullTime": 6,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 6,
+              "fullTime": 6,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 6,
+              "fullTime": 7,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 0,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 7,
+              "fullTime": 9,
+              "intern": 0,
+              "joinCount": 2,
+              "leaveCount": 0,
+              "netChange": 2,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 9,
+              "fullTime": 8,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 8,
+              "fullTime": 8,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "粤闽赣片区直属",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
         }
       ]
     },
@@ -1000,63 +1908,63 @@
           "joinCount": 1,
           "leaveCount": 0,
           "netChange": 1,
-          "weeklyJoinCount": 1,
+          "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         },
         {
           "month": "2月",
-          "startCount": 25,
+          "startCount": 26,
           "fullTime": 25,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 1,
           "netChange": -1,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 0
         },
         {
           "month": "3月",
-          "startCount": 28,
+          "startCount": 25,
           "fullTime": 28,
           "intern": 0,
           "joinCount": 3,
           "leaveCount": 0,
           "netChange": 3,
-          "weeklyJoinCount": 3,
+          "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         },
         {
           "month": "4月",
-          "startCount": 27,
+          "startCount": 28,
           "fullTime": 27,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 1,
           "netChange": -1,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 0
         },
         {
           "month": "5月",
-          "startCount": 25,
+          "startCount": 27,
           "fullTime": 25,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 2,
           "netChange": -2,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 2
+          "weeklyLeaveCount": 0
         },
         {
           "month": "6月",
-          "startCount": 24,
+          "startCount": 25,
           "fullTime": 24,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 1,
           "netChange": -1,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 0
         },
         {
           "month": "7月",
@@ -1068,6 +1976,254 @@
           "netChange": 1,
           "weeklyJoinCount": 2,
           "weeklyLeaveCount": 1
+        }
+      ],
+      "children": [
+        {
+          "name": "上海分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 15,
+              "fullTime": 15,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 0,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 15,
+              "fullTime": 15,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 15,
+              "fullTime": 17,
+              "intern": 0,
+              "joinCount": 2,
+              "leaveCount": 0,
+              "netChange": 2,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 17,
+              "fullTime": 16,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 16,
+              "fullTime": 14,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 2,
+              "netChange": -2,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 14,
+              "fullTime": 14,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 14,
+              "fullTime": 14,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 1,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "浙江分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 10,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 10,
+              "fullTime": 9,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 9,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 0,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 10,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 10,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 10,
+              "fullTime": 9,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 10,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 2,
+              "leaveCount": 1,
+              "netChange": 1,
+              "weeklyJoinCount": 2,
+              "weeklyLeaveCount": 1
+            }
+          ]
+        },
+        {
+          "name": "沪浙片区直属",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
         }
       ]
     },
@@ -1082,30 +2238,30 @@
           "joinCount": 2,
           "leaveCount": 3,
           "netChange": -1,
-          "weeklyJoinCount": 2,
-          "weeklyLeaveCount": 3
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "2月",
-          "startCount": 46,
+          "startCount": 45,
           "fullTime": 46,
           "intern": 0,
           "joinCount": 2,
           "leaveCount": 1,
           "netChange": 1,
-          "weeklyJoinCount": 2,
-          "weeklyLeaveCount": 1
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "3月",
-          "startCount": 48,
+          "startCount": 46,
           "fullTime": 48,
           "intern": 0,
           "joinCount": 7,
           "leaveCount": 5,
           "netChange": 2,
-          "weeklyJoinCount": 7,
-          "weeklyLeaveCount": 5
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "4月",
@@ -1115,8 +2271,8 @@
           "joinCount": 4,
           "leaveCount": 3,
           "netChange": 1,
-          "weeklyJoinCount": 4,
-          "weeklyLeaveCount": 3
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "5月",
@@ -1126,19 +2282,19 @@
           "joinCount": 4,
           "leaveCount": 4,
           "netChange": 0,
-          "weeklyJoinCount": 4,
-          "weeklyLeaveCount": 4
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "6月",
-          "startCount": 45,
+          "startCount": 48,
           "fullTime": 45,
           "intern": 0,
           "joinCount": 6,
           "leaveCount": 9,
           "netChange": -3,
-          "weeklyJoinCount": 6,
-          "weeklyLeaveCount": 9
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "7月",
@@ -1150,6 +2306,336 @@
           "netChange": 5,
           "weeklyJoinCount": 3,
           "weeklyLeaveCount": 0
+        }
+      ],
+      "children": [
+        {
+          "name": "南京分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 20,
+              "fullTime": 20,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 1,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 20,
+              "fullTime": 20,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 1,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 20,
+              "fullTime": 22,
+              "intern": 0,
+              "joinCount": 4,
+              "leaveCount": 2,
+              "netChange": 2,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 22,
+              "fullTime": 23,
+              "intern": 0,
+              "joinCount": 2,
+              "leaveCount": 1,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 23,
+              "fullTime": 23,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 1,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 23,
+              "fullTime": 20,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 4,
+              "netChange": -3,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 24,
+              "fullTime": 24,
+              "intern": 0,
+              "joinCount": 4,
+              "leaveCount": 0,
+              "netChange": 4,
+              "weeklyJoinCount": 2,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "安徽分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 11,
+              "fullTime": 11,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 0,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 11,
+              "fullTime": 11,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 11,
+              "fullTime": 11,
+              "intern": 0,
+              "joinCount": 2,
+              "leaveCount": 2,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 11,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 2,
+              "leaveCount": 2,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 10,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 2,
+              "leaveCount": 2,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 10,
+              "fullTime": 9,
+              "intern": 0,
+              "joinCount": 3,
+              "leaveCount": 4,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 10,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 0,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "苏州分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 13,
+              "fullTime": 13,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 2,
+              "netChange": -2,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 13,
+              "fullTime": 14,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 0,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 14,
+              "fullTime": 14,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 1,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 14,
+              "fullTime": 14,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 14,
+              "fullTime": 14,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 1,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 14,
+              "fullTime": 15,
+              "intern": 0,
+              "joinCount": 2,
+              "leaveCount": 1,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 15,
+              "fullTime": 15,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 1,
+              "netChange": 0,
+              "weeklyJoinCount": 1,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "苏皖片区直属",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
         }
       ]
     },
@@ -1191,36 +2677,36 @@
         },
         {
           "month": "4月",
-          "startCount": 19,
+          "startCount": 18,
           "fullTime": 19,
           "intern": 0,
           "joinCount": 1,
           "leaveCount": 0,
           "netChange": 1,
-          "weeklyJoinCount": 1,
+          "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         },
         {
           "month": "5月",
-          "startCount": 18,
+          "startCount": 19,
           "fullTime": 18,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 1,
           "netChange": -1,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 0
         },
         {
           "month": "6月",
-          "startCount": 17,
+          "startCount": 18,
           "fullTime": 17,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 1,
           "netChange": -1,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 0
         },
         {
           "month": "7月",
@@ -1233,6 +2719,254 @@
           "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         }
+      ],
+      "children": [
+        {
+          "name": "内蒙分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 8,
+              "fullTime": 8,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 8,
+              "fullTime": 8,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 8,
+              "fullTime": 8,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 8,
+              "fullTime": 8,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 8,
+              "fullTime": 8,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 8,
+              "fullTime": 7,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 7,
+              "fullTime": 7,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "辽宁分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 9,
+              "fullTime": 9,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 9,
+              "fullTime": 9,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 9,
+              "fullTime": 9,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 9,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 0,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 10,
+              "fullTime": 9,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 9,
+              "fullTime": 9,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 9,
+              "fullTime": 9,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "辽蒙片区直属",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 1,
+              "fullTime": 1,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        }
       ]
     },
     {
@@ -1240,47 +2974,47 @@
       "monthly": [
         {
           "month": "1月",
-          "startCount": 37,
-          "fullTime": 37,
+          "startCount": 55,
+          "fullTime": 55,
           "intern": 0,
           "joinCount": 0,
-          "leaveCount": 0,
-          "netChange": 0,
+          "leaveCount": 1,
+          "netChange": -1,
           "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         },
         {
           "month": "2月",
-          "startCount": 63,
+          "startCount": 55,
           "fullTime": 63,
           "intern": 0,
           "joinCount": 1,
           "leaveCount": 1,
           "netChange": 0,
-          "weeklyJoinCount": 1,
-          "weeklyLeaveCount": 1
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "3月",
-          "startCount": 66,
+          "startCount": 63,
           "fullTime": 66,
           "intern": 0,
           "joinCount": 3,
           "leaveCount": 0,
           "netChange": 3,
-          "weeklyJoinCount": 3,
+          "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         },
         {
           "month": "4月",
-          "startCount": 64,
+          "startCount": 66,
           "fullTime": 64,
           "intern": 0,
           "joinCount": 1,
           "leaveCount": 4,
           "netChange": -3,
-          "weeklyJoinCount": 1,
-          "weeklyLeaveCount": 4
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "5月",
@@ -1290,8 +3024,8 @@
           "joinCount": 5,
           "leaveCount": 4,
           "netChange": 1,
-          "weeklyJoinCount": 5,
-          "weeklyLeaveCount": 4
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "6月",
@@ -1301,8 +3035,8 @@
           "joinCount": 3,
           "leaveCount": 3,
           "netChange": 0,
-          "weeklyJoinCount": 3,
-          "weeklyLeaveCount": 3
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "7月",
@@ -1314,6 +3048,582 @@
           "netChange": 0,
           "weeklyJoinCount": 1,
           "weeklyLeaveCount": 1
+        }
+      ],
+      "children": [
+        {
+          "name": "云贵分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 10,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 10,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 10,
+              "fullTime": 11,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 0,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 11,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 10,
+              "fullTime": 9,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 9,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 0,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 10,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "四川分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 15,
+              "fullTime": 15,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 15,
+              "fullTime": 12,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 12,
+              "fullTime": 13,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 0,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 13,
+              "fullTime": 13,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 13,
+              "fullTime": 13,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 13,
+              "fullTime": 13,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 1,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 13,
+              "fullTime": 13,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "山西分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 10,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 10,
+              "fullTime": 11,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 11,
+              "fullTime": 12,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 0,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 12,
+              "fullTime": 11,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 11,
+              "fullTime": 11,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 1,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 11,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 2,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 10,
+              "fullTime": 10,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "新疆办事处",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 0,
+              "fullTime": 0,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 0,
+              "fullTime": 3,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 3,
+              "fullTime": 3,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 3,
+              "fullTime": 2,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 2,
+              "fullTime": 4,
+              "intern": 0,
+              "joinCount": 2,
+              "leaveCount": 0,
+              "netChange": 2,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 4,
+              "fullTime": 4,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 3,
+              "fullTime": 3,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 1
+            }
+          ]
+        },
+        {
+          "name": "河北分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 12,
+              "fullTime": 12,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 12,
+              "fullTime": 12,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 12,
+              "fullTime": 12,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 12,
+              "fullTime": 12,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 12,
+              "fullTime": 12,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 12,
+              "fullTime": 12,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 12,
+              "fullTime": 12,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "湖南分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 8,
+              "fullTime": 8,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 8,
+              "fullTime": 7,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 1,
+              "netChange": -1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 7,
+              "fullTime": 7,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 7,
+              "fullTime": 8,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 1,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 8,
+              "fullTime": 7,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 7,
+              "fullTime": 7,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 8,
+              "fullTime": 8,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 0,
+              "netChange": 1,
+              "weeklyJoinCount": 1,
+              "weeklyLeaveCount": 0
+            }
+          ]
+        },
+        {
+          "name": "陕西分公司",
+          "monthly": [
+            {
+              "month": "1月",
+              "startCount": 8,
+              "fullTime": 8,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "2月",
+              "startCount": 8,
+              "fullTime": 8,
+              "intern": 0,
+              "joinCount": 1,
+              "leaveCount": 0,
+              "netChange": 1,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "3月",
+              "startCount": 8,
+              "fullTime": 8,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "4月",
+              "startCount": 8,
+              "fullTime": 8,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "5月",
+              "startCount": 8,
+              "fullTime": 8,
+              "intern": 0,
+              "joinCount": 2,
+              "leaveCount": 2,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "6月",
+              "startCount": 8,
+              "fullTime": 8,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            },
+            {
+              "month": "7月",
+              "startCount": 8,
+              "fullTime": 8,
+              "intern": 0,
+              "joinCount": 0,
+              "leaveCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 0,
+              "weeklyLeaveCount": 0
+            }
+          ]
         }
       ]
     },
@@ -1410,63 +3720,63 @@
           "joinCount": 1,
           "leaveCount": 2,
           "netChange": -1,
-          "weeklyJoinCount": 1,
-          "weeklyLeaveCount": 2
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "2月",
-          "startCount": 26,
+          "startCount": 38,
           "fullTime": 26,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 2,
           "netChange": -2,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 2
+          "weeklyLeaveCount": 0
         },
         {
           "month": "3月",
-          "startCount": 28,
+          "startCount": 26,
           "fullTime": 28,
           "intern": 0,
           "joinCount": 4,
           "leaveCount": 2,
           "netChange": 2,
-          "weeklyJoinCount": 4,
-          "weeklyLeaveCount": 2
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "4月",
-          "startCount": 29,
+          "startCount": 28,
           "fullTime": 29,
           "intern": 0,
           "joinCount": 1,
           "leaveCount": 0,
           "netChange": 1,
-          "weeklyJoinCount": 1,
+          "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         },
         {
           "month": "5月",
-          "startCount": 27,
+          "startCount": 29,
           "fullTime": 27,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 2,
           "netChange": -2,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 2
+          "weeklyLeaveCount": 0
         },
         {
           "month": "6月",
-          "startCount": 26,
+          "startCount": 27,
           "fullTime": 26,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 1,
           "netChange": -1,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 0
         },
         {
           "month": "7月",
@@ -1525,8 +3835,8 @@
           "joinCount": 1,
           "leaveCount": 1,
           "netChange": 0,
-          "weeklyJoinCount": 1,
-          "weeklyLeaveCount": 1
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "5月",
@@ -1541,14 +3851,14 @@
         },
         {
           "month": "6月",
-          "startCount": 5,
+          "startCount": 6,
           "fullTime": 5,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 1,
           "netChange": -1,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 0
         },
         {
           "month": "7月",
@@ -1575,29 +3885,29 @@
           "leaveCount": 1,
           "netChange": -1,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 0
         },
         {
           "month": "2月",
-          "startCount": 7,
+          "startCount": 6,
           "fullTime": 7,
           "intern": 0,
           "joinCount": 1,
           "leaveCount": 0,
           "netChange": 1,
-          "weeklyJoinCount": 1,
+          "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         },
         {
           "month": "3月",
-          "startCount": 6,
+          "startCount": 7,
           "fullTime": 6,
           "intern": 0,
           "joinCount": 1,
           "leaveCount": 2,
           "netChange": -1,
-          "weeklyJoinCount": 1,
-          "weeklyLeaveCount": 2
+          "weeklyJoinCount": 0,
+          "weeklyLeaveCount": 0
         },
         {
           "month": "4月",
@@ -1612,13 +3922,13 @@
         },
         {
           "month": "5月",
-          "startCount": 7,
+          "startCount": 6,
           "fullTime": 7,
           "intern": 0,
           "joinCount": 1,
           "leaveCount": 0,
           "netChange": 1,
-          "weeklyJoinCount": 1,
+          "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0
         },
         {
@@ -1743,7 +4053,7 @@
         },
         {
           "month": "2月",
-          "startCount": 7,
+          "startCount": 0,
           "fullTime": 7,
           "intern": 0,
           "joinCount": 0,
@@ -1754,7 +4064,7 @@
         },
         {
           "month": "3月",
-          "startCount": 6,
+          "startCount": 7,
           "fullTime": 6,
           "intern": 0,
           "joinCount": 0,
@@ -1825,7 +4135,7 @@
         },
         {
           "month": "2月",
-          "startCount": 6,
+          "startCount": 0,
           "fullTime": 6,
           "intern": 0,
           "joinCount": 0,
@@ -1836,7 +4146,7 @@
         },
         {
           "month": "3月",
-          "startCount": 7,
+          "startCount": 6,
           "fullTime": 7,
           "intern": 0,
           "joinCount": 0,
@@ -1896,8 +4206,8 @@
       "monthly": [
         {
           "month": "1月",
-          "startCount": 1,
-          "fullTime": 1,
+          "startCount": 3,
+          "fullTime": 3,
           "intern": 0,
           "joinCount": 0,
           "leaveCount": 0,
@@ -1907,7 +4217,7 @@
         },
         {
           "month": "2月",
-          "startCount": 1,
+          "startCount": 3,
           "fullTime": 1,
           "intern": 0,
           "joinCount": 0,

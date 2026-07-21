@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import type { DepartmentData, MonthlyData } from '@/types';
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
 
@@ -112,59 +112,102 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
               const monthData = dept.monthly[selectedMonthIdx];
               if (!monthData) return null;
               return (
-                <tr
-                  key={dept.name}
-                  className={`border-t border-slate-100 hover:bg-slate-50/50 transition-colors ${
-                    idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/30'
-                  }`}
-                >
-                  <td className="text-left px-4 py-3 font-medium text-slate-700 sticky left-0 bg-inherit z-10">
-                    {dept.name}
-                  </td>
-                  <td className="text-center px-3 py-3 text-slate-700 font-semibold">
-                    {monthData.startCount}
-                  </td>
-                  <td className="text-center px-3 py-3 text-slate-600">
-                    {monthData.fullTime}
-                  </td>
-                  <td className="text-center px-3 py-3 text-slate-600">
-                    {monthData.intern}
-                  </td>
-                  <td className="text-center px-3 py-3 text-emerald-600 font-medium">
-                    +{monthData.weeklyJoinCount}
-                  </td>
-                  <td className="text-center px-3 py-3 text-rose-600 font-medium">
-                    -{monthData.weeklyLeaveCount}
-                  </td>
-                  <td className="text-center px-3 py-3 text-emerald-600 font-medium">
-                    +{monthData.joinCount}
-                  </td>
-                  <td className="text-center px-3 py-3 text-rose-600 font-medium">
-                    -{monthData.leaveCount}
-                  </td>
-                  <td className="text-center px-4 py-3">
-                    <span className={`inline-flex items-center gap-1 font-medium ${
-                      monthData.netChange > 0
-                        ? 'text-emerald-600'
-                        : monthData.netChange < 0
-                        ? 'text-rose-600'
-                        : 'text-slate-500'
-                    }`}>
-                      {monthData.netChange > 0 ? (
-                        <TrendingUp size={14} />
-                      ) : monthData.netChange < 0 ? (
-                        <TrendingDown size={14} />
-                      ) : (
-                        <Minus size={14} />
-                      )}
-                      {monthData.netChange > 0 ? '+' : ''}
-                      {monthData.netChange}
-                    </span>
-                  </td>
-                  <td className="text-center px-3 py-3">
-                    <MiniSparkline data={dept.monthly.map(m => m.startCount)} />
-                  </td>
-                </tr>
+                <Fragment key={dept.name}>
+                  <tr
+                    key={dept.name}
+                    className={`border-t border-slate-100 hover:bg-slate-50/50 transition-colors ${
+                      idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/30'
+                    }`}
+                  >
+                    <td className="text-left px-4 py-3 font-medium text-slate-700 sticky left-0 bg-inherit z-10">
+                      {dept.name}
+                    </td>
+                    <td className="text-center px-3 py-3 text-slate-700 font-semibold">
+                      {monthData.fullTime + monthData.intern}
+                    </td>
+                    <td className="text-center px-3 py-3 text-slate-600">
+                      {monthData.fullTime}
+                    </td>
+                    <td className="text-center px-3 py-3 text-slate-600">
+                      {monthData.intern}
+                    </td>
+                    <td className="text-center px-3 py-3 text-emerald-600 font-medium">
+                      +{monthData.weeklyJoinCount}
+                    </td>
+                    <td className="text-center px-3 py-3 text-rose-600 font-medium">
+                      -{monthData.weeklyLeaveCount}
+                    </td>
+                    <td className="text-center px-3 py-3 text-emerald-600 font-medium">
+                      +{monthData.joinCount}
+                    </td>
+                    <td className="text-center px-3 py-3 text-rose-600 font-medium">
+                      -{monthData.leaveCount}
+                    </td>
+                    <td className="text-center px-4 py-3">
+                      <span className={`inline-flex items-center gap-1 font-medium ${
+                        monthData.netChange > 0
+                          ? 'text-emerald-600'
+                          : monthData.netChange < 0
+                          ? 'text-rose-600'
+                          : 'text-slate-500'
+                      }`}>
+                        {monthData.netChange > 0 ? (
+                          <TrendingUp size={14} />
+                        ) : monthData.netChange < 0 ? (
+                          <TrendingDown size={14} />
+                        ) : (
+                          <Minus size={14} />
+                        )}
+                        {monthData.netChange > 0 ? '+' : ''}
+                        {monthData.netChange}
+                      </span>
+                    </td>
+                    <td className="text-center px-3 py-3">
+                      <MiniSparkline data={dept.monthly.map(m => m.fullTime + m.intern)} />
+                    </td>
+                  </tr>
+                  {dept.children?.map((child, childIdx) => {
+                    const childMonthData = child.monthly[selectedMonthIdx];
+                    if (!childMonthData) return null;
+                    return (
+                      <tr
+                        key={`${dept.name}-${child.name}`}
+                        className="border-t border-slate-100/50 bg-slate-50/30 hover:bg-slate-50/60 transition-colors"
+                      >
+                        <td className="text-left px-4 py-2 pl-8 text-slate-500 text-xs sticky left-0 bg-inherit z-10">
+                          ├ {child.name}
+                        </td>
+                        <td className="text-center px-3 py-2 text-slate-500 text-xs">
+                          {childMonthData.fullTime + childMonthData.intern}
+                        </td>
+                        <td className="text-center px-3 py-2 text-slate-400 text-xs">
+                          {childMonthData.fullTime}
+                        </td>
+                        <td className="text-center px-3 py-2 text-slate-400 text-xs">
+                          {childMonthData.intern}
+                        </td>
+                        <td className="text-center px-3 py-2 text-emerald-500/80 text-xs">
+                          +{childMonthData.weeklyJoinCount}
+                        </td>
+                        <td className="text-center px-3 py-2 text-rose-500/80 text-xs">
+                          -{childMonthData.weeklyLeaveCount}
+                        </td>
+                        <td className="text-center px-3 py-2 text-emerald-500/80 text-xs">
+                          +{childMonthData.joinCount}
+                        </td>
+                        <td className="text-center px-3 py-2 text-rose-500/80 text-xs">
+                          -{childMonthData.leaveCount}
+                        </td>
+                        <td className="text-center px-4 py-2 text-slate-400 text-xs">
+                          {childMonthData.netChange > 0 ? '+' : ''}{childMonthData.netChange}
+                        </td>
+                        <td className="text-center px-3 py-2">
+                          <MiniSparkline data={child.monthly.map(m => m.fullTime + m.intern)} />
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </Fragment>
               );
             })}
             {/* 合计行 */}
@@ -173,7 +216,7 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                 {totalLabel}
               </td>
               <td className="text-center px-3 py-3 text-slate-800">
-                {currentTotal?.startCount ?? 0}
+                {(currentTotal?.fullTime ?? 0) + (currentTotal?.intern ?? 0)}
               </td>
               <td className="text-center px-3 py-3 text-slate-700">
                 {currentTotal?.fullTime ?? 0}
@@ -213,7 +256,7 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                 </span>
               </td>
               <td className="text-center px-3 py-3">
-                <MiniSparkline data={computedTotal.map(m => m.startCount)} accent />
+                <MiniSparkline data={computedTotal.map(m => m.fullTime + m.intern)} accent />
               </td>
             </tr>
             {/* 独立行（不参与合计，置于合计行下方） */}
@@ -236,7 +279,7 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                         {dept.name}
                       </td>
                       <td className="text-center px-3 py-3 text-slate-700 font-semibold">
-                        {monthData.startCount}
+                        {monthData.fullTime + monthData.intern}
                       </td>
                       <td className="text-center px-3 py-3 text-slate-600">
                         {monthData.fullTime}
@@ -276,7 +319,7 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                         </span>
                       </td>
                       <td className="text-center px-3 py-3">
-                        <MiniSparkline data={dept.monthly.map(m => m.startCount)} />
+                        <MiniSparkline data={dept.monthly.map(m => m.fullTime + m.intern)} />
                       </td>
                     </tr>
                   );

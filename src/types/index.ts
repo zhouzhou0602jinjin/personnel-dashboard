@@ -16,6 +16,8 @@ export interface MonthlyData {
 export interface DepartmentData {
   name: string;
   monthly: MonthlyData[];
+  // 下级部门/分公司明细（可选）
+  children?: DepartmentData[];
 }
 
 export interface AnalysisNotes {
