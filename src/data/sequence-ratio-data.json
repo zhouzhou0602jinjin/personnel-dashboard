@@ -1,5 +1,5 @@
 {
-  "updateDate": "2026年7月10日",
+  "updateDate": "2026年7月24日",
   "months": [
     "202601",
     "202602",
@@ -19,45 +19,45 @@
     },
     {
       "month": "2月",
-      "customerSuccess": 138,
+      "customerSuccess": 137,
       "sales": 72,
-      "management": 31,
-      "guanMinRatio": 6.8
+      "management": 32,
+      "guanMinRatio": 6.53
     },
     {
       "month": "3月",
-      "customerSuccess": 135,
+      "customerSuccess": 134,
       "sales": 78,
       "management": 32,
-      "guanMinRatio": 6.7
+      "guanMinRatio": 6.62
     },
     {
       "month": "4月",
       "customerSuccess": 137,
       "sales": 81,
       "management": 32,
-      "guanMinRatio": 6.8
+      "guanMinRatio": 6.81
     },
     {
       "month": "5月",
       "customerSuccess": 137,
       "sales": 77,
       "management": 32,
-      "guanMinRatio": 6.7
+      "guanMinRatio": 6.69
     },
     {
       "month": "6月",
       "customerSuccess": 137,
       "sales": 73,
       "management": 32,
-      "guanMinRatio": 6.6
+      "guanMinRatio": 6.56
     },
     {
       "month": "7月",
-      "customerSuccess": 139,
-      "sales": 77,
+      "customerSuccess": 138,
+      "sales": 74,
       "management": 32,
-      "guanMinRatio": 6.75
+      "guanMinRatio": 6.62
     }
   ]
 }

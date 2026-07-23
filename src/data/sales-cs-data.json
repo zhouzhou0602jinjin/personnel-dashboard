@@ -1,13 +1,13 @@
 {
-  "updateDate": "2026年7月19日",
+  "updateDate": "2026年7月24日",
   "summary": {
     "region": "全国",
     "branch": "全国",
-    "salesSpecialist": 66,
+    "salesSpecialist": 63,
     "salesManager": 11,
     "csManager": 8,
     "csSupervisor": 16,
-    "csSpecialist": 104,
+    "csSpecialist": 103,
     "implementSupervisor": 1,
     "implementSpecialist": 18
   },
@@ -17,7 +17,7 @@
       "summary": {
         "region": "京津片区",
         "branch": "京津片区",
-        "salesSpecialist": 3,
+        "salesSpecialist": 2,
         "salesManager": 0,
         "csManager": 1,
         "csSupervisor": 1,
@@ -28,7 +28,9 @@
       "branches": [
         {
           "branch": "北京分公司",
-          "cities": ["北京"],
+          "cities": [
+            "北京"
+          ],
           "salesSpecialist": 2,
           "salesManager": 0,
           "csManager": 1,
@@ -39,23 +41,14 @@
         },
         {
           "branch": "天津办事处",
-          "cities": ["天津"],
-          "salesSpecialist": 1,
-          "salesManager": 0,
-          "csManager": 0,
-          "csSupervisor": 0,
-          "csSpecialist": 3,
-          "implementSupervisor": 0,
-          "implementSpecialist": 0
-        },
-        {
-          "branch": "京津片区直属",
-          "cities": [],
+          "cities": [
+            "天津"
+          ],
           "salesSpecialist": 0,
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 0,
-          "csSpecialist": 0,
+          "csSpecialist": 3,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         }
@@ -66,7 +59,7 @@
       "summary": {
         "region": "鲁鄂豫片区",
         "branch": "鲁鄂豫片区",
-        "salesSpecialist": 9,
+        "salesSpecialist": 8,
         "salesManager": 3,
         "csManager": 1,
         "csSupervisor": 7,
@@ -77,7 +70,10 @@
       "branches": [
         {
           "branch": "山东分公司",
-          "cities": ["济南", "青岛"],
+          "cities": [
+            "济南",
+            "青岛"
+          ],
           "salesSpecialist": 1,
           "salesManager": 1,
           "csManager": 0,
@@ -88,7 +84,9 @@
         },
         {
           "branch": "河南分公司",
-          "cities": ["郑州"],
+          "cities": [
+            "郑州"
+          ],
           "salesSpecialist": 4,
           "salesManager": 2,
           "csManager": 1,
@@ -99,25 +97,16 @@
         },
         {
           "branch": "湖北分公司",
-          "cities": ["武汉"],
-          "salesSpecialist": 4,
+          "cities": [
+            "武汉"
+          ],
+          "salesSpecialist": 3,
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 1,
           "csSpecialist": 1,
           "implementSupervisor": 0,
           "implementSpecialist": 4
-        },
-        {
-          "branch": "鲁鄂豫片区直属",
-          "cities": [],
-          "salesSpecialist": 0,
-          "salesManager": 0,
-          "csManager": 0,
-          "csSupervisor": 0,
-          "csSpecialist": 0,
-          "implementSupervisor": 0,
-          "implementSpecialist": 0
         }
       ]
     },
@@ -137,7 +126,9 @@
       "branches": [
         {
           "branch": "厦门办事处",
-          "cities": ["厦门"],
+          "cities": [
+            "厦门"
+          ],
           "salesSpecialist": 1,
           "salesManager": 0,
           "csManager": 0,
@@ -148,7 +139,10 @@
         },
         {
           "branch": "广深分公司",
-          "cities": ["广州", "深圳", "南宁"],
+          "cities": [
+            "广州",
+            "深圳"
+          ],
           "salesSpecialist": 5,
           "salesManager": 1,
           "csManager": 0,
@@ -159,23 +153,14 @@
         },
         {
           "branch": "江西分公司",
-          "cities": ["南昌"],
+          "cities": [
+            "南昌"
+          ],
           "salesSpecialist": 3,
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 0,
           "csSpecialist": 4,
-          "implementSupervisor": 0,
-          "implementSpecialist": 0
-        },
-        {
-          "branch": "粤闽赣片区直属",
-          "cities": [],
-          "salesSpecialist": 0,
-          "salesManager": 0,
-          "csManager": 0,
-          "csSupervisor": 0,
-          "csSpecialist": 0,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         }
@@ -197,7 +182,9 @@
       "branches": [
         {
           "branch": "上海分公司",
-          "cities": ["上海"],
+          "cities": [
+            "上海"
+          ],
           "salesSpecialist": 6,
           "salesManager": 1,
           "csManager": 1,
@@ -208,23 +195,14 @@
         },
         {
           "branch": "浙江分公司",
-          "cities": ["杭州"],
+          "cities": [
+            "杭州"
+          ],
           "salesSpecialist": 4,
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 0,
           "csSpecialist": 5,
-          "implementSupervisor": 0,
-          "implementSpecialist": 0
-        },
-        {
-          "branch": "沪浙片区直属",
-          "cities": [],
-          "salesSpecialist": 0,
-          "salesManager": 0,
-          "csManager": 0,
-          "csSupervisor": 0,
-          "csSpecialist": 0,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         }
@@ -235,7 +213,7 @@
       "summary": {
         "region": "苏皖片区",
         "branch": "苏皖片区",
-        "salesSpecialist": 14,
+        "salesSpecialist": 13,
         "salesManager": 2,
         "csManager": 2,
         "csSupervisor": 2,
@@ -246,7 +224,9 @@
       "branches": [
         {
           "branch": "南京分公司",
-          "cities": ["南京"],
+          "cities": [
+            "南京"
+          ],
           "salesSpecialist": 8,
           "salesManager": 1,
           "csManager": 1,
@@ -257,8 +237,10 @@
         },
         {
           "branch": "安徽分公司",
-          "cities": ["合肥"],
-          "salesSpecialist": 2,
+          "cities": [
+            "合肥"
+          ],
+          "salesSpecialist": 1,
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 1,
@@ -268,7 +250,9 @@
         },
         {
           "branch": "苏州分公司",
-          "cities": ["苏州"],
+          "cities": [
+            "苏州"
+          ],
           "salesSpecialist": 4,
           "salesManager": 1,
           "csManager": 1,
@@ -276,17 +260,6 @@
           "csSpecialist": 4,
           "implementSupervisor": 0,
           "implementSpecialist": 3
-        },
-        {
-          "branch": "苏皖片区直属",
-          "cities": [],
-          "salesSpecialist": 0,
-          "salesManager": 0,
-          "csManager": 0,
-          "csSupervisor": 0,
-          "csSpecialist": 0,
-          "implementSupervisor": 0,
-          "implementSpecialist": 0
         }
       ]
     },
@@ -306,7 +279,9 @@
       "branches": [
         {
           "branch": "内蒙分公司",
-          "cities": ["呼和浩特"],
+          "cities": [
+            "呼和浩特"
+          ],
           "salesSpecialist": 3,
           "salesManager": 0,
           "csManager": 0,
@@ -317,23 +292,14 @@
         },
         {
           "branch": "辽宁分公司",
-          "cities": ["沈阳"],
+          "cities": [
+            "沈阳"
+          ],
           "salesSpecialist": 1,
           "salesManager": 1,
           "csManager": 1,
           "csSupervisor": 1,
           "csSpecialist": 5,
-          "implementSupervisor": 0,
-          "implementSpecialist": 0
-        },
-        {
-          "branch": "辽蒙片区直属",
-          "cities": [],
-          "salesSpecialist": 0,
-          "salesManager": 0,
-          "csManager": 0,
-          "csSupervisor": 0,
-          "csSpecialist": 0,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         }
@@ -348,14 +314,17 @@
         "salesManager": 3,
         "csManager": 2,
         "csSupervisor": 4,
-        "csSpecialist": 30,
+        "csSpecialist": 29,
         "implementSupervisor": 0,
         "implementSpecialist": 2
       },
       "branches": [
         {
           "branch": "云贵分公司",
-          "cities": ["昆明", "贵阳"],
+          "cities": [
+            "昆明",
+            "贵阳"
+          ],
           "salesSpecialist": 3,
           "salesManager": 0,
           "csManager": 1,
@@ -366,18 +335,35 @@
         },
         {
           "branch": "四川分公司",
-          "cities": ["成都", "西安", "重庆"],
-          "salesSpecialist": 6,
+          "cities": [
+            "成都"
+          ],
+          "salesSpecialist": 3,
           "salesManager": 1,
           "csManager": 0,
-          "csSupervisor": 2,
-          "csSpecialist": 10,
+          "csSupervisor": 1,
+          "csSpecialist": 7,
+          "implementSupervisor": 0,
+          "implementSpecialist": 0
+        },
+        {
+          "branch": "陕西分公司",
+          "cities": [
+            "西安"
+          ],
+          "salesSpecialist": 3,
+          "salesManager": 0,
+          "csManager": 0,
+          "csSupervisor": 1,
+          "csSpecialist": 3,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         },
         {
           "branch": "山西分公司",
-          "cities": ["太原"],
+          "cities": [
+            "太原"
+          ],
           "salesSpecialist": 2,
           "salesManager": 1,
           "csManager": 1,
@@ -388,18 +374,22 @@
         },
         {
           "branch": "新疆办事处",
-          "cities": ["乌鲁木齐"],
+          "cities": [
+            "乌鲁木齐"
+          ],
           "salesSpecialist": 0,
           "salesManager": 1,
           "csManager": 0,
           "csSupervisor": 0,
-          "csSpecialist": 3,
+          "csSpecialist": 2,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         },
         {
           "branch": "河北分公司",
-          "cities": ["石家庄"],
+          "cities": [
+            "石家庄"
+          ],
           "salesSpecialist": 4,
           "salesManager": 0,
           "csManager": 0,
@@ -410,23 +400,14 @@
         },
         {
           "branch": "湖南分公司",
-          "cities": ["长沙"],
+          "cities": [
+            "长沙"
+          ],
           "salesSpecialist": 2,
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 1,
           "csSpecialist": 3,
-          "implementSupervisor": 0,
-          "implementSpecialist": 0
-        },
-        {
-          "branch": "直辖分公司直属",
-          "cities": [],
-          "salesSpecialist": 0,
-          "salesManager": 0,
-          "csManager": 0,
-          "csSupervisor": 0,
-          "csSpecialist": 0,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         }

@@ -19,14 +19,14 @@ fulltime = df[df['用工类型'] == '全职']
 join_july = join_df[(join_df['入职日期'] >= '2026-07-01') & (join_df['入职日期'] <= '2026-07-31')]
 leave_july = leave_df[(leave_df['离职日期'] >= '2026-07-01') & (leave_df['离职日期'] <= '2026-07-31')]
 
-# 本周 7/13-7/19
-start_week = pd.Timestamp('2026-07-13')
-end_week = pd.Timestamp('2026-07-19')
+# 本周 7/20-7/24
+start_week = pd.Timestamp('2026-07-20')
+end_week = pd.Timestamp('2026-07-24')
 weekly_join = join_df[(join_df['入职日期'] >= start_week) & (join_df['入职日期'] <= end_week)]
 weekly_leave = leave_df[(leave_df['离职日期'] >= start_week) & (leave_df['离职日期'] <= end_week)]
 
 # ========== 更新 updateDate ==========
-data['updateDate'] = '2026年7月19日'
+data['updateDate'] = '2026年7月24日'
 
 # ========== 更新 analysisNotes ==========
 data['analysisNotes'] = [
@@ -99,15 +99,19 @@ for org_name in ['产研中心', '有度税智', '职能中台', '中小微事�
 # 十角兽
 sjs_ft = len(fulltime[fulltime['一级组织'] == '十角兽'])
 sjs_intern = len(df[(df['一级组织'] == '十角兽') & (df['用工类型'] == '实习')])
+sjs_jc = len(join_july[join_july['一级组织'] == '十角兽'])
+sjs_lc = len(leave_july[leave_july['一级组织'] == '十角兽'])
+sjs_wjc = len(weekly_join[weekly_join['一级组织'] == '十角兽'])
+sjs_wlc = len(weekly_leave[weekly_leave['一级组织'] == '十角兽'])
 org_stats['十角兽'] = {
     'startCount': sjs_ft + sjs_intern,
     'fullTime': sjs_ft,
     'intern': sjs_intern,
-    'joinCount': 0,
-    'leaveCount': 0,
-    'netChange': 0,
-    'weeklyJoinCount': 0,
-    'weeklyLeaveCount': 0,
+    'joinCount': sjs_jc,
+    'leaveCount': sjs_lc,
+    'netChange': sjs_jc - sjs_lc,
+    'weeklyJoinCount': sjs_wjc,
+    'weeklyLeaveCount': sjs_wlc,
 }
 
 for org_name, stats in org_stats.items():
@@ -247,6 +251,89 @@ for dept_name, count in dept_counts.items():
     })
 
 # 直属中小微事业群保持不变
+
+# ========== 更新 zxwSubDepartments children (分公司/办事处) 数据 ==========
+# 按四级组织统计7月入职/离职/本周
+def count_by_org4(df, col='四级组织'):
+    result = {}
+    for _, row in df.iterrows():
+        org4 = row[col]
+        if pd.isna(org4):
+            org4 = '未知'
+        result[org4] = result.get(org4, 0) + 1
+    return result
+
+join_by_org4 = count_by_org4(zxw_join_july)
+leave_by_org4 = count_by_org4(zxw_leave_july)
+wjoin_by_org4 = count_by_org4(zxw_wjoin)
+wleave_by_org4 = count_by_org4(zxw_wleave)
+
+# 更新各片区下的分公司/办事处
+for dept in data['zxwSubDepartments']:
+    if 'children' not in dept:
+        continue
+    for child in dept['children']:
+        if '直属' in child['name']:
+            continue
+        child_name = child['name']
+        jc = join_by_org4.get(child_name, 0)
+        lc = leave_by_org4.get(child_name, 0)
+        wjc = wjoin_by_org4.get(child_name, 0)
+        wlc = wleave_by_org4.get(child_name, 0)
+        for item in child['monthly']:
+            if item['month'] == '7月':
+                item.update({
+                    'joinCount': jc,
+                    'leaveCount': lc,
+                    'netChange': jc - lc,
+                    'weeklyJoinCount': wjc,
+                    'weeklyLeaveCount': wlc,
+                })
+                break
+
+# 更新 sjsData
+for item in data['sjsData']['monthly']:
+    if item['month'] == '7月':
+        item.update({
+            'startCount': sjs_ft + sjs_intern,
+            'fullTime': sjs_ft,
+            'intern': sjs_intern,
+            'joinCount': sjs_jc,
+            'leaveCount': sjs_lc,
+            'netChange': sjs_jc - sjs_lc,
+            'weeklyJoinCount': sjs_wjc,
+            'weeklyLeaveCount': sjs_wlc,
+        })
+        break
+
+# ========== 更新 sequence-ratio-data.json ==========
+# 客户成功 = 客户成功+实施岗位(不含客户成功经理)
+# 管理 = 管理序列
+# 官民比 = (客户成功 + 销售) / 管理
+cs_positions = ['客户成功专员', '客户成功主管', '高级客户成功专员', '实施专员', '实施主管']
+sales_positions = ['销售专员', '销售主管']
+mgmt_positions = ['城市负责人', '客户成功经理', '区域总经理', '助理总裁', '办事处经理', '副总裁', '客户成功总监']
+
+zxw_region_all = fulltime[(fulltime['一级组织'] == '中小微事业群') & (fulltime['二级组织'] == '区域团队')]
+cs_count = len(zxw_region_all[zxw_region_all['岗位'].isin(cs_positions)])
+sales_count = len(zxw_region_all[zxw_region_all['岗位'].isin(sales_positions)])
+mgmt_count = len(zxw_region_all[zxw_region_all['岗位'].isin(mgmt_positions)])
+ratio = round((cs_count + sales_count) / mgmt_count, 2) if mgmt_count > 0 else 0
+
+with open('src/data/sequence-ratio-data.json', 'r', encoding='utf-8') as f:
+    seq_data = json.load(f)
+
+seq_data['updateDate'] = data['updateDate']
+for item in seq_data['data']:
+    if item['month'] == '7月':
+        item['customerSuccess'] = cs_count
+        item['sales'] = sales_count
+        item['management'] = mgmt_count
+        item['guanMinRatio'] = ratio
+        break
+
+with open('src/data/sequence-ratio-data.json', 'w', encoding='utf-8') as f:
+    json.dump(seq_data, f, ensure_ascii=False, indent=2)
 
 # 保存
 with open('src/data/personnel-data.json', 'w', encoding='utf-8') as f:
