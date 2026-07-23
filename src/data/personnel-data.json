@@ -4,7 +4,7 @@
     {
       "month": "7月",
       "notes": [
-        "入职最多：中小微事业群（14人），其次为产研中心（6人）"
+        "入职最多：中小微事业群（15人），其次为产研中心（6人）"
       ]
     }
   ],
@@ -80,10 +80,10 @@
       "startCount": 540,
       "fullTime": 537,
       "intern": 3,
-      "joinCount": 26,
+      "joinCount": 24,
       "leaveCount": 14,
-      "netChange": 12,
-      "weeklyJoinCount": 3,
+      "netChange": 10,
+      "weeklyJoinCount": 1,
       "weeklyLeaveCount": 5
     }
   ],
