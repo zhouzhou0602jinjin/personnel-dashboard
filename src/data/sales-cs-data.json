@@ -1,29 +1,29 @@
 {
-  "updateDate": "2026年7月24日",
+  "updateDate": "2026年7月31日",
   "summary": {
-    "region": "全国",
-    "branch": "全国",
-    "salesSpecialist": 63,
+    "salesSpecialist": 62,
     "salesManager": 11,
     "csManager": 8,
     "csSupervisor": 16,
-    "csSpecialist": 103,
+    "csSpecialist": 100,
     "implementSupervisor": 1,
-    "implementSpecialist": 18
+    "implementSpecialist": 18,
+    "region": "全国",
+    "branch": "全国"
   },
   "regions": [
     {
       "regionName": "京津片区",
       "summary": {
-        "region": "京津片区",
-        "branch": "京津片区",
         "salesSpecialist": 2,
         "salesManager": 0,
         "csManager": 1,
         "csSupervisor": 1,
         "csSpecialist": 10,
         "implementSupervisor": 0,
-        "implementSpecialist": 0
+        "implementSpecialist": 0,
+        "region": "京津片区",
+        "branch": "京津片区"
       },
       "branches": [
         {
@@ -57,15 +57,15 @@
     {
       "regionName": "鲁鄂豫片区",
       "summary": {
-        "region": "鲁鄂豫片区",
-        "branch": "鲁鄂豫片区",
         "salesSpecialist": 8,
         "salesManager": 3,
         "csManager": 1,
         "csSupervisor": 7,
         "csSpecialist": 17,
         "implementSupervisor": 0,
-        "implementSpecialist": 4
+        "implementSpecialist": 4,
+        "region": "鲁鄂豫片区",
+        "branch": "鲁鄂豫片区"
       },
       "branches": [
         {
@@ -113,15 +113,15 @@
     {
       "regionName": "粤闽赣片区",
       "summary": {
-        "region": "粤闽赣片区",
-        "branch": "粤闽赣片区",
         "salesSpecialist": 9,
         "salesManager": 1,
         "csManager": 0,
         "csSupervisor": 1,
         "csSpecialist": 14,
         "implementSupervisor": 0,
-        "implementSpecialist": 0
+        "implementSpecialist": 0,
+        "region": "粤闽赣片区",
+        "branch": "粤闽赣片区"
       },
       "branches": [
         {
@@ -169,15 +169,15 @@
     {
       "regionName": "沪浙片区",
       "summary": {
-        "region": "沪浙片区",
-        "branch": "沪浙片区",
         "salesSpecialist": 10,
         "salesManager": 1,
         "csManager": 1,
         "csSupervisor": 0,
         "csSpecialist": 11,
         "implementSupervisor": 0,
-        "implementSpecialist": 0
+        "implementSpecialist": 0,
+        "region": "沪浙片区",
+        "branch": "沪浙片区"
       },
       "branches": [
         {
@@ -211,15 +211,15 @@
     {
       "regionName": "苏皖片区",
       "summary": {
-        "region": "苏皖片区",
-        "branch": "苏皖片区",
         "salesSpecialist": 13,
         "salesManager": 2,
         "csManager": 2,
         "csSupervisor": 2,
-        "csSpecialist": 14,
+        "csSpecialist": 12,
         "implementSupervisor": 1,
-        "implementSpecialist": 12
+        "implementSpecialist": 12,
+        "region": "苏皖片区",
+        "branch": "苏皖片区"
       },
       "branches": [
         {
@@ -231,7 +231,7 @@
           "salesManager": 1,
           "csManager": 1,
           "csSupervisor": 0,
-          "csSpecialist": 7,
+          "csSpecialist": 6,
           "implementSupervisor": 1,
           "implementSpecialist": 6
         },
@@ -244,7 +244,7 @@
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 1,
-          "csSpecialist": 3,
+          "csSpecialist": 2,
           "implementSupervisor": 0,
           "implementSpecialist": 3
         },
@@ -266,15 +266,15 @@
     {
       "regionName": "辽蒙片区",
       "summary": {
-        "region": "辽蒙片区",
-        "branch": "辽蒙片区",
-        "salesSpecialist": 4,
+        "salesSpecialist": 3,
         "salesManager": 1,
         "csManager": 1,
         "csSupervisor": 1,
         "csSpecialist": 8,
         "implementSupervisor": 0,
-        "implementSpecialist": 0
+        "implementSpecialist": 0,
+        "region": "辽蒙片区",
+        "branch": "辽蒙片区"
       },
       "branches": [
         {
@@ -282,7 +282,7 @@
           "cities": [
             "呼和浩特"
           ],
-          "salesSpecialist": 3,
+          "salesSpecialist": 2,
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 0,
@@ -308,15 +308,15 @@
     {
       "regionName": "直辖分公司",
       "summary": {
-        "region": "直辖分公司",
-        "branch": "直辖分公司",
         "salesSpecialist": 17,
         "salesManager": 3,
         "csManager": 2,
         "csSupervisor": 4,
-        "csSpecialist": 29,
+        "csSpecialist": 28,
         "implementSupervisor": 0,
-        "implementSpecialist": 2
+        "implementSpecialist": 2,
+        "region": "直辖分公司",
+        "branch": "直辖分公司"
       },
       "branches": [
         {
@@ -338,7 +338,7 @@
           "cities": [
             "成都"
           ],
-          "salesSpecialist": 3,
+          "salesSpecialist": 2,
           "salesManager": 1,
           "csManager": 0,
           "csSupervisor": 1,
@@ -355,7 +355,7 @@
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 1,
-          "csSpecialist": 3,
+          "csSpecialist": 2,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         },
@@ -364,7 +364,7 @@
           "cities": [
             "太原"
           ],
-          "salesSpecialist": 2,
+          "salesSpecialist": 3,
           "salesManager": 1,
           "csManager": 1,
           "csSupervisor": 0,

@@ -122,7 +122,7 @@ data['analysisNotes'] = [
     {
         "month": "7月",
         "notes": [
-            f"入职最多：中小微事业群（{zxw_jc}人），其次为产研中心（{len(join_july[join_july['一级组织'] == '产研中心'])}人）"
+            f"入职最多：中小微事业群（{zxw_jc}人），其次为产研中心（{len(join_july[join_july['一级组织'] == '产研中心'])}人），7月为校招入职月"
         ]
     }
 ]
@@ -337,6 +337,64 @@ for item in seq_data['data']:
 
 with open('src/data/sequence-ratio-data.json', 'w', encoding='utf-8') as f:
     json.dump(seq_data, f, ensure_ascii=False, indent=2)
+
+# ========== 更新 sales-cs-data.json ==========
+with open('src/data/sales-cs-data.json', 'r', encoding='utf-8') as f:
+    sc_data = json.load(f)
+
+sc_data['updateDate'] = data['updateDate']
+
+# 区域团队人员
+zxw_ft_all = fulltime[fulltime['一级组织'] == '中小微事业群']
+regional = zxw_ft_all[zxw_ft_all['二级组织'] == '区域团队']
+zhixia = zxw_ft_all[zxw_ft_all['三级组织'] == '直辖分公司']
+
+# 岗位映射
+pos_map = {
+    '销售专员': 'salesSpecialist',
+    '销售主管': 'salesManager',
+    '客户成功经理': 'csManager',
+    '客户成功主管': 'csSupervisor',
+    '客户成功专员': 'csSpecialist',
+    '实施主管': 'implementSupervisor',
+    '实施专员': 'implementSpecialist',
+}
+
+def count_positions(df):
+    counts = {v: 0 for v in pos_map.values()}
+    for _, row in df.iterrows():
+        pos = row['岗位']
+        if pos in pos_map:
+            counts[pos_map[pos]] += 1
+    return counts
+
+# 全国总计
+national = count_positions(zxw_ft_all[zxw_ft_all['二级组织'].isin(['区域团队']) | (zxw_ft_all['三级组织'] == '直辖分公司')])
+national['region'] = '全国'
+national['branch'] = '全国'
+sc_data['summary'] = national
+
+# 更新各片区
+for region in sc_data['regions']:
+    rname = region['regionName']
+    if rname == '直辖分公司':
+        region_df = zhixia
+    else:
+        region_df = regional[regional['三级组织'] == rname]
+    
+    reg_summary = count_positions(region_df)
+    reg_summary['region'] = rname
+    reg_summary['branch'] = rname
+    region['summary'] = reg_summary
+    
+    for branch in region['branches']:
+        bname = branch['branch']
+        branch_df = region_df[region_df['四级组织'] == bname]
+        counts = count_positions(branch_df)
+        branch.update(counts)
+
+with open('src/data/sales-cs-data.json', 'w', encoding='utf-8') as f:
+    json.dump(sc_data, f, ensure_ascii=False, indent=2)
 
 # 保存
 with open('src/data/personnel-data.json', 'w', encoding='utf-8') as f:
