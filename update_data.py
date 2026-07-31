@@ -19,14 +19,14 @@ fulltime = df[df['用工类型'] == '全职']
 join_july = join_df[(join_df['入职日期'] >= '2026-07-01') & (join_df['入职日期'] <= '2026-07-31')]
 leave_july = leave_df[(leave_df['离职日期'] >= '2026-07-01') & (leave_df['离职日期'] <= '2026-07-31')]
 
-# 本周 7/20-7/24
-start_week = pd.Timestamp('2026-07-20')
-end_week = pd.Timestamp('2026-07-24')
+# 本周 7/27-7/31
+start_week = pd.Timestamp('2026-07-27')
+end_week = pd.Timestamp('2026-07-31')
 weekly_join = join_df[(join_df['入职日期'] >= start_week) & (join_df['入职日期'] <= end_week)]
 weekly_leave = leave_df[(leave_df['离职日期'] >= start_week) & (leave_df['离职日期'] <= end_week)]
 
 # ========== 更新 updateDate ==========
-data['updateDate'] = '2026年7月24日'
+data['updateDate'] = '2026年7月31日'
 
 # ========== 更新 analysisNotes ==========
 # 稍后在 zxw_jc 定义后更新
