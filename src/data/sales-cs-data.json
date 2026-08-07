@@ -1,11 +1,11 @@
 {
-  "updateDate": "2026年7月31日",
+  "updateDate": "2026年8月7日",
   "summary": {
-    "salesSpecialist": 62,
-    "salesManager": 11,
+    "salesSpecialist": 60,
+    "salesManager": 10,
     "csManager": 8,
     "csSupervisor": 16,
-    "csSpecialist": 100,
+    "csSpecialist": 102,
     "implementSupervisor": 1,
     "implementSpecialist": 18,
     "region": "全国",
@@ -19,7 +19,7 @@
         "salesManager": 0,
         "csManager": 1,
         "csSupervisor": 1,
-        "csSpecialist": 10,
+        "csSpecialist": 11,
         "implementSupervisor": 0,
         "implementSpecialist": 0,
         "region": "京津片区",
@@ -48,7 +48,7 @@
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 0,
-          "csSpecialist": 3,
+          "csSpecialist": 4,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         }
@@ -211,11 +211,11 @@
     {
       "regionName": "苏皖片区",
       "summary": {
-        "salesSpecialist": 13,
+        "salesSpecialist": 12,
         "salesManager": 2,
         "csManager": 2,
         "csSupervisor": 2,
-        "csSpecialist": 12,
+        "csSpecialist": 13,
         "implementSupervisor": 1,
         "implementSpecialist": 12,
         "region": "苏皖片区",
@@ -227,11 +227,11 @@
           "cities": [
             "南京"
           ],
-          "salesSpecialist": 8,
+          "salesSpecialist": 7,
           "salesManager": 1,
           "csManager": 1,
           "csSupervisor": 0,
-          "csSpecialist": 6,
+          "csSpecialist": 7,
           "implementSupervisor": 1,
           "implementSpecialist": 6
         },
@@ -266,7 +266,7 @@
     {
       "regionName": "辽蒙片区",
       "summary": {
-        "salesSpecialist": 3,
+        "salesSpecialist": 2,
         "salesManager": 1,
         "csManager": 1,
         "csSupervisor": 1,
@@ -282,7 +282,7 @@
           "cities": [
             "呼和浩特"
           ],
-          "salesSpecialist": 2,
+          "salesSpecialist": 1,
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 0,
@@ -309,7 +309,7 @@
       "regionName": "直辖分公司",
       "summary": {
         "salesSpecialist": 17,
-        "salesManager": 3,
+        "salesManager": 2,
         "csManager": 2,
         "csSupervisor": 4,
         "csSpecialist": 28,
@@ -339,7 +339,7 @@
             "成都"
           ],
           "salesSpecialist": 2,
-          "salesManager": 1,
+          "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 1,
           "csSpecialist": 7,

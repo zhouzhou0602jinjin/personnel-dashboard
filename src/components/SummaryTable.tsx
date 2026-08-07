@@ -39,7 +39,7 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
   const months = totalMonthly.map(m => m.month);
 
   const computedTotal = computeTotalFromDepartments
-    ? departments.map((_, idx) => sumMonthly(departments, idx))
+    ? totalMonthly.map((_, idx) => sumMonthly(departments, idx))
     : totalMonthly;
   const currentTotal = computedTotal[selectedMonthIdx];
 

@@ -26,7 +26,6 @@ export default function Home() {
     dataset.organizations,
     dataset.companyTotal[dataset.companyTotal.length - 1],
     getAnalysisNotes(latestMonth),
-    true,
   );
 
   const zxwSummary = calcAnalysisSummary(
