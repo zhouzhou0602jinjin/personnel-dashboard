@@ -19,14 +19,14 @@ fulltime = df[df['用工类型'] == '全职']
 join_aug = join_df[(join_df['入职日期'] >= '2026-08-01') & (join_df['入职日期'] <= '2026-08-31')]
 leave_aug = leave_df[(leave_df['离职日期'] >= '2026-08-01') & (leave_df['离职日期'] <= '2026-08-31')]
 
-# 本周 8/3-8/7
-start_week = pd.Timestamp('2026-08-03')
-end_week = pd.Timestamp('2026-08-07')
+# 本周 8/10-8/14
+start_week = pd.Timestamp('2026-08-10')
+end_week = pd.Timestamp('2026-08-14')
 weekly_join = join_df[(join_df['入职日期'] >= start_week) & (join_df['入职日期'] <= end_week)]
 weekly_leave = leave_df[(leave_df['离职日期'] >= start_week) & (leave_df['离职日期'] <= end_week)]
 
 # ========== 更新 updateDate ==========
-data['updateDate'] = '2026年8月7日'
+data['updateDate'] = '2026年8月14日'
 
 # ========== 辅助函数 ==========
 def add_or_update_monthly(org_list, month, updates):

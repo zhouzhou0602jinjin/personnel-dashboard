@@ -1,11 +1,11 @@
 {
-  "updateDate": "2026年8月7日",
+  "updateDate": "2026年8月14日",
   "summary": {
-    "salesSpecialist": 60,
+    "salesSpecialist": 61,
     "salesManager": 10,
     "csManager": 8,
     "csSupervisor": 16,
-    "csSpecialist": 102,
+    "csSpecialist": 104,
     "implementSupervisor": 1,
     "implementSpecialist": 18,
     "region": "全国",
@@ -266,11 +266,11 @@
     {
       "regionName": "辽蒙片区",
       "summary": {
-        "salesSpecialist": 2,
+        "salesSpecialist": 3,
         "salesManager": 1,
         "csManager": 1,
         "csSupervisor": 1,
-        "csSpecialist": 8,
+        "csSpecialist": 9,
         "implementSupervisor": 0,
         "implementSpecialist": 0,
         "region": "辽蒙片区",
@@ -282,11 +282,11 @@
           "cities": [
             "呼和浩特"
           ],
-          "salesSpecialist": 1,
+          "salesSpecialist": 2,
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 0,
-          "csSpecialist": 3,
+          "csSpecialist": 4,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         },
@@ -312,7 +312,7 @@
         "salesManager": 2,
         "csManager": 2,
         "csSupervisor": 4,
-        "csSpecialist": 28,
+        "csSpecialist": 29,
         "implementSupervisor": 0,
         "implementSpecialist": 2,
         "region": "直辖分公司",
@@ -381,7 +381,7 @@
           "salesManager": 1,
           "csManager": 0,
           "csSupervisor": 0,
-          "csSpecialist": 2,
+          "csSpecialist": 3,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         },
