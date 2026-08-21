@@ -1,13 +1,13 @@
 {
-  "updateDate": "2026年8月14日",
+  "updateDate": "2026年8月23日",
   "summary": {
-    "salesSpecialist": 61,
+    "salesSpecialist": 62,
     "salesManager": 10,
     "csManager": 8,
     "csSupervisor": 16,
-    "csSpecialist": 104,
+    "csSpecialist": 103,
     "implementSupervisor": 1,
-    "implementSpecialist": 18,
+    "implementSpecialist": 17,
     "region": "全国",
     "branch": "全国"
   },
@@ -19,7 +19,7 @@
         "salesManager": 0,
         "csManager": 1,
         "csSupervisor": 1,
-        "csSpecialist": 11,
+        "csSpecialist": 10,
         "implementSupervisor": 0,
         "implementSpecialist": 0,
         "region": "京津片区",
@@ -35,7 +35,7 @@
           "salesManager": 0,
           "csManager": 1,
           "csSupervisor": 1,
-          "csSpecialist": 7,
+          "csSpecialist": 6,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         },
@@ -63,7 +63,7 @@
         "csSupervisor": 7,
         "csSpecialist": 17,
         "implementSupervisor": 0,
-        "implementSpecialist": 4,
+        "implementSpecialist": 3,
         "region": "鲁鄂豫片区",
         "branch": "鲁鄂豫片区"
       },
@@ -106,7 +106,7 @@
           "csSupervisor": 1,
           "csSpecialist": 1,
           "implementSupervisor": 0,
-          "implementSpecialist": 4
+          "implementSpecialist": 3
         }
       ]
     },
@@ -211,7 +211,7 @@
     {
       "regionName": "苏皖片区",
       "summary": {
-        "salesSpecialist": 12,
+        "salesSpecialist": 13,
         "salesManager": 2,
         "csManager": 2,
         "csSupervisor": 2,
@@ -227,7 +227,7 @@
           "cities": [
             "南京"
           ],
-          "salesSpecialist": 7,
+          "salesSpecialist": 8,
           "salesManager": 1,
           "csManager": 1,
           "csSupervisor": 0,

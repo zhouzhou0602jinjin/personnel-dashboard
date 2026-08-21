@@ -1,5 +1,5 @@
 {
-  "updateDate": "2026年8月14日",
+  "updateDate": "2026年8月23日",
   "analysisNotes": [],
   "companyTotal": [
     {
@@ -81,14 +81,14 @@
     },
     {
       "month": "8月",
-      "startCount": 510,
-      "fullTime": 505,
+      "startCount": 499,
+      "fullTime": 494,
       "intern": 5,
-      "joinCount": 13,
-      "leaveCount": 7,
-      "netChange": 6,
-      "weeklyJoinCount": 4,
-      "weeklyLeaveCount": 0
+      "joinCount": 15,
+      "leaveCount": 20,
+      "netChange": -5,
+      "weeklyJoinCount": 2,
+      "weeklyLeaveCount": 13
     }
   ],
   "organizations": [
@@ -174,14 +174,14 @@
         },
         {
           "month": "8月",
-          "startCount": 119,
-          "fullTime": 119,
+          "startCount": 109,
+          "fullTime": 109,
           "intern": 0,
           "joinCount": 0,
-          "leaveCount": 0,
-          "netChange": 0,
+          "leaveCount": 10,
+          "netChange": -10,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 0
+          "weeklyLeaveCount": 10
         }
       ]
     },
@@ -453,14 +453,14 @@
         },
         {
           "month": "8月",
-          "startCount": 307,
-          "fullTime": 307,
+          "startCount": 306,
+          "fullTime": 306,
           "intern": 0,
-          "joinCount": 9,
-          "leaveCount": 6,
-          "netChange": 3,
-          "weeklyJoinCount": 4,
-          "weeklyLeaveCount": 0
+          "joinCount": 11,
+          "leaveCount": 9,
+          "netChange": 2,
+          "weeklyJoinCount": 2,
+          "weeklyLeaveCount": 3
         }
       ]
     },
@@ -824,14 +824,14 @@
     },
     {
       "month": "8月",
-      "startCount": 307,
-      "fullTime": 307,
+      "startCount": 306,
+      "fullTime": 306,
       "intern": 0,
-      "joinCount": 9,
-      "leaveCount": 6,
-      "netChange": 3,
-      "weeklyJoinCount": 4,
-      "weeklyLeaveCount": 0
+      "joinCount": 11,
+      "leaveCount": 9,
+      "netChange": 2,
+      "weeklyJoinCount": 2,
+      "weeklyLeaveCount": 3
     }
   ],
   "zxwSubDepartments": [
@@ -917,13 +917,13 @@
         },
         {
           "month": "8月",
-          "startCount": 17,
-          "fullTime": 17,
+          "startCount": 16,
+          "fullTime": 16,
           "joinCount": 1,
-          "leaveCount": 0,
-          "netChange": 1,
+          "leaveCount": 1,
+          "netChange": 0,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 0,
+          "weeklyLeaveCount": 1,
           "intern": 0
         }
       ],
@@ -1011,12 +1011,12 @@
             {
               "month": "8月",
               "joinCount": 0,
-              "leaveCount": 0,
-              "netChange": 0,
+              "leaveCount": 1,
+              "netChange": -1,
               "weeklyJoinCount": 0,
-              "weeklyLeaveCount": 0,
-              "startCount": 11,
-              "fullTime": 11,
+              "weeklyLeaveCount": 1,
+              "startCount": 10,
+              "fullTime": 10,
               "intern": 0
             }
           ]
@@ -1280,13 +1280,13 @@
         },
         {
           "month": "8月",
-          "startCount": 44,
-          "fullTime": 44,
+          "startCount": 43,
+          "fullTime": 43,
           "joinCount": 0,
-          "leaveCount": 0,
-          "netChange": 0,
+          "leaveCount": 1,
+          "netChange": -1,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 0,
+          "weeklyLeaveCount": 1,
           "intern": 0
         }
       ],
@@ -1560,12 +1560,12 @@
             {
               "month": "8月",
               "joinCount": 0,
-              "leaveCount": 0,
-              "netChange": 0,
+              "leaveCount": 1,
+              "netChange": -1,
               "weeklyJoinCount": 0,
-              "weeklyLeaveCount": 0,
-              "startCount": 10,
-              "fullTime": 10,
+              "weeklyLeaveCount": 1,
+              "startCount": 9,
+              "fullTime": 9,
               "intern": 0
             }
           ]
@@ -1738,11 +1738,11 @@
           "month": "8月",
           "startCount": 29,
           "fullTime": 29,
-          "joinCount": 0,
-          "leaveCount": 0,
+          "joinCount": 1,
+          "leaveCount": 1,
           "netChange": 0,
-          "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 0,
+          "weeklyJoinCount": 1,
+          "weeklyLeaveCount": 1,
           "intern": 0
         }
       ],
@@ -1922,11 +1922,11 @@
             },
             {
               "month": "8月",
-              "joinCount": 0,
-              "leaveCount": 0,
+              "joinCount": 1,
+              "leaveCount": 1,
               "netChange": 0,
-              "weeklyJoinCount": 0,
-              "weeklyLeaveCount": 0,
+              "weeklyJoinCount": 1,
+              "weeklyLeaveCount": 1,
               "startCount": 15,
               "fullTime": 15,
               "intern": 0
@@ -2555,12 +2555,12 @@
         },
         {
           "month": "8月",
-          "startCount": 47,
-          "fullTime": 47,
-          "joinCount": 1,
+          "startCount": 48,
+          "fullTime": 48,
+          "joinCount": 2,
           "leaveCount": 2,
-          "netChange": -1,
-          "weeklyJoinCount": 0,
+          "netChange": 0,
+          "weeklyJoinCount": 1,
           "weeklyLeaveCount": 0,
           "intern": 0
         }
@@ -2648,13 +2648,13 @@
             },
             {
               "month": "8月",
-              "joinCount": 0,
+              "joinCount": 1,
               "leaveCount": 1,
-              "netChange": -1,
-              "weeklyJoinCount": 0,
+              "netChange": 0,
+              "weeklyJoinCount": 1,
               "weeklyLeaveCount": 0,
-              "startCount": 23,
-              "fullTime": 23,
+              "startCount": 24,
+              "fullTime": 24,
               "intern": 0
             }
           ]
@@ -3016,7 +3016,7 @@
           "joinCount": 2,
           "leaveCount": 1,
           "netChange": 1,
-          "weeklyJoinCount": 2,
+          "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0,
           "intern": 0
         }
@@ -3107,7 +3107,7 @@
               "joinCount": 2,
               "leaveCount": 1,
               "netChange": 1,
-              "weeklyJoinCount": 2,
+              "weeklyJoinCount": 0,
               "weeklyLeaveCount": 0,
               "startCount": 7,
               "fullTime": 7,
@@ -3379,7 +3379,7 @@
           "joinCount": 2,
           "leaveCount": 2,
           "netChange": 0,
-          "weeklyJoinCount": 1,
+          "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0,
           "intern": 0
         }
@@ -3749,7 +3749,7 @@
               "joinCount": 1,
               "leaveCount": 0,
               "netChange": 1,
-              "weeklyJoinCount": 1,
+              "weeklyJoinCount": 0,
               "weeklyLeaveCount": 0,
               "startCount": 4,
               "fullTime": 4,
@@ -4218,7 +4218,7 @@
           "joinCount": 1,
           "leaveCount": 0,
           "netChange": 1,
-          "weeklyJoinCount": 1,
+          "weeklyJoinCount": 0,
           "weeklyLeaveCount": 0,
           "intern": 0
         }
@@ -4861,7 +4861,7 @@
         "leaveCount": 2,
         "netChange": 0,
         "weeklyJoinCount": 0,
-        "weeklyLeaveCount": 1
+        "weeklyLeaveCount": 0
       }
     ]
   }
