@@ -1,11 +1,11 @@
 {
-  "updateDate": "2026年8月23日",
+  "updateDate": "2026年8月28日",
   "summary": {
     "salesSpecialist": 62,
     "salesManager": 10,
     "csManager": 8,
-    "csSupervisor": 16,
-    "csSpecialist": 103,
+    "csSupervisor": 15,
+    "csSpecialist": 104,
     "implementSupervisor": 1,
     "implementSpecialist": 17,
     "region": "全国",
@@ -18,7 +18,7 @@
         "salesSpecialist": 2,
         "salesManager": 0,
         "csManager": 1,
-        "csSupervisor": 1,
+        "csSupervisor": 0,
         "csSpecialist": 10,
         "implementSupervisor": 0,
         "implementSpecialist": 0,
@@ -34,7 +34,7 @@
           "salesSpecialist": 2,
           "salesManager": 0,
           "csManager": 1,
-          "csSupervisor": 1,
+          "csSupervisor": 0,
           "csSpecialist": 6,
           "implementSupervisor": 0,
           "implementSpecialist": 0
@@ -113,7 +113,7 @@
     {
       "regionName": "粤闽赣片区",
       "summary": {
-        "salesSpecialist": 9,
+        "salesSpecialist": 10,
         "salesManager": 1,
         "csManager": 0,
         "csSupervisor": 1,
@@ -129,7 +129,7 @@
           "cities": [
             "厦门"
           ],
-          "salesSpecialist": 1,
+          "salesSpecialist": 2,
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 0,
@@ -169,7 +169,7 @@
     {
       "regionName": "沪浙片区",
       "summary": {
-        "salesSpecialist": 10,
+        "salesSpecialist": 9,
         "salesManager": 1,
         "csManager": 1,
         "csSupervisor": 0,
@@ -185,7 +185,7 @@
           "cities": [
             "上海"
           ],
-          "salesSpecialist": 6,
+          "salesSpecialist": 5,
           "salesManager": 1,
           "csManager": 1,
           "csSupervisor": 0,
@@ -215,7 +215,7 @@
         "salesManager": 2,
         "csManager": 2,
         "csSupervisor": 2,
-        "csSpecialist": 13,
+        "csSpecialist": 14,
         "implementSupervisor": 1,
         "implementSpecialist": 12,
         "region": "苏皖片区",
@@ -231,7 +231,7 @@
           "salesManager": 1,
           "csManager": 1,
           "csSupervisor": 0,
-          "csSpecialist": 7,
+          "csSpecialist": 8,
           "implementSupervisor": 1,
           "implementSpecialist": 6
         },
