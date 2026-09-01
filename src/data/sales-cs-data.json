@@ -1,11 +1,11 @@
 {
-  "updateDate": "2026年8月28日",
+  "updateDate": "2026年8月31日",
   "summary": {
-    "salesSpecialist": 62,
-    "salesManager": 10,
+    "salesSpecialist": 64,
+    "salesManager": 9,
     "csManager": 8,
     "csSupervisor": 15,
-    "csSpecialist": 104,
+    "csSpecialist": 105,
     "implementSupervisor": 1,
     "implementSpecialist": 17,
     "region": "全国",
@@ -15,11 +15,11 @@
     {
       "regionName": "京津片区",
       "summary": {
-        "salesSpecialist": 2,
+        "salesSpecialist": 3,
         "salesManager": 0,
         "csManager": 1,
         "csSupervisor": 0,
-        "csSpecialist": 10,
+        "csSpecialist": 11,
         "implementSupervisor": 0,
         "implementSpecialist": 0,
         "region": "京津片区",
@@ -31,11 +31,11 @@
           "cities": [
             "北京"
           ],
-          "salesSpecialist": 2,
+          "salesSpecialist": 3,
           "salesManager": 0,
           "csManager": 1,
           "csSupervisor": 0,
-          "csSpecialist": 6,
+          "csSpecialist": 7,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         },
@@ -58,7 +58,7 @@
       "regionName": "鲁鄂豫片区",
       "summary": {
         "salesSpecialist": 8,
-        "salesManager": 3,
+        "salesManager": 2,
         "csManager": 1,
         "csSupervisor": 7,
         "csSpecialist": 17,
@@ -88,7 +88,7 @@
             "郑州"
           ],
           "salesSpecialist": 4,
-          "salesManager": 2,
+          "salesManager": 1,
           "csManager": 1,
           "csSupervisor": 3,
           "csSpecialist": 8,
@@ -211,7 +211,7 @@
     {
       "regionName": "苏皖片区",
       "summary": {
-        "salesSpecialist": 13,
+        "salesSpecialist": 14,
         "salesManager": 2,
         "csManager": 2,
         "csSupervisor": 2,
@@ -240,7 +240,7 @@
           "cities": [
             "合肥"
           ],
-          "salesSpecialist": 1,
+          "salesSpecialist": 2,
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 1,
