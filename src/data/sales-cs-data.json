@@ -1,11 +1,11 @@
 {
-  "updateDate": "2026年8月31日",
+  "updateDate": "2026年9月4日",
   "summary": {
-    "salesSpecialist": 64,
-    "salesManager": 9,
+    "salesSpecialist": 65,
+    "salesManager": 10,
     "csManager": 8,
     "csSupervisor": 15,
-    "csSpecialist": 105,
+    "csSpecialist": 106,
     "implementSupervisor": 1,
     "implementSpecialist": 17,
     "region": "全国",
@@ -19,7 +19,7 @@
         "salesManager": 0,
         "csManager": 1,
         "csSupervisor": 0,
-        "csSpecialist": 11,
+        "csSpecialist": 12,
         "implementSupervisor": 0,
         "implementSpecialist": 0,
         "region": "京津片区",
@@ -35,7 +35,7 @@
           "salesManager": 0,
           "csManager": 1,
           "csSupervisor": 0,
-          "csSpecialist": 7,
+          "csSpecialist": 8,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         },
@@ -61,7 +61,7 @@
         "salesManager": 2,
         "csManager": 1,
         "csSupervisor": 7,
-        "csSpecialist": 17,
+        "csSpecialist": 16,
         "implementSupervisor": 0,
         "implementSpecialist": 3,
         "region": "鲁鄂豫片区",
@@ -91,7 +91,7 @@
           "salesManager": 1,
           "csManager": 1,
           "csSupervisor": 3,
-          "csSpecialist": 8,
+          "csSpecialist": 7,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         },
@@ -266,7 +266,7 @@
     {
       "regionName": "辽蒙片区",
       "summary": {
-        "salesSpecialist": 3,
+        "salesSpecialist": 4,
         "salesManager": 1,
         "csManager": 1,
         "csSupervisor": 1,
@@ -282,7 +282,7 @@
           "cities": [
             "呼和浩特"
           ],
-          "salesSpecialist": 2,
+          "salesSpecialist": 3,
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 0,
@@ -309,10 +309,10 @@
       "regionName": "直辖分公司",
       "summary": {
         "salesSpecialist": 17,
-        "salesManager": 2,
+        "salesManager": 3,
         "csManager": 2,
         "csSupervisor": 4,
-        "csSpecialist": 29,
+        "csSpecialist": 30,
         "implementSupervisor": 0,
         "implementSpecialist": 2,
         "region": "直辖分公司",
@@ -339,10 +339,10 @@
             "成都"
           ],
           "salesSpecialist": 2,
-          "salesManager": 0,
+          "salesManager": 1,
           "csManager": 0,
           "csSupervisor": 1,
-          "csSpecialist": 7,
+          "csSpecialist": 6,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         },
@@ -355,7 +355,7 @@
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 1,
-          "csSpecialist": 2,
+          "csSpecialist": 3,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         },
@@ -394,7 +394,7 @@
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 1,
-          "csSpecialist": 6,
+          "csSpecialist": 7,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         },

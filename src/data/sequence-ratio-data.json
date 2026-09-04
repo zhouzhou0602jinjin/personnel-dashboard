@@ -1,5 +1,5 @@
 {
-  "updateDate": "2026年8月31日",
+  "updateDate": "2026年9月4日",
   "months": [
     "202601",
     "202602",
@@ -65,6 +65,13 @@
       "sales": 70,
       "management": 31,
       "guanMinRatio": 6.68
+    },
+    {
+      "month": "9月",
+      "customerSuccess": 139,
+      "sales": 75,
+      "management": 31,
+      "guanMinRatio": 6.9
     }
   ]
 }

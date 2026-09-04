@@ -15,18 +15,18 @@ leave_df['离职日期'] = pd.to_datetime(leave_df['离职日期'])
 
 fulltime = df[df['用工类型'] == '全职']
 
-# 8月累计
-join_aug = join_df[(join_df['入职日期'] >= '2026-08-01') & (join_df['入职日期'] <= '2026-08-31')]
-leave_aug = leave_df[(leave_df['离职日期'] >= '2026-08-01') & (leave_df['离职日期'] <= '2026-08-31')]
+# 9月累计
+join_mon = join_df[(join_df['入职日期'] >= '2026-09-01') & (join_df['入职日期'] <= '2026-09-30')]
+leave_mon = leave_df[(leave_df['离职日期'] >= '2026-09-01') & (leave_df['离职日期'] <= '2026-09-30')]
 
-# 本周 8/31
-start_week = pd.Timestamp('2026-08-31')
-end_week = pd.Timestamp('2026-08-31')
+# 本周 9/1-9/4
+start_week = pd.Timestamp('2026-09-01')
+end_week = pd.Timestamp('2026-09-04')
 weekly_join = join_df[(join_df['入职日期'] >= start_week) & (join_df['入职日期'] <= end_week)]
 weekly_leave = leave_df[(leave_df['离职日期'] >= start_week) & (leave_df['离职日期'] <= end_week)]
 
 # ========== 更新 updateDate ==========
-data['updateDate'] = '2026年8月31日'
+data['updateDate'] = '2026年9月4日'
 
 # ========== 辅助函数 ==========
 def add_or_update_monthly(org_list, month, updates):
@@ -54,12 +54,12 @@ def update_zxw_dept(dept_name, month, updates):
 # ========== Company Total (不含SJS) ==========
 total_ft = len(fulltime[fulltime['一级组织'] != '十角兽'])
 total_intern = len(df[(df['一级组织'] != '十角兽') & (df['用工类型'] == '实习')])
-total_jc = len(join_aug[join_aug['一级组织'] != '十角兽'])
-total_lc = len(leave_aug[leave_aug['一级组织'] != '十角兽'])
+total_jc = len(join_mon[join_mon['一级组织'] != '十角兽'])
+total_lc = len(leave_mon[leave_mon['一级组织'] != '十角兽'])
 total_wjc = len(weekly_join[weekly_join['一级组织'] != '十角兽'])
 total_wlc = len(weekly_leave[weekly_leave['一级组织'] != '十角兽'])
 
-add_or_update_monthly(data['companyTotal'], '8月', {
+add_or_update_monthly(data['companyTotal'], '9月', {
     'startCount': total_ft + total_intern,
     'fullTime': total_ft,
     'intern': total_intern,
@@ -75,8 +75,8 @@ org_stats = {}
 for org_name in ['产研中心', '有度税智', '职能中台', '中小微事业群', '数科中心', '总经办', '福鹿事业部']:
     ft = len(fulltime[fulltime['一级组织'] == org_name])
     intern = len(df[(df['一级组织'] == org_name) & (df['用工类型'] == '实习')])
-    jc = len(join_aug[join_aug['一级组织'] == org_name])
-    lc = len(leave_aug[leave_aug['一级组织'] == org_name])
+    jc = len(join_mon[join_mon['一级组织'] == org_name])
+    lc = len(leave_mon[leave_mon['一级组织'] == org_name])
     wjc = len(weekly_join[weekly_join['一级组织'] == org_name])
     wlc = len(weekly_leave[weekly_leave['一级组织'] == org_name])
     org_stats[org_name] = {
@@ -93,8 +93,8 @@ for org_name in ['产研中心', '有度税智', '职能中台', '中小微事�
 # 十角兽
 sjs_ft = len(fulltime[fulltime['一级组织'] == '十角兽'])
 sjs_intern = len(df[(df['一级组织'] == '十角兽') & (df['用工类型'] == '实习')])
-sjs_jc = len(join_aug[join_aug['一级组织'] == '十角兽'])
-sjs_lc = len(leave_aug[leave_aug['一级组织'] == '十角兽'])
+sjs_jc = len(join_mon[join_mon['一级组织'] == '十角兽'])
+sjs_lc = len(leave_mon[leave_mon['一级组织'] == '十角兽'])
 sjs_wjc = len(weekly_join[weekly_join['一级组织'] == '十角兽'])
 sjs_wlc = len(weekly_leave[weekly_leave['一级组织'] == '十角兽'])
 org_stats['十角兽'] = {
@@ -109,18 +109,18 @@ org_stats['十角兽'] = {
 }
 
 for org_name, stats in org_stats.items():
-    update_org_monthly(org_name, '8月', stats)
+    update_org_monthly(org_name, '9月', stats)
 
 # ========== zxwSubTotal ==========
 zxw_ft = len(fulltime[fulltime['一级组织'] == '中小微事业群'])
-zxw_jc = len(join_aug[join_aug['一级组织'] == '中小微事业群'])
-zxw_lc = len(leave_aug[leave_aug['一级组织'] == '中小微事业群'])
+zxw_jc = len(join_mon[join_mon['一级组织'] == '中小微事业群'])
+zxw_lc = len(leave_mon[leave_mon['一级组织'] == '中小微事业群'])
 zxw_wjc = len(weekly_join[weekly_join['一级组织'] == '中小微事业群'])
 zxw_wlc = len(weekly_leave[weekly_leave['一级组织'] == '中小微事业群'])
 
 # 更新 analysisNotes - 8月不追加备注
 
-add_or_update_monthly(data['zxwSubTotal'], '8月', {
+add_or_update_monthly(data['zxwSubTotal'], '9月', {
     'startCount': zxw_ft,
     'fullTime': zxw_ft,
     'intern': 0,
@@ -160,14 +160,14 @@ dept_counts['直属区域团队'] = regional_total - piandxia_total
 for dept in data['zxwSubDepartments']:
     if dept['name'] == '直属中小微事业群':
         for item in dept['monthly']:
-            if item['month'] == '7月':
+            if item['month'] == '8月':
                 dept_counts['直属中小微事业群'] = item['startCount']
                 break
         break
 
 # ========== zxwSubDepartments 入职离职统计 ==========
-zxw_join_aug = join_aug[join_aug['一级组织'] == '中小微事业群']
-zxw_leave_aug = leave_aug[leave_aug['一级组织'] == '中小微事业群']
+zxw_join_mon = join_mon[join_mon['一级组织'] == '中小微事业群']
+zxw_leave_mon = leave_mon[leave_mon['一级组织'] == '中小微事业群']
 zxw_wjoin = weekly_join[weekly_join['一级组织'] == '中小微事业群']
 zxw_wleave = weekly_leave[weekly_leave['一级组织'] == '中小微事业群']
 
@@ -180,8 +180,8 @@ def count_by_org3(df, col='三级组织'):
         result[org3] = result.get(org3, 0) + 1
     return result
 
-join_by_org3 = count_by_org3(zxw_join_aug)
-leave_by_org3 = count_by_org3(zxw_leave_aug)
+join_by_org3 = count_by_org3(zxw_join_mon)
+leave_by_org3 = count_by_org3(zxw_leave_mon)
 wjoin_by_org3 = count_by_org3(zxw_wjoin)
 wleave_by_org3 = count_by_org3(zxw_wleave)
 
@@ -194,8 +194,8 @@ def count_by_org2(df, col='二级组织'):
         result[org2] = result.get(org2, 0) + 1
     return result
 
-join_by_org2 = count_by_org2(zxw_join_aug)
-leave_by_org2 = count_by_org2(zxw_leave_aug)
+join_by_org2 = count_by_org2(zxw_join_mon)
+leave_by_org2 = count_by_org2(zxw_leave_mon)
 wjoin_by_org2 = count_by_org2(zxw_wjoin)
 wleave_by_org2 = count_by_org2(zxw_wleave)
 
@@ -230,7 +230,7 @@ for dept_name, count in dept_counts.items():
         wjc = wjoin_by_org2.get(dept_name, 0)
         wlc = wleave_by_org2.get(dept_name, 0)
 
-    update_zxw_dept(dept_name, '8月', {
+    update_zxw_dept(dept_name, '9月', {
         'startCount': count,
         'fullTime': count,
         'intern': 0,
@@ -251,8 +251,8 @@ def count_by_org4(df, col='四级组织'):
         result[org4] = result.get(org4, 0) + 1
     return result
 
-join_by_org4 = count_by_org4(zxw_join_aug)
-leave_by_org4 = count_by_org4(zxw_leave_aug)
+join_by_org4 = count_by_org4(zxw_join_mon)
+leave_by_org4 = count_by_org4(zxw_leave_mon)
 wjoin_by_org4 = count_by_org4(zxw_wjoin)
 wleave_by_org4 = count_by_org4(zxw_wleave)
 
@@ -271,7 +271,7 @@ for dept in data['zxwSubDepartments']:
         child_df = zxw[zxw['四级组织'] == child_name]
         child_ft = len(child_df)
         child_intern = 0
-        add_or_update_monthly(child['monthly'], '8月', {
+        add_or_update_monthly(child['monthly'], '9月', {
             'startCount': child_ft + child_intern,
             'fullTime': child_ft,
             'intern': child_intern,
@@ -283,7 +283,7 @@ for dept in data['zxwSubDepartments']:
         })
 
 # 更新 sjsData
-add_or_update_monthly(data['sjsData']['monthly'], '8月', {
+add_or_update_monthly(data['sjsData']['monthly'], '9月', {
     'startCount': sjs_ft + sjs_intern,
     'fullTime': sjs_ft,
     'intern': sjs_intern,
@@ -311,9 +311,9 @@ with open('src/data/sequence-ratio-data.json', 'r', encoding='utf-8') as f:
 seq_data['updateDate'] = data['updateDate']
 # 追加8月数据(避免重复)
 existing_seq_months = {item['month'] for item in seq_data['data']}
-if '8月' not in existing_seq_months:
+if '9月' not in existing_seq_months:
     seq_data['data'].append({
-        'month': '8月',
+        'month': '9月',
         'customerSuccess': cs_count,
         'sales': sales_count,
         'management': mgmt_count,
@@ -385,4 +385,4 @@ with open('src/data/personnel-data.json', 'w', encoding='utf-8') as f:
 print('更新完成！')
 print(f'公司总人数: {total_ft + total_intern} (全职{total_ft} + 实习{total_intern})')
 print(f'本周入职: {total_wjc}, 本周离职: {total_wlc}')
-print(f'8月累计入职: {total_jc}, 8月累计离职: {total_lc}')
+print(f'9月累计入职: {total_jc}, 9月累计离职: {total_lc}')
