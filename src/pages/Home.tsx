@@ -13,17 +13,19 @@ import {
   getUpdateDate,
   calcAnalysisSummary,
   getAnalysisNotes,
+  getActiveOrganizations,
 } from '@/utils/data-loader';
 import salesCsData from '@/data/sales-cs-data.json';
 
 export default function Home() {
   const dataset = getDataset();
   const updateDate = getUpdateDate();
+  const activeOrgs = getActiveOrganizations();
 
   const latestMonth = dataset.companyTotal[dataset.companyTotal.length - 1]?.month ?? '最新月';
 
   const companySummary = calcAnalysisSummary(
-    dataset.organizations,
+    activeOrgs,
     dataset.companyTotal[dataset.companyTotal.length - 1],
     getAnalysisNotes(latestMonth),
   );
@@ -51,27 +53,27 @@ export default function Home() {
         {/* ===================== 第一部分：公司总计 ===================== */}
         <Section
           title="第一部分 · 公司整体数据"
-          subtitle={`共 ${dataset.organizations.length} 个一级组织 · ${latestMonth}数据`}
+          subtitle={`共 ${activeOrgs.length} 个一级组织 · ${latestMonth}数据`}
           icon={<Building2 size={20} className="text-sky-600" />}
           accentColor="sky"
         >
           <div className="space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <MultiTrendChart departments={dataset.organizations} title="各一级组织人数变化趋势" metric="fullTime" />
-              <HeadcountRankChart departments={dataset.organizations} title="各一级组织在职人数排行" metric="fullTime" />
+              <MultiTrendChart departments={activeOrgs} title="各一级组织人数变化趋势" metric="fullTime" />
+              <HeadcountRankChart departments={activeOrgs} title="各一级组织在职人数排行" metric="fullTime" />
             </div>
 
             <StructurePieChart
-              departments={dataset.organizations}
+              departments={activeOrgs}
               totalData={dataset.companyTotal[dataset.companyTotal.length - 1]}
               title="各组织人数占比"
               metric="fullTime"
             />
 
-            <NetChangeChart departments={dataset.organizations} title="各一级组织净变动排行" metric="fullTime" calcFromPrevMonth={true} />
+            <NetChangeChart departments={activeOrgs} title="各一级组织净变动排行" metric="fullTime" calcFromPrevMonth={true} />
 
             <SummaryTable
-              departments={dataset.organizations}
+              departments={activeOrgs}
               totalMonthly={dataset.companyTotal}
               totalLabel="公司总计"
               extraRows={[dataset.sjsData]}

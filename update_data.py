@@ -13,20 +13,25 @@ leave_df = pd.read_excel('人员数据自动化看板底表.xlsx', sheet_name='�
 join_df['入职日期'] = pd.to_datetime(join_df['入职日期'])
 leave_df['离职日期'] = pd.to_datetime(leave_df['离职日期'])
 
+# 组织架构归并：数科中心 自9月起并入 职能中台
+for _t in [df, join_df, leave_df]:
+    if '一级组织' in _t.columns:
+        _t['一级组织'] = _t['一级组织'].replace({'数科中心': '职能中台'})
+
 fulltime = df[df['用工类型'] == '全职']
 
 # 9月累计
 join_mon = join_df[(join_df['入职日期'] >= '2026-09-01') & (join_df['入职日期'] <= '2026-09-30')]
 leave_mon = leave_df[(leave_df['离职日期'] >= '2026-09-01') & (leave_df['离职日期'] <= '2026-09-30')]
 
-# 本周 9/7-9/11
-start_week = pd.Timestamp('2026-09-07')
-end_week = pd.Timestamp('2026-09-11')
+# 本周 9/14-9/18
+start_week = pd.Timestamp('2026-09-14')
+end_week = pd.Timestamp('2026-09-18')
 weekly_join = join_df[(join_df['入职日期'] >= start_week) & (join_df['入职日期'] <= end_week)]
 weekly_leave = leave_df[(leave_df['离职日期'] >= start_week) & (leave_df['离职日期'] <= end_week)]
 
 # ========== 更新 updateDate ==========
-data['updateDate'] = '2026年9月11日'
+data['updateDate'] = '2026年9月18日'
 
 # ========== 辅助函数 ==========
 def add_or_update_monthly(org_list, month, updates):
@@ -72,7 +77,7 @@ add_or_update_monthly(data['companyTotal'], '9月', {
 
 # ========== Organizations ==========
 org_stats = {}
-for org_name in ['产研中心', '有度税智', '职能中台', '中小微事业群', '数科中心', '总经办', '福鹿事业部']:
+for org_name in ['产研中心', '有度税智', '职能中台', '中小微事业群', '总经办', '福鹿事业部']:
     ft = len(fulltime[fulltime['一级组织'] == org_name])
     intern = len(df[(df['一级组织'] == org_name) & (df['用工类型'] == '实习')])
     jc = len(join_mon[join_mon['一级组织'] == org_name])

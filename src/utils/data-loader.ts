@@ -19,10 +19,20 @@ export const getMonths = (): string[] => {
 
 // ===================== 第一部分：公司总计 =====================
 
-// 一级组织名称列表（含“全部” = 公司总人数）
+// 一级组织名称列表（含"全部" = 公司总人数）
+// 自动过滤已停用/已并入的组织（末月早于全局最新月）
 export const getOrganizationNames = (): string[] => {
   const data = getDataset();
-  return ['全部', ...data.organizations.map(o => o.name)];
+  const latestMonth = data.companyTotal[data.companyTotal.length - 1]?.month;
+  const activeOrgs = data.organizations.filter(o => o.monthly[o.monthly.length - 1]?.month === latestMonth);
+  return ['全部', ...activeOrgs.map(o => o.name)];
+};
+
+// 获取所有"活跃"的一级组织（末月 === 全局最新月）
+export const getActiveOrganizations = () => {
+  const data = getDataset();
+  const latestMonth = data.companyTotal[data.companyTotal.length - 1]?.month;
+  return data.organizations.filter(o => o.monthly[o.monthly.length - 1]?.month === latestMonth);
 };
 
 // 获取一级组织（或“全部”）的月度数据
