@@ -1,5 +1,5 @@
 {
-  "updateDate": "2026年9月25日",
+  "updateDate": "2026年9月30日",
   "analysisNotes": [],
   "companyTotal": [
     {
@@ -92,14 +92,14 @@
     },
     {
       "month": "9月",
-      "startCount": 498,
-      "fullTime": 494,
+      "startCount": 494,
+      "fullTime": 490,
       "intern": 4,
       "joinCount": 16,
-      "leaveCount": 19,
-      "netChange": -3,
+      "leaveCount": 22,
+      "netChange": -6,
       "weeklyJoinCount": 0,
-      "weeklyLeaveCount": 13
+      "weeklyLeaveCount": 2
     }
   ],
   "organizations": [
@@ -196,14 +196,14 @@
         },
         {
           "month": "9月",
-          "startCount": 98,
-          "fullTime": 98,
+          "startCount": 96,
+          "fullTime": 96,
           "intern": 0,
           "joinCount": 2,
-          "leaveCount": 12,
-          "netChange": -10,
+          "leaveCount": 13,
+          "netChange": -11,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 10
+          "weeklyLeaveCount": 1
         }
       ]
     },
@@ -404,14 +404,14 @@
         },
         {
           "month": "9月",
-          "startCount": 31,
-          "fullTime": 28,
+          "startCount": 30,
+          "fullTime": 27,
           "intern": 3,
           "joinCount": 1,
-          "leaveCount": 1,
-          "netChange": 0,
+          "leaveCount": 2,
+          "netChange": -1,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 0
+          "weeklyLeaveCount": 1
         }
       ]
     },
@@ -508,14 +508,14 @@
         },
         {
           "month": "9月",
-          "startCount": 317,
-          "fullTime": 317,
+          "startCount": 316,
+          "fullTime": 316,
           "intern": 0,
           "joinCount": 13,
-          "leaveCount": 6,
-          "netChange": 7,
+          "leaveCount": 7,
+          "netChange": 6,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 3
+          "weeklyLeaveCount": 0
         }
       ]
     },
@@ -912,14 +912,14 @@
     },
     {
       "month": "9月",
-      "startCount": 317,
-      "fullTime": 317,
+      "startCount": 316,
+      "fullTime": 316,
       "intern": 0,
       "joinCount": 13,
-      "leaveCount": 6,
-      "netChange": 7,
+      "leaveCount": 7,
+      "netChange": 6,
       "weeklyJoinCount": 0,
-      "weeklyLeaveCount": 3
+      "weeklyLeaveCount": 0
     }
   ],
   "zxwSubDepartments": [
@@ -1419,7 +1419,7 @@
           "leaveCount": 1,
           "netChange": 1,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 0
         }
       ],
       "children": [
@@ -1731,7 +1731,7 @@
               "leaveCount": 1,
               "netChange": 1,
               "weeklyJoinCount": 0,
-              "weeklyLeaveCount": 1
+              "weeklyLeaveCount": 0
             }
           ]
         },
@@ -2419,7 +2419,7 @@
           "leaveCount": 1,
           "netChange": 0,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 0
         }
       ],
       "children": [
@@ -2627,7 +2627,7 @@
               "leaveCount": 1,
               "netChange": -1,
               "weeklyJoinCount": 0,
-              "weeklyLeaveCount": 1
+              "weeklyLeaveCount": 0
             }
           ]
         },
@@ -2808,14 +2808,14 @@
         },
         {
           "month": "9月",
-          "startCount": 53,
-          "fullTime": 53,
+          "startCount": 52,
+          "fullTime": 52,
           "intern": 0,
           "joinCount": 4,
-          "leaveCount": 1,
-          "netChange": 3,
+          "leaveCount": 2,
+          "netChange": 2,
           "weeklyJoinCount": 0,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 0
         }
       ],
       "children": [
@@ -2912,14 +2912,14 @@
             },
             {
               "month": "9月",
-              "startCount": 25,
-              "fullTime": 25,
+              "startCount": 24,
+              "fullTime": 24,
               "intern": 0,
               "joinCount": 1,
-              "leaveCount": 1,
-              "netChange": 0,
+              "leaveCount": 2,
+              "netChange": -1,
               "weeklyJoinCount": 0,
-              "weeklyLeaveCount": 1
+              "weeklyLeaveCount": 0
             }
           ]
         },

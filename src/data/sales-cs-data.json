@@ -1,7 +1,7 @@
 {
-  "updateDate": "2026年9月25日",
+  "updateDate": "2026年9月30日",
   "summary": {
-    "salesSpecialist": 65,
+    "salesSpecialist": 64,
     "salesManager": 10,
     "csManager": 8,
     "csSupervisor": 15,
@@ -211,7 +211,7 @@
     {
       "regionName": "苏皖片区",
       "summary": {
-        "salesSpecialist": 14,
+        "salesSpecialist": 13,
         "salesManager": 2,
         "csManager": 2,
         "csSupervisor": 2,
@@ -227,7 +227,7 @@
           "cities": [
             "南京"
           ],
-          "salesSpecialist": 7,
+          "salesSpecialist": 6,
           "salesManager": 1,
           "csManager": 1,
           "csSupervisor": 0,
