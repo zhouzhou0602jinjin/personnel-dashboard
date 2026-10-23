@@ -1,11 +1,11 @@
 {
-  "updateDate": "2026年10月16日",
+  "updateDate": "2026年10月23日",
   "summary": {
-    "salesSpecialist": 66,
+    "salesSpecialist": 67,
     "salesManager": 10,
     "csManager": 8,
     "csSupervisor": 15,
-    "csSpecialist": 110,
+    "csSpecialist": 109,
     "implementSupervisor": 1,
     "implementSpecialist": 17,
     "region": "全国",
@@ -15,7 +15,7 @@
     {
       "regionName": "京津片区",
       "summary": {
-        "salesSpecialist": 4,
+        "salesSpecialist": 3,
         "salesManager": 0,
         "csManager": 1,
         "csSupervisor": 0,
@@ -31,7 +31,7 @@
           "cities": [
             "北京"
           ],
-          "salesSpecialist": 4,
+          "salesSpecialist": 3,
           "salesManager": 0,
           "csManager": 1,
           "csSupervisor": 0,
@@ -74,7 +74,7 @@
             "济南",
             "青岛"
           ],
-          "salesSpecialist": 1,
+          "salesSpecialist": 2,
           "salesManager": 1,
           "csManager": 0,
           "csSupervisor": 3,
@@ -100,7 +100,7 @@
           "cities": [
             "武汉"
           ],
-          "salesSpecialist": 4,
+          "salesSpecialist": 3,
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 1,
@@ -211,11 +211,11 @@
     {
       "regionName": "苏皖片区",
       "summary": {
-        "salesSpecialist": 13,
+        "salesSpecialist": 14,
         "salesManager": 2,
         "csManager": 2,
         "csSupervisor": 2,
-        "csSpecialist": 16,
+        "csSpecialist": 15,
         "implementSupervisor": 1,
         "implementSpecialist": 12,
         "region": "苏皖片区",
@@ -227,11 +227,11 @@
           "cities": [
             "南京"
           ],
-          "salesSpecialist": 6,
+          "salesSpecialist": 7,
           "salesManager": 1,
           "csManager": 1,
           "csSupervisor": 0,
-          "csSpecialist": 9,
+          "csSpecialist": 8,
           "implementSupervisor": 1,
           "implementSpecialist": 6
         },
@@ -308,7 +308,7 @@
     {
       "regionName": "直辖分公司",
       "summary": {
-        "salesSpecialist": 19,
+        "salesSpecialist": 20,
         "salesManager": 3,
         "csManager": 2,
         "csSupervisor": 4,
@@ -338,7 +338,7 @@
           "cities": [
             "成都"
           ],
-          "salesSpecialist": 3,
+          "salesSpecialist": 4,
           "salesManager": 1,
           "csManager": 0,
           "csSupervisor": 1,
