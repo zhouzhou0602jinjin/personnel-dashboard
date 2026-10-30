@@ -1,7 +1,7 @@
 {
   "updateDate": "2026年10月31日",
   "summary": {
-    "salesSpecialist": 63,
+    "salesSpecialist": 62,
     "salesManager": 10,
     "csManager": 8,
     "csSupervisor": 15,
@@ -308,7 +308,7 @@
     {
       "regionName": "直辖分公司",
       "summary": {
-        "salesSpecialist": 20,
+        "salesSpecialist": 19,
         "salesManager": 3,
         "csManager": 2,
         "csSupervisor": 4,
@@ -364,7 +364,7 @@
           "cities": [
             "太原"
           ],
-          "salesSpecialist": 4,
+          "salesSpecialist": 3,
           "salesManager": 1,
           "csManager": 1,
           "csSupervisor": 0,
