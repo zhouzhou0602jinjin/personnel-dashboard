@@ -103,14 +103,14 @@
     },
     {
       "month": "10月",
-      "startCount": 489,
-      "fullTime": 487,
+      "startCount": 488,
+      "fullTime": 486,
       "intern": 2,
       "joinCount": 17,
-      "leaveCount": 22,
-      "netChange": -5,
+      "leaveCount": 23,
+      "netChange": -6,
       "weeklyJoinCount": 3,
-      "weeklyLeaveCount": 7
+      "weeklyLeaveCount": 8
     }
   ],
   "organizations": [
@@ -563,14 +563,14 @@
         },
         {
           "month": "10月",
-          "startCount": 314,
-          "fullTime": 314,
+          "startCount": 313,
+          "fullTime": 313,
           "intern": 0,
           "joinCount": 15,
-          "leaveCount": 17,
-          "netChange": -2,
+          "leaveCount": 18,
+          "netChange": -3,
           "weeklyJoinCount": 3,
-          "weeklyLeaveCount": 6
+          "weeklyLeaveCount": 7
         }
       ]
     },
@@ -1000,14 +1000,14 @@
     },
     {
       "month": "10月",
-      "startCount": 314,
-      "fullTime": 314,
+      "startCount": 313,
+      "fullTime": 313,
       "intern": 0,
       "joinCount": 15,
-      "leaveCount": 17,
-      "netChange": -2,
+      "leaveCount": 18,
+      "netChange": -3,
       "weeklyJoinCount": 3,
-      "weeklyLeaveCount": 6
+      "weeklyLeaveCount": 7
     }
   ],
   "zxwSubDepartments": [
@@ -4034,14 +4034,14 @@
         },
         {
           "month": "10月",
-          "startCount": 69,
-          "fullTime": 69,
+          "startCount": 68,
+          "fullTime": 68,
           "intern": 0,
           "joinCount": 10,
-          "leaveCount": 3,
-          "netChange": 7,
+          "leaveCount": 4,
+          "netChange": 6,
           "weeklyJoinCount": 2,
-          "weeklyLeaveCount": 1
+          "weeklyLeaveCount": 2
         }
       ],
       "children": [
@@ -4839,14 +4839,14 @@
             },
             {
               "month": "10月",
-              "startCount": 7,
-              "fullTime": 7,
+              "startCount": 6,
+              "fullTime": 6,
               "intern": 0,
               "joinCount": 1,
-              "leaveCount": 1,
-              "netChange": 0,
+              "leaveCount": 2,
+              "netChange": -1,
               "weeklyJoinCount": 0,
-              "weeklyLeaveCount": 0
+              "weeklyLeaveCount": 1
             }
           ]
         }
