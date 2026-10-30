@@ -1,13 +1,13 @@
 {
-  "updateDate": "2026年10月23日",
+  "updateDate": "2026年10月31日",
   "summary": {
-    "salesSpecialist": 67,
+    "salesSpecialist": 63,
     "salesManager": 10,
     "csManager": 8,
     "csSupervisor": 15,
-    "csSpecialist": 109,
+    "csSpecialist": 111,
     "implementSupervisor": 1,
-    "implementSpecialist": 17,
+    "implementSpecialist": 16,
     "region": "全国",
     "branch": "全国"
   },
@@ -15,11 +15,11 @@
     {
       "regionName": "京津片区",
       "summary": {
-        "salesSpecialist": 3,
+        "salesSpecialist": 2,
         "salesManager": 0,
         "csManager": 1,
         "csSupervisor": 0,
-        "csSpecialist": 11,
+        "csSpecialist": 12,
         "implementSupervisor": 0,
         "implementSpecialist": 0,
         "region": "京津片区",
@@ -31,11 +31,11 @@
           "cities": [
             "北京"
           ],
-          "salesSpecialist": 3,
+          "salesSpecialist": 2,
           "salesManager": 0,
           "csManager": 1,
           "csSupervisor": 0,
-          "csSpecialist": 7,
+          "csSpecialist": 8,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         },
@@ -211,13 +211,13 @@
     {
       "regionName": "苏皖片区",
       "summary": {
-        "salesSpecialist": 14,
+        "salesSpecialist": 13,
         "salesManager": 2,
         "csManager": 2,
         "csSupervisor": 2,
         "csSpecialist": 15,
         "implementSupervisor": 1,
-        "implementSpecialist": 12,
+        "implementSpecialist": 11,
         "region": "苏皖片区",
         "branch": "苏皖片区"
       },
@@ -240,13 +240,13 @@
           "cities": [
             "合肥"
           ],
-          "salesSpecialist": 3,
+          "salesSpecialist": 2,
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 1,
           "csSpecialist": 3,
           "implementSupervisor": 0,
-          "implementSpecialist": 3
+          "implementSpecialist": 2
         },
         {
           "branch": "苏州分公司",
@@ -266,7 +266,7 @@
     {
       "regionName": "辽蒙片区",
       "summary": {
-        "salesSpecialist": 4,
+        "salesSpecialist": 2,
         "salesManager": 1,
         "csManager": 1,
         "csSupervisor": 1,
@@ -282,7 +282,7 @@
           "cities": [
             "呼和浩特"
           ],
-          "salesSpecialist": 3,
+          "salesSpecialist": 1,
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 0,
@@ -312,7 +312,7 @@
         "salesManager": 3,
         "csManager": 2,
         "csSupervisor": 4,
-        "csSpecialist": 32,
+        "csSpecialist": 33,
         "implementSupervisor": 0,
         "implementSpecialist": 2,
         "region": "直辖分公司",
@@ -329,7 +329,7 @@
           "salesManager": 0,
           "csManager": 1,
           "csSupervisor": 0,
-          "csSpecialist": 5,
+          "csSpecialist": 7,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         },
@@ -342,7 +342,7 @@
           "salesManager": 1,
           "csManager": 0,
           "csSupervisor": 1,
-          "csSpecialist": 7,
+          "csSpecialist": 6,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         },
