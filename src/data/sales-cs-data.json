@@ -1,13 +1,13 @@
 {
-  "updateDate": "2026年10月31日",
+  "updateDate": "2026年11月6日",
   "summary": {
     "salesSpecialist": 62,
     "salesManager": 10,
     "csManager": 8,
     "csSupervisor": 15,
-    "csSpecialist": 110,
+    "csSpecialist": 111,
     "implementSupervisor": 1,
-    "implementSpecialist": 16,
+    "implementSpecialist": 17,
     "region": "全国",
     "branch": "全国"
   },
@@ -15,7 +15,7 @@
     {
       "regionName": "京津片区",
       "summary": {
-        "salesSpecialist": 2,
+        "salesSpecialist": 3,
         "salesManager": 0,
         "csManager": 1,
         "csSupervisor": 0,
@@ -31,7 +31,7 @@
           "cities": [
             "北京"
           ],
-          "salesSpecialist": 2,
+          "salesSpecialist": 3,
           "salesManager": 0,
           "csManager": 1,
           "csSupervisor": 0,
@@ -113,7 +113,7 @@
     {
       "regionName": "粤闽赣片区",
       "summary": {
-        "salesSpecialist": 10,
+        "salesSpecialist": 9,
         "salesManager": 1,
         "csManager": 0,
         "csSupervisor": 1,
@@ -143,7 +143,7 @@
             "广州",
             "深圳"
           ],
-          "salesSpecialist": 5,
+          "salesSpecialist": 4,
           "salesManager": 1,
           "csManager": 0,
           "csSupervisor": 1,
@@ -211,13 +211,13 @@
     {
       "regionName": "苏皖片区",
       "summary": {
-        "salesSpecialist": 13,
+        "salesSpecialist": 12,
         "salesManager": 2,
         "csManager": 2,
         "csSupervisor": 2,
         "csSpecialist": 15,
         "implementSupervisor": 1,
-        "implementSpecialist": 11,
+        "implementSpecialist": 12,
         "region": "苏皖片区",
         "branch": "苏皖片区"
       },
@@ -246,14 +246,14 @@
           "csSupervisor": 1,
           "csSpecialist": 3,
           "implementSupervisor": 0,
-          "implementSpecialist": 2
+          "implementSpecialist": 3
         },
         {
           "branch": "苏州分公司",
           "cities": [
             "苏州"
           ],
-          "salesSpecialist": 4,
+          "salesSpecialist": 3,
           "salesManager": 1,
           "csManager": 1,
           "csSupervisor": 1,
@@ -308,11 +308,11 @@
     {
       "regionName": "直辖分公司",
       "summary": {
-        "salesSpecialist": 19,
+        "salesSpecialist": 20,
         "salesManager": 3,
         "csManager": 2,
         "csSupervisor": 4,
-        "csSpecialist": 32,
+        "csSpecialist": 33,
         "implementSupervisor": 0,
         "implementSpecialist": 2,
         "region": "直辖分公司",
@@ -351,11 +351,11 @@
           "cities": [
             "西安"
           ],
-          "salesSpecialist": 2,
+          "salesSpecialist": 3,
           "salesManager": 0,
           "csManager": 0,
           "csSupervisor": 1,
-          "csSpecialist": 2,
+          "csSpecialist": 3,
           "implementSupervisor": 0,
           "implementSpecialist": 0
         },

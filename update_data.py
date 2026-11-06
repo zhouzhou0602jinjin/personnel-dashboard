@@ -5,7 +5,26 @@ import pandas as pd
 with open('src/data/personnel-data.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
-# 读取底表
+# ========== 固定上月数据：周入离职清零 ==========
+def freeze_last_month(item_list, last_month='10月'):
+    for item in item_list:
+        if item.get('month') == last_month:
+            item['weeklyJoinCount'] = 0
+            item['weeklyLeaveCount'] = 0
+
+freeze_last_month(data['companyTotal'])
+for org in data['organizations']:
+    freeze_last_month(org['monthly'])
+freeze_last_month(data['zxwSubTotal'])
+for dept in data['zxwSubDepartments']:
+    freeze_last_month(dept['monthly'])
+    if 'children' in dept:
+        for child in dept['children']:
+            freeze_last_month(child['monthly'])
+freeze_last_month(data['sjsData']['monthly'])
+print('已固定10月数据（weeklyJoin/Leave清零）')
+
+# 读取底表（已翻月，仅含11月数据）
 df = pd.read_excel('人员数据自动化看板底表.xlsx', sheet_name='总人员')
 join_df = pd.read_excel('人员数据自动化看板底表.xlsx', sheet_name='本月入职人员')
 leave_df = pd.read_excel('人员数据自动化看板底表.xlsx', sheet_name='本月离职人员')
@@ -20,18 +39,18 @@ for _t in [df, join_df, leave_df]:
 
 fulltime = df[df['用工类型'] == '全职']
 
-# 10月累计
-join_mon = join_df[(join_df['入职日期'] >= '2026-10-01') & (join_df['入职日期'] <= '2026-10-31')]
-leave_mon = leave_df[(leave_df['离职日期'] >= '2026-10-01') & (leave_df['离职日期'] <= '2026-10-31')]
+# 11月累计
+join_mon = join_df[(join_df['入职日期'] >= '2026-11-01') & (join_df['入职日期'] <= '2026-11-30')]
+leave_mon = leave_df[(leave_df['离职日期'] >= '2026-11-01') & (leave_df['离职日期'] <= '2026-11-30')]
 
-# 本周 10/26 - 10/31
-start_week = pd.Timestamp('2026-10-26')
-end_week = pd.Timestamp('2026-10-31')
+# 本周 11/2 - 11/6
+start_week = pd.Timestamp('2026-11-02')
+end_week = pd.Timestamp('2026-11-06')
 weekly_join = join_df[(join_df['入职日期'] >= start_week) & (join_df['入职日期'] <= end_week)]
 weekly_leave = leave_df[(leave_df['离职日期'] >= start_week) & (leave_df['离职日期'] <= end_week)]
 
 # ========== 更新 updateDate ==========
-data['updateDate'] = '2026年10月31日'
+data['updateDate'] = '2026年11月6日'
 
 # ========== 辅助函数 ==========
 def add_or_update_monthly(org_list, month, updates):
@@ -64,7 +83,7 @@ total_lc = len(leave_mon[leave_mon['一级组织'] != '十角兽'])
 total_wjc = len(weekly_join[weekly_join['一级组织'] != '十角兽'])
 total_wlc = len(weekly_leave[weekly_leave['一级组织'] != '十角兽'])
 
-add_or_update_monthly(data['companyTotal'], '10月', {
+add_or_update_monthly(data['companyTotal'], '11月', {
     'startCount': total_ft + total_intern,
     'fullTime': total_ft,
     'intern': total_intern,
@@ -114,7 +133,7 @@ org_stats['十角兽'] = {
 }
 
 for org_name, stats in org_stats.items():
-    update_org_monthly(org_name, '10月', stats)
+    update_org_monthly(org_name, '11月', stats)
 
 # ========== zxwSubTotal ==========
 zxw_ft = len(fulltime[fulltime['一级组织'] == '中小微事业群'])
@@ -125,7 +144,7 @@ zxw_wlc = len(weekly_leave[weekly_leave['一级组织'] == '中小微事业群']
 
 # 更新 analysisNotes - 8月不追加备注
 
-add_or_update_monthly(data['zxwSubTotal'], '10月', {
+add_or_update_monthly(data['zxwSubTotal'], '11月', {
     'startCount': zxw_ft,
     'fullTime': zxw_ft,
     'intern': 0,
@@ -235,7 +254,7 @@ for dept_name, count in dept_counts.items():
         wjc = wjoin_by_org2.get(dept_name, 0)
         wlc = wleave_by_org2.get(dept_name, 0)
 
-    update_zxw_dept(dept_name, '10月', {
+    update_zxw_dept(dept_name, '11月', {
         'startCount': count,
         'fullTime': count,
         'intern': 0,
@@ -276,7 +295,7 @@ for dept in data['zxwSubDepartments']:
         child_df = zxw[zxw['四级组织'] == child_name]
         child_ft = len(child_df)
         child_intern = 0
-        add_or_update_monthly(child['monthly'], '10月', {
+        add_or_update_monthly(child['monthly'], '11月', {
             'startCount': child_ft + child_intern,
             'fullTime': child_ft,
             'intern': child_intern,
@@ -288,7 +307,7 @@ for dept in data['zxwSubDepartments']:
         })
 
 # 更新 sjsData
-add_or_update_monthly(data['sjsData']['monthly'], '10月', {
+add_or_update_monthly(data['sjsData']['monthly'], '11月', {
     'startCount': sjs_ft + sjs_intern,
     'fullTime': sjs_ft,
     'intern': sjs_intern,
@@ -316,9 +335,9 @@ with open('src/data/sequence-ratio-data.json', 'r', encoding='utf-8') as f:
 seq_data['updateDate'] = data['updateDate']
 # 追加8月数据(避免重复)
 existing_seq_months = {item['month'] for item in seq_data['data']}
-if '10月' not in existing_seq_months:
+if '11月' not in existing_seq_months:
     seq_data['data'].append({
-        'month': '10月',
+        'month': '11月',
         'customerSuccess': cs_count,
         'sales': sales_count,
         'management': mgmt_count,
@@ -390,4 +409,4 @@ with open('src/data/personnel-data.json', 'w', encoding='utf-8') as f:
 print('更新完成！')
 print(f'公司总人数: {total_ft + total_intern} (全职{total_ft} + 实习{total_intern})')
 print(f'本周入职: {total_wjc}, 本周离职: {total_wlc}')
-print(f'10月累计入职: {total_jc}, 10月累计离职: {total_lc}')
+print(f'11月累计入职: {total_jc}, 11月累计离职: {total_lc}')
