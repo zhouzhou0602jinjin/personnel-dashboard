@@ -1,11 +1,12 @@
 import ReactECharts from 'echarts-for-react';
-import type { DepartmentData } from '@/types';
+import type { DepartmentData, MonthlyData } from '@/types';
 
 interface MultiTrendChartProps {
   departments: DepartmentData[];
   title?: string;
   height?: number;
   metric?: 'startCount' | 'fullTime';
+  globalMonths?: MonthlyData[]; // 全局月份基准（来自 companyTotal）
 }
 
 const COLORS = [
@@ -14,28 +15,38 @@ const COLORS = [
   '#06b6d4', '#d946ef', '#eab308', '#22c55e', '#3b82f6',
 ];
 
-export default function MultiTrendChart({ departments, title = '各部门人数变化趋势', height = 360, metric = 'startCount' }: MultiTrendChartProps) {
+export default function MultiTrendChart({ departments, title = '各部门人数变化趋势', height = 360, metric = 'startCount', globalMonths }: MultiTrendChartProps) {
   if (departments.length === 0) return null;
 
-  const months = departments[0].monthly.map(m => m.month);
+  // 用全局月份作为 x 轴基准（如果提供了），否则用第一个部门的月份
+  // 这样每个组织的 data 长度都对齐全局月份，缺失月份填 null（ECharts 自然断线）
+  const months = globalMonths ? globalMonths.map(m => m.month) : departments[0].monthly.map(m => m.month);
 
-  const series = departments.map((dept, index) => ({
-    name: dept.name,
-    type: 'line' as const,
-    smooth: true,
-    symbol: 'circle',
-    symbolSize: 6,
-    data: dept.monthly.map(m => m[metric]),
-    lineStyle: {
-      width: 2,
-      color: COLORS[index % COLORS.length],
-    },
-    itemStyle: {
-      color: COLORS[index % COLORS.length],
-      borderWidth: 2,
-      borderColor: '#fff',
-    },
-  }));
+  const series = departments.map((dept, index) => {
+    // 构建该部门的月份→数值映射
+    const monthMap = new Map(dept.monthly.map(m => [m.month, m[metric]]));
+    // 按全局月份对齐，缺失月份填 null
+    const data = months.map(m => monthMap.has(m) ? monthMap.get(m)! : null);
+
+    return {
+      name: dept.name,
+      type: 'line' as const,
+      smooth: true,
+      symbol: 'circle',
+      symbolSize: 6,
+      connectNulls: false, // 缺失月份断线，不强行连接
+      data,
+      lineStyle: {
+        width: 2,
+        color: COLORS[index % COLORS.length],
+      },
+      itemStyle: {
+        color: COLORS[index % COLORS.length],
+        borderWidth: 2,
+        borderColor: '#fff',
+      },
+    };
+  });
 
   const option = {
     title: {
@@ -54,6 +65,19 @@ export default function MultiTrendChart({ departments, title = '各部门人数�
       borderWidth: 1,
       textStyle: {
         color: '#334155',
+      },
+      // 过滤掉 null 值的 series（组织当月不存在时不显示 "-"）
+      formatter: (params: any) => {
+        const valid = params.filter((p: any) => p.value != null);
+        if (valid.length === 0) return '';
+        let html = `<div style="font-weight:600;margin-bottom:4px">${valid[0].axisValue}</div>`;
+        valid.forEach((p: any) => {
+          html += `<div style="display:flex;align-items:center;gap:6px;margin:2px 0">
+            <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${p.color}"></span>
+            ${p.seriesName}: <b>${p.value}</b>
+          </div>`;
+        });
+        return html;
       },
     },
     legend: {

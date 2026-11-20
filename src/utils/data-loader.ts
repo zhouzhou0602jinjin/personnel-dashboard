@@ -28,11 +28,23 @@ export const getOrganizationNames = (): string[] => {
   return ['全部', ...activeOrgs.map(o => o.name)];
 };
 
-// 获取所有"活跃"的一级组织（末月 === 全局最新月）
+// 获取"当前月存在"的一级组织（末月 === 全局最新月）
+// 用于排行、占比、表格等只显示当前月的组件
 export const getActiveOrganizations = () => {
   const data = getDataset();
   const latestMonth = data.companyTotal[data.companyTotal.length - 1]?.month;
   return data.organizations.filter(o => o.monthly[o.monthly.length - 1]?.month === latestMonth);
+};
+
+// 获取"趋势图用"的一级组织（末月 >= 最新月-2）
+// 用于趋势图，保留已合并组织的历史曲线（福鹿、数科等）
+export const getOrganizationsForTrend = () => {
+  const data = getDataset();
+  const latestMonthIdx = data.companyTotal.length - 1;
+  return data.organizations.filter(o => {
+    const orgLatestIdx = data.companyTotal.findIndex(m => m.month === o.monthly[o.monthly.length - 1]?.month);
+    return orgLatestIdx >= latestMonthIdx - 2;
+  });
 };
 
 // 获取一级组织（或“全部”）的月度数据

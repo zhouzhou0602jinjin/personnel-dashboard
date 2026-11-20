@@ -32,10 +32,11 @@ leave_df = pd.read_excel('人员数据自动化看板底表.xlsx', sheet_name='�
 join_df['入职日期'] = pd.to_datetime(join_df['入职日期'])
 leave_df['离职日期'] = pd.to_datetime(leave_df['离职日期'])
 
-# 组织架构归并：数科中心 自9月起并入 职能中台
+# 组织架构归并：数科中心→职能中台（历史），福鹿事业部+十角兽→终端（11月起）
 for _t in [df, join_df, leave_df]:
     if '一级组织' in _t.columns:
         _t['一级组织'] = _t['一级组织'].replace({'数科中心': '职能中台'})
+        _t['一级组织'] = _t['一级组织'].replace({'福鹿事业部': '终端', '十角兽': '终端'})
 
 fulltime = df[df['用工类型'] == '全职']
 
@@ -43,14 +44,14 @@ fulltime = df[df['用工类型'] == '全职']
 join_mon = join_df[(join_df['入职日期'] >= '2026-11-01') & (join_df['入职日期'] <= '2026-11-30')]
 leave_mon = leave_df[(leave_df['离职日期'] >= '2026-11-01') & (leave_df['离职日期'] <= '2026-11-30')]
 
-# 本周 11/9 - 11/13
-start_week = pd.Timestamp('2026-11-09')
-end_week = pd.Timestamp('2026-11-13')
+# 本周 11/16 - 11/20
+start_week = pd.Timestamp('2026-11-16')
+end_week = pd.Timestamp('2026-11-20')
 weekly_join = join_df[(join_df['入职日期'] >= start_week) & (join_df['入职日期'] <= end_week)]
 weekly_leave = leave_df[(leave_df['离职日期'] >= start_week) & (leave_df['离职日期'] <= end_week)]
 
 # ========== 更新 updateDate ==========
-data['updateDate'] = '2026年11月13日'
+data['updateDate'] = '2026年11月20日'
 
 # ========== 辅助函数 ==========
 def add_or_update_monthly(org_list, month, updates):
@@ -62,6 +63,10 @@ def add_or_update_monthly(org_list, month, updates):
     new_entry = {'month': month}
     new_entry.update(updates)
     org_list.append(new_entry)
+
+def remove_month(item_list, month):
+    """删除指定月份条目（用于组织合并后隐藏旧组织）"""
+    return [item for item in item_list if item.get('month') != month]
 
 def update_org_monthly(org_name, month, updates):
     for org in data['organizations']:
@@ -75,13 +80,14 @@ def update_zxw_dept(dept_name, month, updates):
             add_or_update_monthly(dept['monthly'], month, updates)
             return
 
-# ========== Company Total (不含SJS) ==========
-total_ft = len(fulltime[fulltime['一级组织'] != '十角兽'])
-total_intern = len(df[(df['一级组织'] != '十角兽') & (df['用工类型'] == '实习')])
-total_jc = len(join_mon[join_mon['一级组织'] != '十角兽'])
-total_lc = len(leave_mon[leave_mon['一级组织'] != '十角兽'])
-total_wjc = len(weekly_join[weekly_join['一级组织'] != '十角兽'])
-total_wlc = len(weekly_leave[weekly_leave['一级组织'] != '十角兽'])
+# ========== Company Total ==========
+# 注：福鹿事业部+十角兽已合并为终端（11月起），公司总计含终端
+total_ft = len(fulltime)
+total_intern = len(df[df['用工类型'] == '实习'])
+total_jc = len(join_mon)
+total_lc = len(leave_mon)
+total_wjc = len(weekly_join)
+total_wlc = len(weekly_leave)
 
 add_or_update_monthly(data['companyTotal'], '11月', {
     'startCount': total_ft + total_intern,
@@ -95,8 +101,17 @@ add_or_update_monthly(data['companyTotal'], '11月', {
 })
 
 # ========== Organizations ==========
+# 11月起：福鹿事业部+十角兽合并为"终端"
+# 从底表自动获取归并后的一级组织列表（不再硬编码）
+# 归并规则：数科中心→职能中台（历史），福鹿事业部+十角兽→终端（11月起）
+all_orgs = df['一级组织'].unique().tolist()
+# 归并后的组织名：替换后得到
+mapped_orgs = df['一级组织'].replace({'数科中心': '职能中台', '福鹿事业部': '终端', '十角兽': '终端'}).unique().tolist()
+# 过滤掉已合并的旧组织（十角兽已合并到终端，它单独在 sjsData 里显示历史）
+org_list = [o for o in mapped_orgs if o != '十角兽']
+
 org_stats = {}
-for org_name in ['产研中心', '有度税智', '职能中台', '中小微事业群', '总经办', '福鹿事业部']:
+for org_name in org_list:
     ft = len(fulltime[fulltime['一级组织'] == org_name])
     intern = len(df[(df['一级组织'] == org_name) & (df['用工类型'] == '实习')])
     jc = len(join_mon[join_mon['一级组织'] == org_name])
@@ -113,27 +128,41 @@ for org_name in ['产研中心', '有度税智', '职能中台', '中小微事�
         'weeklyJoinCount': wjc,
         'weeklyLeaveCount': wlc,
     }
+print(f"从底表动态识别到一级组织: {list(org_stats.keys())}")
 
-# 十角兽
-sjs_ft = len(fulltime[fulltime['一级组织'] == '十角兽'])
-sjs_intern = len(df[(df['一级组织'] == '十角兽') & (df['用工类型'] == '实习')])
-sjs_jc = len(join_mon[join_mon['一级组织'] == '十角兽'])
-sjs_lc = len(leave_mon[leave_mon['一级组织'] == '十角兽'])
-sjs_wjc = len(weekly_join[weekly_join['一级组织'] == '十角兽'])
-sjs_wlc = len(weekly_leave[weekly_leave['一级组织'] == '十角兽'])
-org_stats['十角兽'] = {
-    'startCount': sjs_ft + sjs_intern,
-    'fullTime': sjs_ft,
-    'intern': sjs_intern,
-    'joinCount': sjs_jc,
-    'leaveCount': sjs_lc,
-    'netChange': sjs_jc - sjs_lc,
-    'weeklyJoinCount': sjs_wjc,
-    'weeklyLeaveCount': sjs_wlc,
-}
+# 清理 organizations：底表没有的组织名，且末月无有效数据（fullTime==0），删除
+# 比如之前误创建的"其他"现在底表没有了
+valid_org_names = set(org_stats.keys())
+# 数科中心/福鹿事业部是历史保留的，不在底表里但要保留
+historical_orgs = {'数科中心', '福鹿事业部'}
+data['organizations'] = [
+    o for o in data['organizations']
+    if o['name'] in valid_org_names or o['name'] in historical_orgs
+]
+print(f"清理后 organizations: {[o['name'] for o in data['organizations']]}")
+
+# 确保 organizations 里有所有识别到的组织条目（先创建，后面才能更新 monthly）
+for new_org in org_stats:
+    if not any(o['name'] == new_org for o in data['organizations']):
+        data['organizations'].append({'name': new_org, 'monthly': []})
 
 for org_name, stats in org_stats.items():
     update_org_monthly(org_name, '11月', stats)
+
+# 福鹿事业部 11月已并入终端 → 删除11月条目，让末月停在10月（历史数据保留）
+# 同时把6月之前的 startCount/fullTime 置为 None（图表不画0值段）
+for org in data['organizations']:
+    if org['name'] == '福鹿事业部':
+        org['monthly'] = remove_month(org['monthly'], '11月')
+        for m in org['monthly']:
+            if m['month'] in ('1月','2月','3月','4月','5月'):
+                m['startCount'] = None
+                m['fullTime'] = None
+        break
+
+# sjsData(十角兽) 11月已并入终端 → 删除11月条目（历史数据保留）
+data['sjsData']['monthly'] = remove_month(data['sjsData']['monthly'], '11月')
+print('已将福鹿事业部和十角兽的11月条目删除，末月停留在10月')
 
 # ========== zxwSubTotal ==========
 zxw_ft = len(fulltime[fulltime['一级组织'] == '中小微事业群'])
@@ -305,18 +334,6 @@ for dept in data['zxwSubDepartments']:
             'weeklyJoinCount': wjc,
             'weeklyLeaveCount': wlc,
         })
-
-# 更新 sjsData
-add_or_update_monthly(data['sjsData']['monthly'], '11月', {
-    'startCount': sjs_ft + sjs_intern,
-    'fullTime': sjs_ft,
-    'intern': sjs_intern,
-    'joinCount': sjs_jc,
-    'leaveCount': sjs_lc,
-    'netChange': sjs_jc - sjs_lc,
-    'weeklyJoinCount': sjs_wjc,
-    'weeklyLeaveCount': sjs_wlc,
-})
 
 # ========== 更新 sequence-ratio-data.json ==========
 cs_positions = ['客户成功专员', '客户成功主管', '高级客户成功专员', '实施专员', '实施主管']

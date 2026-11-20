@@ -59,7 +59,7 @@ export default function Home() {
         >
           <div className="space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <MultiTrendChart departments={activeOrgs} title="各一级组织人数变化趋势" metric="fullTime" />
+              <MultiTrendChart departments={dataset.organizations} title="各一级组织人数变化趋势" metric="fullTime" globalMonths={dataset.companyTotal} />
               <HeadcountRankChart departments={activeOrgs} title="各一级组织在职人数排行" metric="fullTime" />
             </div>
 
@@ -73,7 +73,7 @@ export default function Home() {
             <NetChangeChart departments={activeOrgs} title="各一级组织净变动排行" metric="fullTime" calcFromPrevMonth={true} />
 
             <SummaryTable
-              departments={activeOrgs}
+              departments={dataset.organizations}
               totalMonthly={dataset.companyTotal}
               totalLabel="公司总计"
               extraRows={[dataset.sjsData]}

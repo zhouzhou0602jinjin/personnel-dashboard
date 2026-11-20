@@ -10,25 +10,29 @@ interface SummaryTableProps {
   computeTotalFromDepartments?: boolean;
 }
 
-function sumMonthly(departments: DepartmentData[], idx: number): MonthlyData {
-  const month = departments[0]?.monthly[idx]?.month ?? '';
+// 工具函数：从 monthly 数组中按月份名称查找（不依赖数组索引）
+function findMonth(monthly: MonthlyData[] | undefined, monthName: string): MonthlyData | undefined {
+  return monthly?.find(m => m.month === monthName);
+}
+
+function sumMonthly(departments: DepartmentData[], monthName: string): MonthlyData {
   let startCount = 0, fullTime = 0, intern = 0;
   let weeklyJoinCount = 0, weeklyLeaveCount = 0;
   let joinCount = 0, leaveCount = 0, netChange = 0;
   departments.forEach(d => {
-    const m = d.monthly[idx];
+    const m = findMonth(d.monthly, monthName);
     if (m) {
-      startCount += m.startCount;
-      fullTime += m.fullTime;
-      intern += m.intern;
-      weeklyJoinCount += m.weeklyJoinCount;
-      weeklyLeaveCount += m.weeklyLeaveCount;
-      joinCount += m.joinCount;
-      leaveCount += m.leaveCount;
-      netChange += m.netChange;
+      startCount += m.startCount ?? 0;
+      fullTime += m.fullTime ?? 0;
+      intern += m.intern ?? 0;
+      weeklyJoinCount += m.weeklyJoinCount ?? 0;
+      weeklyLeaveCount += m.weeklyLeaveCount ?? 0;
+      joinCount += m.joinCount ?? 0;
+      leaveCount += m.leaveCount ?? 0;
+      netChange += m.netChange ?? 0;
     }
   });
-  return { month, startCount, fullTime, intern, weeklyJoinCount, weeklyLeaveCount, joinCount, leaveCount, netChange };
+  return { month: monthName, startCount, fullTime, intern, weeklyJoinCount, weeklyLeaveCount, joinCount, leaveCount, netChange };
 }
 
 export default function SummaryTable({ departments, totalMonthly, totalLabel = '合计', extraRows = [], computeTotalFromDepartments = false }: SummaryTableProps) {
@@ -37,9 +41,11 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
   if (departments.length === 0) return null;
 
   const months = totalMonthly.map(m => m.month);
+  const selectedMonth = months[selectedMonthIdx];
 
+  // 计算合计行：computeTotalFromDepartments=true 时从各部门汇总，否则直接用 totalMonthly
   const computedTotal = computeTotalFromDepartments
-    ? totalMonthly.map((_, idx) => sumMonthly(departments, idx))
+    ? totalMonthly.map(m => sumMonthly(departments, m.month))
     : totalMonthly;
   const currentTotal = computedTotal[selectedMonthIdx];
 
@@ -109,8 +115,11 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
           </thead>
           <tbody>
             {departments.map((dept, idx) => {
-              const monthData = dept.monthly[selectedMonthIdx];
+              const monthData = findMonth(dept.monthly, selectedMonth);
+              // 过滤：monthData 不存在，或 fullTime/startCount 都是 null，或在职人数为0（组织当月不存在/已注销/无人员）
               if (!monthData) return null;
+              const totalStaff = (monthData.fullTime ?? 0) + monthData.intern;
+              if ((monthData.fullTime == null && monthData.startCount == null) || totalStaff === 0) return null;
               return (
                 <Fragment key={dept.name}>
                   <tr
@@ -123,10 +132,10 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                       {dept.name}
                     </td>
                     <td className="text-center px-3 py-3 text-slate-700 font-semibold">
-                      {monthData.fullTime + monthData.intern}
+                      {(monthData.fullTime ?? 0) + monthData.intern}
                     </td>
                     <td className="text-center px-3 py-3 text-slate-600">
-                      {monthData.fullTime}
+                      {monthData.fullTime ?? 0}
                     </td>
                     <td className="text-center px-3 py-3 text-slate-600">
                       {monthData.intern}
@@ -163,12 +172,12 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                       </span>
                     </td>
                     <td className="text-center px-3 py-3">
-                      <MiniSparkline data={dept.monthly.map(m => m.fullTime + m.intern)} />
+                      <MiniSparkline data={dept.monthly.map(m => (m.fullTime ?? 0) + m.intern)} />
                     </td>
                   </tr>
                   {dept.children?.map((child, childIdx) => {
-                    const childMonthData = child.monthly[selectedMonthIdx];
-                    if (!childMonthData) return null;
+                    const childMonthData = findMonth(child.monthly, selectedMonth);
+                    if (!childMonthData || (childMonthData.fullTime == null && childMonthData.startCount == null)) return null;
                     return (
                       <tr
                         key={`${dept.name}-${child.name}`}
@@ -178,10 +187,10 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                           ├ {child.name}
                         </td>
                         <td className="text-center px-3 py-2 text-slate-500 text-xs">
-                          {childMonthData.fullTime + childMonthData.intern}
+                          {(childMonthData.fullTime ?? 0) + childMonthData.intern}
                         </td>
                         <td className="text-center px-3 py-2 text-slate-400 text-xs">
-                          {childMonthData.fullTime}
+                          {childMonthData.fullTime ?? 0}
                         </td>
                         <td className="text-center px-3 py-2 text-slate-400 text-xs">
                           {childMonthData.intern}
@@ -202,7 +211,7 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                           {childMonthData.netChange > 0 ? '+' : ''}{childMonthData.netChange}
                         </td>
                         <td className="text-center px-3 py-2">
-                          <MiniSparkline data={child.monthly.map(m => m.fullTime + m.intern)} />
+                          <MiniSparkline data={child.monthly.map(m => (m.fullTime ?? 0) + m.intern)} />
                         </td>
                       </tr>
                     );
@@ -268,8 +277,10 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                   </td>
                 </tr>
                 {extraRows.map((dept) => {
-                  const monthData = dept.monthly[selectedMonthIdx];
+                  const monthData = findMonth(dept.monthly, selectedMonth);
                   if (!monthData) return null;
+                  const totalStaff = (monthData.fullTime ?? 0) + monthData.intern;
+                  if ((monthData.fullTime == null && monthData.startCount == null) || totalStaff === 0) return null;
                   return (
                     <tr
                       key={dept.name}
@@ -279,10 +290,10 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                         {dept.name}
                       </td>
                       <td className="text-center px-3 py-3 text-slate-700 font-semibold">
-                        {monthData.fullTime + monthData.intern}
+                        {(monthData.fullTime ?? 0) + monthData.intern}
                       </td>
                       <td className="text-center px-3 py-3 text-slate-600">
-                        {monthData.fullTime}
+                        {monthData.fullTime ?? 0}
                       </td>
                       <td className="text-center px-3 py-3 text-slate-600">
                         {monthData.intern}
@@ -319,7 +330,7 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
                         </span>
                       </td>
                       <td className="text-center px-3 py-3">
-                        <MiniSparkline data={dept.monthly.map(m => m.fullTime + m.intern)} />
+                        <MiniSparkline data={dept.monthly.map(m => (m.fullTime ?? 0) + m.intern)} />
                       </td>
                     </tr>
                   );
@@ -330,7 +341,7 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
         </table>
       </div>
       <div className="px-5 py-3 border-t border-slate-100 bg-slate-50/50 text-xs text-slate-500">
-        当前查看：{months[selectedMonthIdx]} · 全部月份：{months.join(' / ')}
+        当前查看：{selectedMonth} · 全部月份：{months.join(' / ')}
       </div>
     </div>
   );
@@ -339,13 +350,16 @@ export default function SummaryTable({ departments, totalMonthly, totalLabel = '
 function MiniSparkline({ data, accent = false }: { data: number[]; accent?: boolean }) {
   const width = 100;
   const height = 24;
-  const min = Math.min(...data);
-  const max = Math.max(...data);
+  const nums = data.filter((v): v is number => v != null);
+  if (nums.length === 0) return null;
+  const min = Math.min(...nums);
+  const max = Math.max(...nums);
   const range = max - min || 1;
 
   const points = data.map((val, i) => {
+    const v = val ?? min;
     const x = (i / (data.length - 1)) * width;
-    const y = height - ((val - min) / range) * height;
+    const y = height - ((v - min) / range) * height;
     return `${x},${y}`;
   }).join(' ');
 
